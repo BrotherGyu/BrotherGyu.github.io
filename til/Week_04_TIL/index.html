@@ -1,0 +1,1199 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Boostcamp Week 04 [TIL] | BrotherGyu</title>
+<meta name="description" content="Week 04 [03.27 ~ 03.31]">
+
+
+  <meta name="author" content="Brother_Gyu">
+  
+  <meta property="article:author" content="Brother_Gyu">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="BrotherGyu">
+<meta property="og:title" content="Boostcamp Week 04 [TIL]">
+<meta property="og:url" content="https://brothergyu.github.io/til/Week_04_TIL/">
+
+
+  <meta property="og:description" content="Week 04 [03.27 ~ 03.31]">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-03-27T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://brothergyu.github.io/til/Week_04_TIL/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Brother_Gyu",
+      "url": "https://brothergyu.github.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="BrotherGyu Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<link rel="apple-touch-icon" sizes="180x180" href="../../assets/logo.ico/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../assets/logo.ico/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../assets/logo.ico/favicon-16x16.png">
+<link rel="mask-icon" href="../../assets/logo.ico/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/brother_gyu_logo_image.png" alt="BrotherGyu"></a>
+        
+        <a class="site-title" href="/">
+          BrotherGyu
+          <span class="site-subtitle">Devlog_</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/index.html">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tag</a>
+            </li><li class="masthead__menu-item">
+              <a href="/portfolio/">Portfolio</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#til" itemprop="item"><span itemprop="name">Til</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">Boostcamp Week 04 [TIL]</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="https://brothergyu.github.io/">
+        <img src="/assets/images/brother_gyu_profile_image.png" alt="Brother_Gyu" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="https://brothergyu.github.io/" itemprop="url">Brother_Gyu</a>
+    </h3>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <!-- 팔로우 버튼 제거 -->
+    <!-- <button class="btn btn--inverse">팔로우</button> -->
+    <ul class="author__urls social-icons">
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+    
+      <nav class="nav__list">
+  <!-- 토글 버튼 제거 -->
+  <input id="ac-toc" name="accordion-toc" type="checkbox" checked/>
+  <!-- 예전 코드 -->
+  <!-- <input id="ac-toc" name="accordion-toc" type="checkbox"/> -->
+  <!-- <label for="ac-toc">Toggle menu</label> -->
+  <ul class="nav__items" id="category_tag_menu">
+    <li>
+      <span>Category List</span>
+    </li>  
+    <li>
+        <span class="nav__sub-title">study</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/BoostCamp_AI" class="">NaverBoostCamp AI [11]</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+              
+                  
+                      <li><a href="/categories/CleanCode_Python" class="">CleanCode Python [5]</a></li>
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/AI" class="">AI [2]</a></li>
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/Pytorch" class="">Pytorch [3]</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/Ubuntu_Server" class="">Ubuntu Server [7]</a></li>
+                    
+                
+                    
+                
+            </ul>
+
+        <span class="nav__sub-title">python</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/Python_Module" class="">Python Module [3]</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        <span class="nav__sub-title">etc</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/DevTools" class="">DevTools [9]</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                        <li><a href="/categories/TIL" class="">TIL [7]</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/ETC" class="">ETC [1]</a></li>
+                    
+                
+            </ul>
+      </li>
+  </ul>
+</nav>
+    
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Boostcamp Week 04 [TIL]">
+    <meta itemprop="description" content="Week 04 [03.27 ~ 03.31]">
+    <meta itemprop="datePublished" content="2023-03-27T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="https://brothergyu.github.io/til/Week_04_TIL/" class="u-url" itemprop="url">Boostcamp Week 04 [TIL]
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-03-27T00:00:00+09:00">2023-03-27 Monday</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-fas fa-list-ul"></i> 목차</h4></header>
+              <!-- toc 인식 범위 수정 -->
+              <!-- <ul class="toc__menu"><li><a href="#0327-월">03.27 (월)</a><ul><li><a href="#추천-시스템-basic">추천 시스템 Basic</a></li></ul></li></ul></li></ul></li><li><a href="#0328-화">03.28 (화)</a><ul><li><a href="#생활코딩이고잉님의-git특강">생활코딩[이고잉]님의 Git특강</a></li></ul></li></ul></li></ul></li><li><a href="#0329수">03.29(수)</a><ul><li><a href="#collaborative-filtering">Collaborative Filtering</a></li></ul></li></ul></li></ul></li><li><a href="#0330목">03.30(목)</a><ul><li><a href="#mbcf">MBCF</a></li><li><a href="#singular-value-decompositionsvd">Singular Value Decomposition(SVD)</a></li><li><a href="#matrix-factorizationmf">Matrix Factorization(MF)</a></li><li><a href="#alternative-least-square-als">Alternative Least Square (ALS)</a></li></ul></li></ul></li></ul></li><li><a href="#0331금">03.31(금)</a><ul><li><a href="#item2vec--ann">Item2Vec / ANN</a></li><li><a href="#recommender-systerm-with-deep-learning">Recommender Systerm with Deep Learning</a></li></ul></li></ul></li></ul></li></ul>
+ -->
+              <ul class="toc__menu"><li><a href="#0327-월">03.27 (월)</a></li><li><a href="#0328-화">03.28 (화)</a></li><li><a href="#0329수">03.29(수)</a></li><li><a href="#0330목">03.30(목)</a></li><li><a href="#0331금">03.31(금)</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h1 id="0327-월">03.27 (월)</h1>
+
+<hr />
+
+<h4 id="추천-시스템-basic">추천 시스템 Basic</h4>
+
+<p>추천 시스템의 기본에 대해서 학습 했습니다.<br />
+Precision@K, Recall@K, AP@K, MAP@K, NDCG와 같은 여러 지표를 학습하였습니다.<br />
+추천 시스템을 공부하면서도 계속 사용될 개념이라 학습 정리를 블로그에 작성하기로 계획을 하였습니다.</p>
+
+<p><br /></p>
+
+<h1 id="0328-화">03.28 (화)</h1>
+
+<hr />
+
+<h4 id="생활코딩이고잉님의-git특강">생활코딩[이고잉]님의 Git특강</h4>
+
+<p>Github 사용하는 방법에 대한 특강이 있었습니다.<br />
+이 블로그를 만들 때에도 Github를 기반으로 데이터를 관리하기 때문에 예전 녹화 강의를 본적이 있는 데,<br />
+실시간 강의를 들을 수 있어서 좋았습니다.</p>
+
+<p><br /></p>
+
+<h1 id="0329수">03.29(수)</h1>
+
+<hr />
+
+<h4 id="collaborative-filtering">Collaborative Filtering</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Aspect</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>정의</td>
+      <td>협업 필터링은 유사한 사용자의 행동을 분석하여 사용자의 선호도를 예측하는 기술</td>
+    </tr>
+    <tr>
+      <td>Types</td>
+      <td>사용자 기반 협업 필터링 및 항목 기반 협업 필터링</td>
+    </tr>
+    <tr>
+      <td>User-based CF</td>
+      <td>사용자와 유사한 다른 사용자의 선호도를 기반으로 사용자에게 항목을 추천</td>
+    </tr>
+    <tr>
+      <td>Item-based CF</td>
+      <td>과거에 평가한 항목의 유사성을 기반으로 사용자에게 항목을 추천</td>
+    </tr>
+    <tr>
+      <td>장점</td>
+      <td>개인화된 추천을 제공할 수 있으며, 신규 및 비인기 항목에 효과적이며 콘텐츠 정보가 필요하지 않다</td>
+    </tr>
+    <tr>
+      <td>단점</td>
+      <td>Cold-start problem, 희소성 및 확장성 문제</td>
+    </tr>
+    <tr>
+      <td>Data required</td>
+      <td>평가, 리뷰 및 구매 내역과 같은 사용자 항목 상호 작용 데이터</td>
+    </tr>
+    <tr>
+      <td>Algorithm</td>
+      <td>협업 필터링 알고리즘은 유사성 측정을 사용하여 유사한 사용자 또는 항목을 식별</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br /></p>
+
+<h1 id="0330목">03.30(목)</h1>
+
+<hr />
+
+<h4 id="mbcf">MBCF</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>측면</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>정의</td>
+      <td>기계 학습 알고리즘을 사용하여 사용자-항목 상호 작용 모델을 학습하는 추천 기술</td>
+    </tr>
+    <tr>
+      <td>모델 유형</td>
+      <td>Matrix factorization, Bayesian personalized ranking, and neural networks.</td>
+    </tr>
+    <tr>
+      <td>장점</td>
+      <td>Sparsity / Scalability 문제 개선<br />크고 희소한 데이터 세트를 처리할 수 있고 제한된 사용자 데이터로도 정확한 예측을 할 수 있으며 암시적 및 명시적 피드백과 같은 다양한 유형의 데이터를 처리<br />이웃 기반 CF의 경우 공통의 유저/아이템을 많이 공유해야 유사도 값이 정확해지지만 이러한 Limited Coverage를 극복</td>
+    </tr>
+    <tr>
+      <td>단점</td>
+      <td>다른 협업 필터링 기술보다 더 많은 계산 리소스가 필요하며 적절한 모델을 선택하고 최적화하려면 전문 지식이 필요</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>Explicit feedback</li>
+</ul>
+
+<blockquote>
+  <p>평점, 별점 등 item에 대한 user의 선호도를 직접적으로 알수 있는 문제</p>
+</blockquote>
+
+<ul>
+  <li>Implict feedback</li>
+</ul>
+
+<blockquote>
+  <p>클릭 여부, 시청 여부 등 item에 대한 user 선호도를 간접적으로 알 수 있는 데이터</p>
+
+  <p>1(positive)을 원소로 가지는 행렬로  표현가능</p>
+</blockquote>
+
+<h4 id="singular-value-decompositionsvd">Singular Value Decomposition(SVD)</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Aspect</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Definition</td>
+      <td>사용자 항목 등급 매트릭스를 3개의 매트릭스로 분해하기 위해 협업 필터링에 사용되는 매트릭스 분해 기술</td>
+    </tr>
+    <tr>
+      <td>Matrix decomposition</td>
+      <td>U, S 및 V 행렬 여기서 U는 user factors, S는 singular values, V는 item factors을 나타냄</td>
+    </tr>
+    <tr>
+      <td>Prediction formula</td>
+      <td>U, S 및 V 행렬의 내적을 통해 unknown ratings을 추정</td>
+    </tr>
+    <tr>
+      <td>장점</td>
+      <td>크고 sparse한 데이터 세트를 처리하는 데 효과적이며 누락된 등급을 처리하고 정확한 권장 사항을 제공할 수 있다.</td>
+    </tr>
+    <tr>
+      <td>단점</td>
+      <td>분해 하려는 행렬의 knowledge가 불완전할 때 정의 안됨<br />정확하지 않은 Imputation은 데이터를 왜곡 시키고 성능을 떨어뜨린다<br />행렬의 entry가 적을때 과적합 되기 쉬움<br />-&gt; MF 등장</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="matrix-factorizationmf">Matrix Factorization(MF)</h4>
+
+<ul>
+  <li>정의<br />
+User-Item 행렬을 저차원의 User와 Item의 latent factor 행렬의 곱으로 분해<br />
+SVD와 유사하지만 관측된 선호도(평점)만 모델링에 활용</li>
+</ul>
+
+<blockquote>
+\[Rating Matrix를 P와 Q로 분해하여 R과 최대한 유사하게 \hat{R}을 추론
+\\
+R \approx P * Q^T = \hat{R}\]
+
+</blockquote>
+
+<h4 id="alternative-least-square-als">Alternative Least Square (ALS)</h4>
+
+<ul>
+  <li>
+    <p>정의<br />
+Implict Feedback 데이터에 적합하도록 MF 기반 모델을 설계하여 성능을 향상</p>
+  </li>
+  <li>
+    <p>Basic Concept<br />
+User와 Item 매트릭스를 번갈아 가면서 업데이트<br />
+두 매트릭스 중 하나를 상수로 놓고 나머지 매트릭스를 업데이트<br />
+<code class="language-plaintext highlighter-rouge">p_u, q_i</code> 가운데 하나를 고정하고 다른 하나로 least-square문제를 해결</p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h1 id="0331금">03.31(금)</h1>
+
+<hr />
+
+<h4 id="item2vec--ann">Item2Vec / ANN</h4>
+
+<h4 id="recommender-systerm-with-deep-learning">Recommender Systerm with Deep Learning</h4>
+
+<blockquote>
+  <p>DL / MLP / AE</p>
+</blockquote>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#boostcamp-ai" class="page__taxonomy-item p-category" rel="tag">BoostCamp_AI</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#til" class="page__taxonomy-item p-category" rel="tag">TIL</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-03-27T00:00:00+09:00">2023-03-27 Monday</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Boostcamp+Week+04+%5BTIL%5D%20https%3A%2F%2Fbrothergyu.github.io%2Ftil%2FWeek_04_TIL%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fbrothergyu.github.io%2Ftil%2FWeek_04_TIL%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fbrothergyu.github.io%2Ftil%2FWeek_04_TIL%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      <!-- 
+  <nav class="pagination">
+    
+      <a href="/devtools/nbconvert/" class="pagination--pager" title="[Python Library] nbconvert - ipynb파일을 markdown으로 변환하는 방법
+">이전</a>
+    
+    
+      <a href="/til/Week_05_TIL/" class="pagination--pager" title="Boostcamp Week 05 [TIL]
+">다음</a>
+    
+  </nav>
+ -->
+
+
+
+
+  
+
+  
+
+  
+
+  
+  	
+  	
+  	
+  	
+  	
+
+
+  <nav class="pagination_prev_next">
+    
+      <a href="/til/Week_03_TIL/" class="pagination_prev_next--pager_left"><span class="prev_next">이전 포스트<br></span>Boostcamp Week 03 [TIL]</a>
+    
+    
+    
+      <a href="/til/Week_05_TIL/" class="pagination_prev_next--pager_right"><span class="prev_next">다음 포스트<br></span>Boostcamp Week 05 [TIL]</a>
+    
+    
+  </nav>
+
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">댓글남기기</h4>
+      <section id="utterances-comments"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">최근 포스트</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ubuntu_server/cuda_install/" rel="permalink">[Setting] cuda/cudnn 설치하기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-08-25T00:00:00+09:00">2023-08-25 Friday</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">cuda 설치하기
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ubuntu_server/userful_util/" rel="permalink">[Util] 알면 편한 유틸리티들
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-08-24T00:00:00+09:00">2023-08-24 Thursday</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">알면 편한 유틸리티들
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/etc/ram_overclock/" rel="permalink">[Desktop Setting] Ram Overclock
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-08-24T00:00:00+09:00">2023-08-24 Thursday</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">램 오버클럭 수치 기록
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ai/cosine_similarity/" rel="permalink">[sklearn] cosine_similarity
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-08-24T00:00:00+09:00">2023-08-24 Thursday</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">[sklearn] cosine_similarity
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+    
+    <aside class="sidebar__top">
+      <a href="#site-nav"> <i class="fas fa-angle-up fa-2x"></i></a>
+    </aside>
+    
+      <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="mailto:brothergyu98@gmail.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+        
+      
+        
+          <li><a href="https://github.com/BrotherGyu/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 Brother_Gyu. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BDHERKJ7W3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-BDHERKJ7W3', { 'anonymize_ip': false});
+</script>
+
+
+
+
+
+
+    <script>
+  'use strict';
+
+  (function() {
+    var commentContainer = document.querySelector('#utterances-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://utteranc.es/client.js');
+    script.setAttribute('repo', 'BrotherGyu/BrotherGyu.github.io_comments');
+    script.setAttribute('issue-term', 'pathname');
+    
+    script.setAttribute('theme', 'github-light');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+    <script type="text/javascript">
+    window.MathJax = {
+   tex: {
+     packages: ['base', 'ams']
+   },
+   loader: {
+     load: ['ui/menu', '[tex]/ams']
+   },
+   startup: {
+     ready() {
+       MathJax.startup.defaultReady();
+       const Macro = MathJax._.input.tex.Symbol.Macro;
+       const MapHandler = MathJax._.input.tex.MapHandler.MapHandler;
+       const Array = MathJax._.input.tex.ams.AmsMethods.default.Array;
+       const env = new Macro('psmallmatrix', Array, [null, '(', ')', 'c', '.333em', '.2em', 'S', 1]);
+       MapHandler.getMap('AMSmath-environment').add('psmallmatrix', env);
+     }
+   }
+    };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async
+   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1153 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[Project] Books_Recommendation_Platform | BrotherGyu</title>
+<meta name="description" content="도메인 기초 대회 예측 모델을 활용하여 웹 서비스 개발[Streamlit]">
+
+
+  <meta name="author" content="Brother_Gyu">
+  
+  <meta property="article:author" content="Brother_Gyu">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="BrotherGyu">
+<meta property="og:title" content="[Project] Books_Recommendation_Platform">
+<meta property="og:url" content="https://brothergyu.github.io/boostcamp_ai/Books_Recommendation_Platform/">
+
+
+  <meta property="og:description" content="도메인 기초 대회 예측 모델을 활용하여 웹 서비스 개발[Streamlit]">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-04-28T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://brothergyu.github.io/boostcamp_ai/Books_Recommendation_Platform/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Brother_Gyu",
+      "url": "https://brothergyu.github.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="BrotherGyu Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<link rel="apple-touch-icon" sizes="180x180" href="../../assets/logo.ico/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../assets/logo.ico/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../assets/logo.ico/favicon-16x16.png">
+<link rel="mask-icon" href="../../assets/logo.ico/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/brother_gyu_logo_image.png" alt="BrotherGyu"></a>
+        
+        <a class="site-title" href="/">
+          BrotherGyu
+          <span class="site-subtitle">Devlog_</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/index.html">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tag</a>
+            </li><li class="masthead__menu-item">
+              <a href="/portfolio/">Portfolio</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#boostcamp_ai" itemprop="item"><span itemprop="name">Boostcamp_ai</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">[Project] Books_Recommendation_Platform</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="https://brothergyu.github.io/">
+        <img src="/assets/images/brother_gyu_profile_image.png" alt="Brother_Gyu" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="https://brothergyu.github.io/" itemprop="url">Brother_Gyu</a>
+    </h3>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <!-- 팔로우 버튼 제거 -->
+    <!-- <button class="btn btn--inverse">팔로우</button> -->
+    <ul class="author__urls social-icons">
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+    
+      <nav class="nav__list">
+  <!-- 토글 버튼 제거 -->
+  <input id="ac-toc" name="accordion-toc" type="checkbox" checked/>
+  <!-- 예전 코드 -->
+  <!-- <input id="ac-toc" name="accordion-toc" type="checkbox"/> -->
+  <!-- <label for="ac-toc">Toggle menu</label> -->
+  <ul class="nav__items" id="category_tag_menu">
+    <li>
+      <span>Category List</span>
+    </li>  
+    <li>
+        <span class="nav__sub-title">study</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/BoostCamp_AI" class="">NaverBoostCamp AI [11]</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+              
+                  
+                      <li><a href="/categories/CleanCode_Python" class="">CleanCode Python [5]</a></li>
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/AI" class="">AI [2]</a></li>
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/Pytorch" class="">Pytorch [3]</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/Ubuntu_Server" class="">Ubuntu Server [7]</a></li>
+                    
+                
+                    
+                
+            </ul>
+
+        <span class="nav__sub-title">python</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/Python_Module" class="">Python Module [3]</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        <span class="nav__sub-title">etc</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/DevTools" class="">DevTools [9]</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                        <li><a href="/categories/TIL" class="">TIL [7]</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/ETC" class="">ETC [1]</a></li>
+                    
+                
+            </ul>
+      </li>
+  </ul>
+</nav>
+    
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[Project] Books_Recommendation_Platform">
+    <meta itemprop="description" content="도메인 기초 대회 예측 모델을 활용하여 웹 서비스 개발[Streamlit]">
+    <meta itemprop="datePublished" content="2023-04-28T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="https://brothergyu.github.io/boostcamp_ai/Books_Recommendation_Platform/" class="u-url" itemprop="url">[Project] Books_Recommendation_Platform
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-04-28T00:00:00+09:00">2023-04-28 Friday</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-fas fa-list-ul"></i> 목차</h4></header>
+              <!-- toc 인식 범위 수정 -->
+              <!-- <ul class="toc__menu"><li><a href="#books_recommendation_platform">Books_Recommendation_Platform</a><ul><li><a href="#naver-boostcamp-ai-tech-5th-recsys-product-serving-by-streamlit">Naver BoostCamp AI Tech 5th Recsys Product Serving by Streamlit</a></li><li><a href="#--files">- Files</a><ul><li><a href="#--apppy">- app.py</a></li><li><a href="#--data-폴더">- data 폴더</a></li><li><a href="#--model-폴더">- model 폴더</a></li><li><a href="#--src-폴더">- src 폴더</a></li><li><a href="#--readmemd">- README.md</a></li><li><a href="#--poetrylock-및-pyprojecttoml">- poetry.lock 및 pyproject.toml</a></li></ul></li><li><a href="#--flow-chart">- Flow Chart</a></li><li><a href="#--usage">- Usage</a></li><li><a href="#--license">- License</a></li></ul></li><li><a href="#회고">회고</a><ul><li><a href="#개선-해야-될점">개선 해야 될점</a></li></ul></li></ul>
+ -->
+              <ul class="toc__menu"><li><a href="#books_recommendation_platform">Books_Recommendation_Platform</a><ul><li><a href="#naver-boostcamp-ai-tech-5th-recsys-product-serving-by-streamlit">Naver BoostCamp AI Tech 5th Recsys Product Serving by Streamlit</a></li><li><a href="#--files">- Files</a><ul><li><a href="#--apppy">- app.py</a></li><li><a href="#--data-폴더">- data 폴더</a></li><li><a href="#--model-폴더">- model 폴더</a></li><li><a href="#--src-폴더">- src 폴더</a></li><li><a href="#--readmemd">- README.md</a></li><li><a href="#--poetrylock-및-pyprojecttoml">- poetry.lock 및 pyproject.toml</a></li></ul></li><li><a href="#--flow-chart">- Flow Chart</a></li><li><a href="#--usage">- Usage</a></li><li><a href="#--license">- License</a></li></ul></li><li><a href="#회고">회고</a><ul><li><a href="#개선-해야-될점">개선 해야 될점</a></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <blockquote>
+  <p>Week 06 ~ 07 [2023.04.10 ~ 2023.04.21] 동안 진행했던 네이버 커넥트재단 <strong>Book Rating Prediction</strong> 기초 대회에서 개발했던 머신러닝 예측 모델을 웹 서비스 서빙에 알맞은 모델로 새롭게 학습을 진행 한 후 모델 서빙 프로젝트를 진행하였습니다.</p>
+</blockquote>
+
+<h1 id="books_recommendation_platform"><strong>Books_Recommendation_Platform</strong></h1>
+
+<hr />
+
+<h2 id="naver-boostcamp-ai-tech-5th-recsys-product-serving-by-streamlit">Naver BoostCamp AI Tech 5th Recsys Product Serving by Streamlit</h2>
+
+<blockquote>
+  <p><strong>Books_Recommendation_Platform</strong>은 사용자 입력을 기반으로 책 추천을 제공하는 플랫폼입니다.<br />
+머신 러닝 알고리즘을 사용하여 사용자의 입력 기반으로 어떤 책을 선호할지 예측합니다.</p>
+
+  <p>GitHub - <a href="https://github.com/BrotherGyu/Books_Recommendation_Platform"><strong>Books_Recommendation_Platform</strong></a><br />
+Website - <a href="https://brothergyu-books-recommendation-platform-book-recapp-d0pqn9.streamlit.app/"><strong>books-recommendation-platform</strong></a></p>
+</blockquote>
+
+<p><br /></p>
+
+<h2 id="--files">- Files</h2>
+
+<blockquote>
+  <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Books_Recommendation_Platform
+├── Book_Rec
+│   ├── app.py
+│   ├── data
+│   │   ├── idx2info.pkl
+│   │   └── info2idx_convert_data.pkl
+│   ├── model
+│   │   ├── README.md
+│   │   ├── catboost_model_IALLC.pkl
+│   │   └── catboost_model_IALL_.pkl
+│   └── src
+│       ├── __init__.py
+│       ├── data_loader.py
+│       ├── info2idx.py
+│       ├── model_loader.py
+│       └── predict.py
+├── README.md
+├── poetry.lock
+└── pyproject.toml
+</code></pre></div>  </div>
+  <p>이 프로젝트에는 다음과 같은 파일이 포함되어 있습니다:</p>
+</blockquote>
+
+<h3 id="--apppy">- app.py</h3>
+
+<blockquote>
+  <p>Streamlit 어플리케이션을 실행하는 주 파일입니다. 사용자 입력을 처리하고 결과로 나오는 책 추천을 표시합니다.</p>
+
+  <p>상위 book list를 하위 묘듈을 통해 반환을 받은 후 <code class="language-plaintext highlighter-rouge">info2idx.py</code>의 <code class="language-plaintext highlighter-rouge">info_data_load()</code>를 통해 books data를 불러온 후 request를 통해 책의 이미지를 불러오고 로컬 데이터셋에서 이름, 작가, 출판 년도를 합쳐 Streamlit 화면에 출력합니다</p>
+</blockquote>
+
+<h3 id="--data-폴더">- data 폴더</h3>
+
+<p>머신 러닝 모델에서 사용하는 데이터가 포함된 폴더입니다. <code class="language-plaintext highlighter-rouge">idx2info.pkl</code>과 <code class="language-plaintext highlighter-rouge">info2idx_convert_data.pkl</code> 두 개의 pickle 파일이 있습니다.</p>
+
+<h3 id="--model-폴더">- model 폴더</h3>
+
+<p>책 추천에 사용되는 머신 러닝 모델이 포함된 폴더입니다. <code class="language-plaintext highlighter-rouge">catboost_model_IALLC.pkl</code>과 <code class="language-plaintext highlighter-rouge">catboost_model_IALL_.pkl</code> 두 개의 pickle 파일이 있습니다.</p>
+
+<h3 id="--src-폴더">- src 폴더</h3>
+
+<p>머신 러닝 모델이 예측을 수행하는 데 사용하는 Python 모듈이 포함된 폴더입니다. <code class="language-plaintext highlighter-rouge">data_loader.py</code>, <code class="language-plaintext highlighter-rouge">info2idx.py</code>, <code class="language-plaintext highlighter-rouge">model_loader.py</code>, <code class="language-plaintext highlighter-rouge">predict.py</code>이 있습니다.</p>
+
+<ul>
+  <li>
+    <p>data_loader.py</p>
+
+    <blockquote>
+      <p><code class="language-plaintext highlighter-rouge">idx2info.pkl</code>의 isbn의 값을 기반으로 add.py에서 받은 데이터를 합쳐 예측을 위한 인풋 데이터셋을 구성합니다</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>info2idx.py</p>
+
+    <blockquote>
+      <p>에측을 위해서 <code class="language-plaintext highlighter-rouge">idx2info.pkl</code>, <code class="language-plaintext highlighter-rouge">info2idx_convert_data.pkl</code>의 파일을 불러와서<code class="language-plaintext highlighter-rouge"> add.py</code>로 넘겨주는 파일입니다</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>model_loader.py</p>
+
+    <blockquote>
+      <p><code class="language-plaintext highlighter-rouge">catboost_model_IALLC.pkl</code>, <code class="language-plaintext highlighter-rouge">catboost_model_IALL_.pkl</code> category 사용 여부에 따라 예측 모델을 <code class="language-plaintext highlighter-rouge">predict.py</code>로 넘겨주는 파일입니다</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>predict.py</p>
+
+    <blockquote>
+      <p>인풋 데이터셋을 받아 예측 모델을 통해 rating을 예측하고 <code class="language-plaintext highlighter-rouge">app.py</code>로 결과를 반환합니다</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h3 id="--readmemd">- README.md</h3>
+
+<p>현재 읽고 있는 파일입니다. 이 프로젝트의 개요와 사용 방법에 대한 설명을 제공합니다.</p>
+
+<h3 id="--poetrylock-및-pyprojecttoml">- poetry.lock 및 pyproject.toml</h3>
+
+<p>이 파일들은 Poetry를 사용하여 프로젝트 종속성을 관리하는 데 사용됩니다.</p>
+
+<p><br /></p>
+
+<h2 id="--flow-chart">- Flow Chart</h2>
+
+<p><img src="https://user-images.githubusercontent.com/60868825/234962541-056c64c3-cefa-4108-a46c-0c3d92a4ade7.png" alt="image" /></p>
+
+<p><br /></p>
+
+<h2 id="--usage">- Usage</h2>
+
+<p>책 추천 플랫폼을 사용하려면 다음 단계를 따르세요:</p>
+
+<ol>
+  <li>이 저장소를 로컬 컴퓨터에 복제합니다.</li>
+  <li>Poetry를 사용하여 필요한 종속성을 설치합니다. <code class="language-plaintext highlighter-rouge">poetry install</code></li>
+  <li><code class="language-plaintext highlighter-rouge">app.py</code>를 실행합니다. <code class="language-plaintext highlighter-rouge">streamlit run app.py</code></li>
+  <li>웹 브라우저를 열고 <code class="language-plaintext highlighter-rouge">http://localhost:[할당된 포드번호]</code>로 이동합니다.</li>
+  <li>데이터를 입력하고 “Recommend Books”를 클릭합니다.</li>
+  <li>페이지에 표시되는 추천 책을 확인합니다.</li>
+</ol>
+
+<p><br /></p>
+
+<h2 id="--license">- License</h2>
+
+<ul>
+  <li>Python: PSF (Python Software Foundation) 라이선스</li>
+  <li>Streamlit: Apache-2.0 라이선스</li>
+  <li>Pandas: BSD-3-Clause 라이선스</li>
+  <li>NumPy: BSD-3-Clause 라이선스</li>
+</ul>
+
+<hr />
+<p><br /></p>
+
+<h1 id="회고">회고</h1>
+
+<hr />
+<h2 id="개선-해야-될점">개선 해야 될점</h2>
+
+<ul>
+  <li>대부분의 책 데이터가 영어 도서로 이루어져 있고, 2006년에 출판된 도서가 데이터 셋에서 가장 최신 도서이기 때문에 추천 되는 결과도 노후되어 있다</li>
+  <li>시리즈가 연속적으로 추천 되어 추천의 다양성이 떨어지는 경우가 있다</li>
+  <li>접속한 유저 데이터를 기록하지 않아 개인화와 로그 수집 및 추가적인 모델 학습이 어렵다</li>
+</ul>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#project" class="page__taxonomy-item p-category" rel="tag">Project</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#boostcamp-ai" class="page__taxonomy-item p-category" rel="tag">BoostCamp_AI</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-04-28T00:00:00+09:00">2023-04-28 Friday</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%5BProject%5D+Books_Recommendation_Platform%20https%3A%2F%2Fbrothergyu.github.io%2Fboostcamp_ai%2FBooks_Recommendation_Platform%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fbrothergyu.github.io%2Fboostcamp_ai%2FBooks_Recommendation_Platform%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fbrothergyu.github.io%2Fboostcamp_ai%2FBooks_Recommendation_Platform%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      <!-- 
+  <nav class="pagination">
+    
+      <a href="/til/Week_08_TIL/" class="pagination--pager" title="Boostcamp Week 08 [TIL]
+">이전</a>
+    
+    
+      <a href="/boostcamp_ai/DKT_EDA/" class="pagination--pager" title="[Project] DKT 대회 - EDA
+">다음</a>
+    
+  </nav>
+ -->
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  	
+  	
+  	
+  	
+  	
+
+
+  <nav class="pagination_prev_next">
+    
+      <a href="/boostcamp_ai/Domain_Foundation_Competition/" class="pagination_prev_next--pager_left"><span class="prev_next">이전 포스트<br></span>[Wrap_up] 도메인 기초 대회</a>
+    
+    
+    
+      <a href="/boostcamp_ai/DKT_EDA/" class="pagination_prev_next--pager_right"><span class="prev_next">다음 포스트<br></span>[Project] DKT 대회 - EDA</a>
+    
+    
+  </nav>
+
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">댓글남기기</h4>
+      <section id="utterances-comments"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">최근 포스트</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ubuntu_server/cuda_install/" rel="permalink">[Setting] cuda/cudnn 설치하기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-08-25T00:00:00+09:00">2023-08-25 Friday</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">cuda 설치하기
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ubuntu_server/userful_util/" rel="permalink">[Util] 알면 편한 유틸리티들
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-08-24T00:00:00+09:00">2023-08-24 Thursday</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">알면 편한 유틸리티들
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/etc/ram_overclock/" rel="permalink">[Desktop Setting] Ram Overclock
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-08-24T00:00:00+09:00">2023-08-24 Thursday</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">램 오버클럭 수치 기록
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ai/cosine_similarity/" rel="permalink">[sklearn] cosine_similarity
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-08-24T00:00:00+09:00">2023-08-24 Thursday</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">[sklearn] cosine_similarity
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+    
+    <aside class="sidebar__top">
+      <a href="#site-nav"> <i class="fas fa-angle-up fa-2x"></i></a>
+    </aside>
+    
+      <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="mailto:brothergyu98@gmail.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+        
+      
+        
+          <li><a href="https://github.com/BrotherGyu/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 Brother_Gyu. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BDHERKJ7W3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-BDHERKJ7W3', { 'anonymize_ip': false});
+</script>
+
+
+
+
+
+
+    <script>
+  'use strict';
+
+  (function() {
+    var commentContainer = document.querySelector('#utterances-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://utteranc.es/client.js');
+    script.setAttribute('repo', 'BrotherGyu/BrotherGyu.github.io_comments');
+    script.setAttribute('issue-term', 'pathname');
+    
+    script.setAttribute('theme', 'github-light');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+    <script type="text/javascript">
+    window.MathJax = {
+   tex: {
+     packages: ['base', 'ams']
+   },
+   loader: {
+     load: ['ui/menu', '[tex]/ams']
+   },
+   startup: {
+     ready() {
+       MathJax.startup.defaultReady();
+       const Macro = MathJax._.input.tex.Symbol.Macro;
+       const MapHandler = MathJax._.input.tex.MapHandler.MapHandler;
+       const Array = MathJax._.input.tex.ams.AmsMethods.default.Array;
+       const env = new Macro('psmallmatrix', Array, [null, '(', ')', 'c', '.333em', '.2em', 'S', 1]);
+       MapHandler.getMap('AMSmath-environment').add('psmallmatrix', env);
+     }
+   }
+    };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async
+   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+  </body>
+</html>

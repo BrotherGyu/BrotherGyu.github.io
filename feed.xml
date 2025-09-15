@@ -1,0 +1,1143 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://brothergyu.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://brothergyu.github.io/" rel="alternate" type="text/html" /><updated>2025-09-15T16:48:20+09:00</updated><id>https://brothergyu.github.io/feed.xml</id><title type="html">BrotherGyu</title><author><name>Brother_Gyu</name></author><entry><title type="html">[Setting] cuda/cudnn 설치하기</title><link href="https://brothergyu.github.io/ubuntu_server/cuda_install/" rel="alternate" type="text/html" title="[Setting] cuda/cudnn 설치하기" /><published>2023-08-25T00:00:00+09:00</published><updated>2023-08-25T00:00:00+09:00</updated><id>https://brothergyu.github.io/ubuntu_server/cuda_install</id><content type="html" xml:base="https://brothergyu.github.io/ubuntu_server/cuda_install/"><![CDATA[<h1 id="setting-cudacudnn-설치하기">[Setting] cuda/cudnn 설치하기</h1>
+
+<blockquote>
+  <p>Ubuntu 환경에서 cuda/cudnn 설치하는 법을 다룹니다.</p>
+</blockquote>
+
+<h2 id="--cuda-설치">- CUDA 설치</h2>
+
+<ol>
+  <li>
+    <p>사전 준비:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt update
+<span class="nb">sudo </span>apt upgrade
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>NVIDIA 드라이버 설치:</p>
+
+    <blockquote>
+      <p>NVIDIA GPU 드라이버가 설치되어 있지 않다면, Ubuntu의 기본 리포지토리를 사용하여 설치 가능</p>
+
+      <p><code class="language-plaintext highlighter-rouge">nvidia-smi</code> 명령어가 작동한다면 <strong>3. CUDA 설치</strong>로 바로 이동하면 됩니다.</p>
+    </blockquote>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># sudo apt install nvidia-driver-xxx</span>
+<span class="nb">sudo </span>apt <span class="nb">install </span>nvidia-driver-535  <span class="c"># 혹은 최신 버전으로</span>
+or
+<span class="nb">sudo </span>ubuntu-drivers autoinstall <span class="c"># 자동 설치</span>
+</code></pre></div>    </div>
+
+    <p>- 재부팅:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>reboot
+</code></pre></div>    </div>
+
+    <p>- 설치된 드라이버 확인:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nvidia-smi
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>CUDA 설치:</p>
+
+    <blockquote>
+      <p>CUDA Toolkit - <a href="https://developer.nvidia.com/cuda-downloads">https://developer.nvidia.com/cuda-downloads</a></p>
+    </blockquote>
+
+    <ol>
+      <li>
+        <p>첫 페이지</p>
+
+        <p><img src="../../images/Ubuntu_Server/2023-08-25-cuda_install/image-20230825230222898.png" alt="image-20230825230222898" /></p>
+      </li>
+      <li>
+        <p>설치 환경에 맞추어서 선택</p>
+
+        <p><img src="../../images/Ubuntu_Server/2023-08-25-cuda_install/image-20230825230328437.png" alt="image-20230825230328437" /></p>
+      </li>
+      <li>
+        <p>해당 base installer의 내용을 복사후 터미널에 입력</p>
+
+        <p><img src="../../images/Ubuntu_Server/2023-08-25-cuda_install/image-20230825230411316.png" alt="image-20230825230411316" /></p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>환경변수 설정:</p>
+
+    <blockquote>
+      <p><code class="language-plaintext highlighter-rouge">.bashrc</code>나 <code class="language-plaintext highlighter-rouge">.zshrc</code> 파일에 아래 내용을 추가</p>
+    </blockquote>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s1">'# ---------- cuda setting ---------- #'</span> <span class="o">&gt;&gt;</span> ~/.bashrc <span class="c"># or ~/.zshrc</span>
+<span class="nb">echo</span> <span class="s1">'export PATH=/usr/local/cuda/bin:$PATH'</span> <span class="o">&gt;&gt;</span> ~/.bashrc <span class="c"># or ~/.zshrc</span>
+<span class="nb">echo</span> <span class="s1">'export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH'</span> <span class="o">&gt;&gt;</span> ~/.bashrc <span class="c"># or ~/.zshrc</span>
+<span class="nb">echo</span> <span class="s1">'# ----------------------------------- #'</span> <span class="o">&gt;&gt;</span> ~/.bashrc <span class="c"># or ~/.zshrc</span>
+<span class="nb">source</span> ~/.bashrc <span class="c"># or ~/.zshrc</span>
+<span class="nb">exec</span> <span class="nv">$SHELL</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>설치 확인:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nvcc <span class="nt">--version</span>
+</code></pre></div>    </div>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># example</span>
+<span class="o">&gt;</span> nvcc: NVIDIA <span class="o">(</span>R<span class="o">)</span> Cuda compiler driver
+<span class="o">&gt;</span> Copyright <span class="o">(</span>c<span class="o">)</span> 2005-2023 NVIDIA Corporation
+<span class="o">&gt;</span> Built on Tue_Jul_11_02:20:44_PDT_2023
+<span class="o">&gt;</span> Cuda compilation tools, release 12.2, V12.2.128
+<span class="o">&gt;</span> Build cuda_12.2.r12.2/compiler.33053471_0
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h2 id="--cudnn-설치">- cuDNN 설치</h2>
+
+<ol>
+  <li>
+    <p>파일 다운로드:</p>
+
+    <blockquote>
+      <p>cuDNN Download - <a href="https://developer.nvidia.com/rdp/cudnn-download">https://developer.nvidia.com/rdp/cudnn-download</a><br />
+환경에 맞는 파일을 다운합니다</p>
+    </blockquote>
+
+    <p><img src="../../images/Ubuntu_Server/2023-08-25-cuda_install/image-20230825234622027.png" alt="image-20230825234622027" /></p>
+  </li>
+  <li>
+    <p>cuDNN 설치:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># sudo chown _apt: &lt;file_path&gt;</span>
+<span class="c"># sudo apt install &lt;codnn-*.deb file&gt;</span>
+<span class="nb">sudo chown </span>_apt: /home/brother_gyu/dev/cudnn-local-repo-ubuntu2204-8.9.4.25_1.0-1_amd64.deb
+<span class="nb">sudo </span>apt <span class="nb">install</span> ./cudnn-local-repo-ubuntu2204-8.9.4.25_1.0-1_amd64.deb
+</code></pre></div>    </div>
+
+    <p><img src="../../images/Ubuntu_Server/2023-08-25-cuda_install/image-20230825234936361.png" alt="image-20230825234936361" /></p>
+  </li>
+  <li>
+    <p>sudo apt update 에러 발생할 경우:</p>
+
+    <p><img src="../../images/Ubuntu_Server/2023-08-25-cuda_install/image-20230825235159896.png" alt="image-20230825235159896" /></p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># ls /var/cudnn-local-repo-ubuntuxxxx-x.x.x.xx/</span>
+<span class="nb">ls</span> /var/cudnn-local-repo-ubuntu2204-8.9.4.25/
+</code></pre></div>    </div>
+
+    <p><img src="../../images/Ubuntu_Server/2023-08-25-cuda_install/image-20230825235339302.png" alt="image-20230825235339302" /></p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">ls</span> /usr/share/keyrings/
+</code></pre></div>    </div>
+    <p><img src="../../images/Ubuntu_Server/2023-08-25-cuda_install/image-20230825235450250.png" alt="image-20230825235450250" /></p>
+
+    <blockquote>
+      <p><code class="language-plaintext highlighter-rouge">ls /var/cudnn-local-repo-ubuntuxxxx-x.x.x.xx/</code> 폴더 내의 <code class="language-plaintext highlighter-rouge">cudnn-local-*-keyring.gpg</code> 파일을 <code class="language-plaintext highlighter-rouge">/usr/share/keyrings/</code>에 넣어줘야 합니다.</p>
+    </blockquote>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># sudo cp /var/cudnn-local-repo-ubuntuxxxx-x.x.x.xx/cudnn-local-xxxxxxxx-keyring.gpg /usr/share/keyrings/</span>
+<span class="nb">sudo cp</span> /var/cudnn-local-repo-ubuntu2204-8.9.4.25/cudnn-local-3C3A81D3-keyring.gpg /usr/share/keyrings/
+</code></pre></div>    </div>
+
+    <blockquote>
+      <p><img src="../../images/Ubuntu_Server/2023-08-25-cuda_install/image-20230826000510571.png" alt="image-20230826000510571" /></p>
+
+      <p>이제 해결된 것을 확인할 수 있습니다.</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>라이브러리 설치</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># sudo apt-get install libcudnn8=8.x.x.x-1+cudaX.Y</span>
+<span class="c"># sudo apt-get install libcudnn8-dev=8.x.x.x-1+cudaX.Y</span>
+<span class="c"># sudo apt-get install libcudnn8-samples=8.x.x.x-1+cudaX.Y</span>
+   
+<span class="nb">sudo </span>apt-get <span class="nb">install </span><span class="nv">libcudnn8</span><span class="o">=</span>8.9.4.25-1+cuda12.2
+<span class="nb">sudo </span>apt-get <span class="nb">install </span>libcudnn8-dev<span class="o">=</span>8.9.4.25-1+cuda12.2
+<span class="nb">sudo </span>apt-get <span class="nb">install </span>libcudnn8-samples<span class="o">=</span>8.9.4.25-1+cuda12.2  
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h2 id="--정상-설치-테스트">- 정상 설치 테스트</h2>
+
+<ol>
+  <li>
+    <p>pytorch 설치</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>torch torchvision torchaudio
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>test 코드</p>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">torch</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">torch</span><span class="p">.</span><span class="n">cuda</span><span class="p">.</span><span class="nf">is_available</span><span class="p">())</span> <span class="c1"># True
+</span><span class="n">t</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">rand</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">).</span><span class="nf">cuda</span><span class="p">()</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">device</span><span class="p">)</span> <span class="c1"># cuda:*
+</span></code></pre></div>    </div>
+
+    <p>- 예시 결과</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">(</span>dev_3.11.4<span class="o">)</span> brother_gyu@rtx4060:~/dev<span class="nv">$ </span>python
+Python 3.11.4 <span class="o">(</span>main, Aug 25 2023, 00:30:45<span class="o">)</span> <span class="o">[</span>GCC 11.4.0] on linux
+Type <span class="s2">"help"</span>, <span class="s2">"copyright"</span>, <span class="s2">"credits"</span> or <span class="s2">"license"</span> <span class="k">for </span>more information.
+<span class="o">&gt;&gt;&gt;</span> import torch
+<span class="o">&gt;&gt;&gt;</span> print<span class="o">(</span>torch.cuda.is_available<span class="o">())</span>
+True
+<span class="o">&gt;&gt;&gt;</span> t <span class="o">=</span> torch.rand<span class="o">(</span>100, 100<span class="o">)</span>.cuda<span class="o">()</span>
+<span class="o">&gt;&gt;&gt;</span> print<span class="o">(</span>t.device<span class="o">)</span>
+cuda:0
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h1 id="reference">Reference</h1>
+
+<hr />
+
+<blockquote>
+  <p>cuDNN 설치법 - <a href="https://docs.nvidia.com/deeplearning/cudnn/install-guide/index.html#installlinux-deb">https://docs.nvidia.com/deeplearning/cudnn/install-guide/index.html#installlinux-deb</a></p>
+
+  <p>cuda_install.md [unofficial] - <a href="https://gist.github.com/denguir/b21aa66ae7fb1089655dd9de8351a202">https://gist.github.com/denguir/b21aa66ae7fb1089655dd9de8351a202</a></p>
+
+</blockquote>]]></content><author><name>Brother_Gyu</name></author><category term="Ubuntu_Server" /><category term="Ubuntu Server" /><category term="Setting" /><summary type="html"><![CDATA[cuda 설치하기]]></summary></entry><entry><title type="html">[sklearn] cosine_similarity</title><link href="https://brothergyu.github.io/ai/cosine_similarity/" rel="alternate" type="text/html" title="[sklearn] cosine_similarity" /><published>2023-08-24T00:00:00+09:00</published><updated>2023-08-24T00:00:00+09:00</updated><id>https://brothergyu.github.io/ai/cosine_similarity</id><content type="html" xml:base="https://brothergyu.github.io/ai/cosine_similarity/"><![CDATA[<h1 id="cosine_similarity-코사인-유사도">cosine_similarity [코사인 유사도]</h1>
+
+<hr />
+
+<ul>
+  <li>
+    <p>Cosine Similarity [코사인 유사도]</p>
+
+    <blockquote>
+      <p>코사인 유사도는 벡터 간의 유사성을 측정하는 방법 중 하나로 두 벡터 간의 각도에 기반하여 유사성을 측정하며, 벡터가 얼마나 비슷한 방향을 가지는지를 판단합니다.<br />
+<img src="../../images/AI/2023-08-24-cosine_similarity/image-20230913221324361.png" alt="image-20230913221324361" /><br />
+그림 - <a href="https://ko.wikipedia.org/wiki/%EC%BD%94%EC%82%AC%EC%9D%B8_%EC%9C%A0%EC%82%AC%EB%8F%84">https://ko.wikipedia.org/wiki/코사인_유사도</a></p>
+    </blockquote>
+  </li>
+  <li>
+    <p>Euclidean distance [유클리드 거리]</p>
+
+    <blockquote>
+      <p>유클리드 거리(Euclidean Distance)는 유사성 측정 방법 중 하나로 사용자 간 또는 아이템 간의 거리를 기반으로 유사성을 측정하는 방법입니다.<br />
+<img src="../../images/AI/2023-08-24-cosine_similarity/image-20230913233335184.png" alt="image-20230913233335184" /><br />
+그림 - <a href="https://ko.wikipedia.org/wiki/%EC%9C%A0%ED%81%B4%EB%A6%AC%EB%93%9C_%EA%B1%B0%EB%A6%AC">https://ko.wikipedia.org/wiki/유클리드거리</a></p>
+    </blockquote>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="01-cf에서의-cosine-similarity">01. CF에서의 Cosine Similarity</h2>
+
+<blockquote>
+  <p>Collaborative Filtering을 통한 추천 시스템을 구현할 때, 여러 유사성 메트릭 중 코사인 유사도를 통해서 구현하였습니다.<br />
+먼저 Collaborative Filtering이란 :</p>
+
+  <ul>
+    <li>Collaborative Filtering은 사용자의 행동 패턴을 기반으로 추천을 수행하는 기술입니다.</li>
+    <li>주로 사용자-아이템 행렬(User-Item Matrix)을 기반으로 작동합니다. 이 행렬은 사용자와 아이템 간의 상호 작용을 표현한 것으로, 보통 사용자가 아이템에 대한 평가 또는 구매 등의 활동을 나타냅니다.</li>
+  </ul>
+
+  <p>그래서 Collaborative Filtering에서 왜 코사인 유사도를 메트릭으로 사용 했는지에 대해서 공부한 내용입니다.</p>
+</blockquote>
+
+<ul>
+  <li>
+    <p>코사인 유사도를 사용한 이유</p>
+
+    <p><img src="../../images/AI/2023-08-24-cosine_similarity/image-20230913235920521.png" alt="image-20230913235920521" /></p>
+
+    <blockquote>
+      <p>코사인 유사도는 계산 과정에서 두 벡터 간의 각도에 기반하여 유사성을 측정하게 됩니다. 그래서 코사인 유사도를 통해서는 각도가 더 유사한 C_1을 유사하다고 판단하게 됩니다.<br />
+반면에 유클리드 거리 기반 유사도는 거리를 기반으로 유사도를 측정하기 때문에 apple이 더 많은 빈도를 보이지만 거리 상으로 가까운 banana banana를 더 유사하다고 판단하게 됩니다.<br />
+그래서 유클리드 거리는 벡터의 크기에 민감하게 되고 스케일이 다른 특성들을 가진 데이터에서는 유클리드 거리를 사용하는 것이 적절하지 않게 됩니다.<br />
+또한 이런 특성으로 인해 CF에서는 사용자-아이템 행렬이 희소한 경우가 많은데, 유클리드 거리를 사용하면 희소한 데이터에 대한 정확한 유사성 측정이 어려지게 됩니다.<br />
+그래서 두 벡터 간 크기가 아닌 각도로 유사성을 판단하는 코사인 유사도가 좋은 성능을 보이는 경향이 있습니다.</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h2 id="02-코사인-유사도-계산">02. 코사인 유사도 계산</h2>
+
+<blockquote>
+  <p>MovieLens small 데이터를 사용하여 진행하였습니다<br />
+link - <a href="https://grouplens.org/datasets/movielens/latest/">https://grouplens.org/datasets/movielens/latest/</a></p>
+  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">TRAIN_PATH</span> <span class="o">=</span> <span class="sh">"</span><span class="s">/home/brother_gyu/dev/movie_rec/data</span><span class="sh">"</span>
+<span class="n">RATING_FILE_NAME</span> <span class="o">=</span> <span class="sh">"</span><span class="s">ratings.csv</span><span class="sh">"</span>
+<span class="n">ratings_df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">TRAIN_PATH</span><span class="p">,</span> <span class="n">RATING_FILE_NAME</span><span class="p">))</span>
+<span class="n">pivot_df</span> <span class="o">=</span> <span class="n">ratings_df</span><span class="p">.</span><span class="nf">pivot_table</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="sh">'</span><span class="s">userId</span><span class="sh">'</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="sh">'</span><span class="s">movieId</span><span class="sh">'</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="sh">'</span><span class="s">rating</span><span class="sh">'</span><span class="p">,</span> <span class="n">fill_value</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div>  </div>
+
+  <p><img src="../../images/AI/2023-08-24-cosine_similarity/image-20230914001310149.png" alt="image-20230914001310149" /></p>
+</blockquote>
+
+<h3 id="02_01-sklearn-라이브러리-사용">02_01 sklearn 라이브러리 사용</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">sklearn.metrics.pairwise</span> <span class="kn">import</span> <span class="n">cosine_similarity</span>
+<span class="n">user_similarity</span> <span class="o">=</span> <span class="nf">cosine_similarity</span><span class="p">(</span><span class="n">pivot_df</span><span class="p">)</span>
+<span class="n">pd</span><span class="p">.</span><span class="nc">DataFrame</span><span class="p">(</span><span class="n">user_similarity</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="../../images/AI/2023-08-24-cosine_similarity/image-20230914001625630.png" alt="image-20230914001625630" /></p>
+
+<blockquote>
+  <p>time: 0.0388s<br />
+sklearn 라이브러리를 활용하여 간단하게 구현 할 수 있습니다.</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># sklearn 라이브러리의 cosine_similarity 함수
+</span><span class="k">def</span> <span class="nf">cosine_similarity</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">dense_output</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+    <span class="c1"># 입력 데이터 X와 Y가 유효한 pairwise 배열인지 확인
+</span>    <span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="nf">check_pairwise_arrays</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">)</span>
+	
+  	<span class="c1"># 입력 데이터를 정규화
+</span>    <span class="n">X_normalized</span> <span class="o">=</span> <span class="nf">normalize</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">X</span> <span class="ow">is</span> <span class="n">Y</span><span class="p">:</span>
+        <span class="n">Y_normalized</span> <span class="o">=</span> <span class="n">X_normalized</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">Y_normalized</span> <span class="o">=</span> <span class="nf">normalize</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+		<span class="c1"># safe_sparse_dot을 사용하여 코사인 유사도를 계산
+</span>    <span class="c1"># X_normalized @ Y_normalized.T
+</span>    <span class="n">K</span> <span class="o">=</span> <span class="nf">safe_sparse_dot</span><span class="p">(</span><span class="n">X_normalized</span><span class="p">,</span> <span class="n">Y_normalized</span><span class="p">.</span><span class="n">T</span><span class="p">,</span> <span class="n">dense_output</span><span class="o">=</span><span class="n">dense_output</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">K</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>sklearn 라이브러리의 cosine_similarity 함수는 위와 같이 구성되어 있습니다.<br />
+다양한 데이터 형식에 대응할수 있게 작성되어 있습니다.</p>
+</blockquote>
+
+<ul>
+  <li>
+    <p>코드 나누어서 파악하기</p>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># check_pairwise_arrays()
+</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="nf">check_pairwise_arrays</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]]),</span> <span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">([[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]]))</span>
+  
+<span class="c1"># output
+</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span>
+<span class="o">&gt;</span> <span class="p">(</span><span class="nf">array</span><span class="p">([[</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">]]),</span> <span class="nf">array</span><span class="p">([[</span><span class="mf">4.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">,</span> <span class="mf">6.</span><span class="p">]]))</span>
+</code></pre></div>    </div>
+
+    <blockquote>
+      <p>유효한 pairwise 배열인지 확인을 하게 됩니다.<br />
+만약 유효하지 않다면 <code class="language-plaintext highlighter-rouge">ValueError: Expected 2D array, got 1D array instead: array=[4. 5. 6.].</code>과 같은 ValueError를 일으킵니다.</p>
+    </blockquote>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># normalize()
+</span><span class="n">X_normalized</span> <span class="o">=</span> <span class="nf">normalize</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">X</span> <span class="ow">is</span> <span class="n">Y</span><span class="p">:</span>
+    <span class="n">Y_normalized</span> <span class="o">=</span> <span class="n">X_normalized</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">Y_normalized</span> <span class="o">=</span> <span class="nf">normalize</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+      
+<span class="c1"># output
+</span><span class="n">X_normalized</span><span class="p">,</span> <span class="n">Y_normalized</span>
+<span class="o">&gt;</span> <span class="p">(</span><span class="nf">array</span><span class="p">([[</span><span class="mf">0.26726124</span><span class="p">,</span> <span class="mf">0.53452248</span><span class="p">,</span> <span class="mf">0.80178373</span><span class="p">]]),</span>
+   <span class="nf">array</span><span class="p">([[</span><span class="mf">0.45584231</span><span class="p">,</span> <span class="mf">0.56980288</span><span class="p">,</span> <span class="mf">0.68376346</span><span class="p">]]))</span>
+</code></pre></div>    </div>
+
+    <blockquote>
+      <p>normalize()를 통해 정규화를 하게 됩니다.<br />
+추가로 조건문에서 X와 Y가 같다면 X_normalized 값을 Y_normalized로 선언하면서 시간을 단축하고자 한 것을 확인 할 수 있습니다.</p>
+    </blockquote>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># safe_sparse_dot()
+</span><span class="n">K</span> <span class="o">=</span> <span class="nf">safe_sparse_dot</span><span class="p">(</span><span class="n">X_normalized</span><span class="p">,</span> <span class="n">Y_normalized</span><span class="p">.</span><span class="n">T</span><span class="p">,</span> <span class="n">dense_output</span><span class="o">=</span><span class="n">dense_output</span><span class="p">)</span>
+  
+<span class="c1"># output
+</span><span class="n">K</span>
+<span class="o">&gt;</span> <span class="nf">array</span><span class="p">([[</span><span class="mf">0.97463185</span><span class="p">]])</span>
+</code></pre></div>    </div>
+
+    <blockquote>
+      <p>safe_sparse_dot()은 행렬 곱셈을 처리하는 유틸리티 함수입니다.</p>
+      <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">X_normalized</span> <span class="o">@</span> <span class="n">Y_normalized</span><span class="p">.</span><span class="n">T</span>
+<span class="c1"># output
+</span><span class="o">&gt;</span> <span class="nf">array</span><span class="p">([[</span><span class="mf">0.97463185</span><span class="p">]])</span>
+</code></pre></div>      </div>
+
+      <p>위 코드와 같이 행렬 곱을 반환합니다. 하지만 safe_sparse_dot() 함수는 dense_output 매개변수를 통해 희소 행렬과 밀집 행렬 간의 곱셈을 효율적으로 처리하고, 밀집 배열과 밀집 배열 간의 곱셈도 처리할 수 있습니다.</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h3 id="02_02-코사인-유사도-함수-구현">02_02 코사인 유사도 함수 구현</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">from</span> <span class="n">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+
+<span class="k">def</span> <span class="nf">cosine_similarity_numpy</span><span class="p">(</span><span class="n">vector1</span><span class="p">,</span> <span class="n">vector2</span><span class="p">):</span>
+    <span class="n">dot_product</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">dot</span><span class="p">(</span><span class="n">vector1</span><span class="p">,</span> <span class="n">vector2</span><span class="p">)</span>
+    <span class="n">norm_vector1</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">linalg</span><span class="p">.</span><span class="nf">norm</span><span class="p">(</span><span class="n">vector1</span><span class="p">)</span>
+    <span class="n">norm_vector2</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">linalg</span><span class="p">.</span><span class="nf">norm</span><span class="p">(</span><span class="n">vector2</span><span class="p">)</span>
+    <span class="n">similarity</span> <span class="o">=</span> <span class="n">dot_product</span> <span class="o">/</span> <span class="p">(</span><span class="n">norm_vector1</span> <span class="o">*</span> <span class="n">norm_vector2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">similarity</span>
+
+<span class="n">pivot_matrix</span> <span class="o">=</span> <span class="n">pivot_df</span><span class="p">.</span><span class="nf">to_numpy</span><span class="p">()</span>
+
+<span class="n">user_similarity_dict</span> <span class="o">=</span> <span class="nf">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">x</span> <span class="ow">in</span> <span class="nf">enumerate</span><span class="p">(</span><span class="n">pivot_matrix</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">pivot_matrix</span><span class="p">:</span>
+        <span class="n">user_similarity_dict</span><span class="p">[</span><span class="n">idx</span><span class="p">].</span><span class="nf">append</span><span class="p">(</span><span class="nf">cosine_similarity_numpy</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p><img src="../../images/AI/2023-08-24-cosine_similarity/image-20230914003920647.png" alt="image-20230914003920647" /></p>
+
+<blockquote>
+  <p>time: 13.0641s<br />
+코사인 유사도 공식을 함수로 만들어 유사도 행렬을 만드는 코드입니다.<br />
+결과는 sklearn 라이브러리의 코사인 유사도 행렬과 동일한 것을 확인할 수 있었지만, 400배에 가까운 시간이 더 소요되는 것을 확인할 수 있었습니다.</p>
+</blockquote>
+
+<h3 id="02_03-함수-시간-개선">02_03 함수 시간 개선</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">cosine_similarity_numpy_fast</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
+  	<span class="c1"># 유사도 행렬 계산
+</span>    <span class="n">user_similarity_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">dot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">X</span><span class="p">.</span><span class="n">T</span><span class="p">)</span>
+    <span class="c1"># 각 사용자의 벡터 길이(norm) 계산
+</span>    <span class="n">norms</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">linalg</span><span class="p">.</span><span class="nf">norm</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="c1"># 벡터 길이(norm)를 외적하여 벡터 길이(norm) 행렬 생성
+</span>    <span class="n">norms_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">outer</span><span class="p">(</span><span class="n">norms</span><span class="p">,</span> <span class="n">norms</span><span class="p">)</span>
+    <span class="c1"># 코사인 유사도 행렬을 각 벡터 길이(norm) 행렬로 나눠서 정규화
+</span>    <span class="n">user_similarity_matrix</span> <span class="o">/=</span> <span class="n">norms_matrix</span>
+    <span class="k">return</span> <span class="n">user_similarity_matrix</span>
+  
+<span class="n">similarity_matrix</span> <span class="o">=</span> <span class="nf">cosine_similarity_numpy_fast</span><span class="p">(</span><span class="n">pivot_matrix</span><span class="p">)</span>
+
+<span class="c1"># output
+</span><span class="n">pd</span><span class="p">.</span><span class="nc">DataFrame</span><span class="p">(</span><span class="n">similarity_matrix</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="../../images/AI/2023-08-24-cosine_similarity/image-20230914011705422.png" alt="image-20230914011705422" /></p>
+
+<blockquote>
+  <p>time: 0.0291s<br />
+행렬 연산으로 처리하면 sklearn 라이브러리처럼 빠른 속도로 처리할 수 있었습니다.</p>
+</blockquote>
+
+<h2 id="마치며">마치며</h2>
+
+<blockquote>
+  <p>유클리드 거리와 코사인 유사도만 해도 같은 유사도 측정 메트릭이지만 정반대의 결과를 보였습니다.<br />
+데이터의 형태와 목적에 따라 적절한 메트릭을 판단하는 능력을 기르는 것이 중요하다고 느껴졌고, 유사도 함수를 구현해도 단순 공식대로 구현하는 것보다 행렬 연산을 활용하여 구성하는 것이 처리 속도면에서도 크게 차이가 났습니다.<br />
+메트릭 수식을 행렬 연산을 결합하는 것이 쉽지는 않지만 노력해야 되는 부분인것 같고, 평소에 별다른 생각 없이 사용만 하던 sklearn 코사인 유사도 코드를 파악해볼 수 있는 좋은 기회였습니다.</p>
+</blockquote>]]></content><author><name>Brother_Gyu</name></author><category term="AI" /><category term="similarity" /><summary type="html"><![CDATA[[sklearn] cosine_similarity]]></summary></entry><entry><title type="html">[Desktop Setting] Ram Overclock</title><link href="https://brothergyu.github.io/etc/ram_overclock/" rel="alternate" type="text/html" title="[Desktop Setting] Ram Overclock" /><published>2023-08-24T00:00:00+09:00</published><updated>2023-08-24T00:00:00+09:00</updated><id>https://brothergyu.github.io/etc/ram_overclock</id><content type="html" xml:base="https://brothergyu.github.io/etc/ram_overclock/"><![CDATA[<h1 id="desktop-setting-ram-overclock">[Desktop Setting] Ram Overclock</h1>
+
+<blockquote>
+  <p>램 오버클럭 수치 기록</p>
+</blockquote>
+
+<h2 id="--hardware">- Hardware</h2>
+
+<blockquote>
+  <p>Mainboard - ASUS TUF GAMING B550-PLUS (WI-FI)</p>
+
+  <p>CPU - AMD Ryzen 5 5600X 6-Core Processor [Stepping: B0]</p>
+
+  <p>Ram - Samsung DDR4 16GB 3200 [2Rx8 PC4 C다이]</p>
+</blockquote>
+
+<h2 id="--testmem5-v012-advanced-5---10주기-통과">- TestMem5 v0.12 Advanced 5 - 10주기 통과</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>설정값</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Memory Frequency</td>
+      <td>DDR4-3600Mhz</td>
+    </tr>
+    <tr>
+      <td>FCLK Frequency</td>
+      <td>1800Mhz</td>
+    </tr>
+    <tr>
+      <td>DRAM CAS# Latency</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <td>Trcdrd</td>
+      <td>21</td>
+    </tr>
+    <tr>
+      <td>Trcdwr</td>
+      <td>21</td>
+    </tr>
+    <tr>
+      <td>DRAM RAS# PRE Time</td>
+      <td>21</td>
+    </tr>
+    <tr>
+      <td>DRAM RAS# ACT Time</td>
+      <td>44</td>
+    </tr>
+    <tr>
+      <td>Command Rate</td>
+      <td>1T</td>
+    </tr>
+    <tr>
+      <td>DRAM Voltage</td>
+      <td>1.35</td>
+    </tr>
+  </tbody>
+</table>]]></content><author><name>Brother_Gyu</name></author><category term="ETC" /><category term="Desktop Setting" /><summary type="html"><![CDATA[램 오버클럭 수치 기록]]></summary></entry><entry><title type="html">[Util] 알면 편한 유틸리티들</title><link href="https://brothergyu.github.io/ubuntu_server/userful_util/" rel="alternate" type="text/html" title="[Util] 알면 편한 유틸리티들" /><published>2023-08-24T00:00:00+09:00</published><updated>2023-08-24T00:00:00+09:00</updated><id>https://brothergyu.github.io/ubuntu_server/userful_util</id><content type="html" xml:base="https://brothergyu.github.io/ubuntu_server/userful_util/"><![CDATA[<h1 id="util-알면-편한-유틸리티들">[Util] 알면 편한 유틸리티들</h1>
+
+<h3 id="--htop">- htop</h3>
+
+<hr />
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">top</code> 명령어보다 더 직관적인 인터페이스로 시스템의 프로세스와 리소스 사용량을 모니터링</p>
+</blockquote>
+
+<ul>
+  <li>
+    <p>설치</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get <span class="nb">install </span>htop
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>사용법</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>htop
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="--tumx">- tumx</h3>
+
+<hr />
+
+<blockquote>
+  <p>터미널 세션을 관리하고 여러 윈도우와 패널을 사용할 수 있게 해주는 터미널 멀티플렉서
+터미널 다중 작업을 지원</p>
+</blockquote>
+
+<ul>
+  <li>
+    <p>설치</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get <span class="nb">install </span>tmux
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>사용법</p>
+
+    <blockquote>
+      <p>블로그 정리 - [<a href="https://brothergyu.github.io/devtools/tmux/">linux] tmux - terminal multiplexer</a></p>
+    </blockquote>
+  </li>
+</ul>
+
+<h3 id="--tree">- tree</h3>
+
+<hr />
+
+<blockquote>
+  <p>우분투와 다른 리눅스 배포판에서 사용할 수 있는 명령행 유틸리티로, 디렉토리와 그 하위의 디렉토리 및 파일들을 트리 구조로 시각적으로 출력</p>
+</blockquote>
+
+<ul>
+  <li>설치
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get <span class="nb">install </span>tree
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>사용법</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tree
+or
+tree <span class="o">[</span>디렉토리 경로]
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>출력 결과</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">.</span>
+└── catboost_recipe_classifier
+    ├── config.yaml
+    ├── data
+    │   ├── category_onehot.csv
+    │   └── train_data.csv
+    ├── model
+    │   └── catboost_model.bin
+    ├── notebook
+    │   ├── catboost_test_prototype.ipynb
+    │   └── eda.ipynb
+    ├── predict.py
+    ├── README.md
+    ├── requirements.txt
+    └── train.py
+  
+4 directories, 10 files
+</code></pre></div>    </div>
+  </li>
+</ul>]]></content><author><name>Brother_Gyu</name></author><category term="Ubuntu_Server" /><category term="Ubuntu Server" /><category term="Util" /><summary type="html"><![CDATA[알면 편한 유틸리티들]]></summary></entry><entry><title type="html">[Pyenv] pyenv 가상환경 생성</title><link href="https://brothergyu.github.io/devtools/pyenv_setting/" rel="alternate" type="text/html" title="[Pyenv] pyenv 가상환경 생성" /><published>2023-08-23T00:00:00+09:00</published><updated>2023-08-23T00:00:00+09:00</updated><id>https://brothergyu.github.io/devtools/pyenv_setting</id><content type="html" xml:base="https://brothergyu.github.io/devtools/pyenv_setting/"><![CDATA[<h1 id="pyenv-pyenv-가상환경-생성">[Pyenv] pyenv 가상환경 생성</h1>
+
+<blockquote>
+  <p>pyenv 설치 후 진행하는 환경 설정입니다</p>
+
+  <p>설치 방법 - [<a href="https://brothergyu.github.io/ubuntu_server/python_pyenv_setting/">Setting] python / pyenv 설치</a></p>
+</blockquote>
+
+<h3 id="--설치된-python-버전-확인">- 설치된 python 버전 확인</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pyenv versions
+</code></pre></div></div>
+
+<blockquote>
+  <p>pyenv를 통해 설치 한 파이썬이 없다면 <code class="language-plaintext highlighter-rouge">* system (set by ...)</code>으로 한 줄만 출력됩니다</p>
+</blockquote>
+
+<h3 id="--설치-가능-python-버전-확인">- 설치 가능 python 버전 확인</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pyenv <span class="nb">install</span> <span class="nt">--list</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>설치 가능한 파이썬 버전의 리스트가 출력됩니다<br />
+원하는 버전이 있다면 확인후에 아래 절차대로 진행합니다</p>
+</blockquote>
+
+<h3 id="--python-설치">- python 설치</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># pyenv install &lt;version&gt;</span>
+pyenv <span class="nb">install </span>3.11
+</code></pre></div></div>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">pyenv install &lt;버전&gt;</code>을 입력하면 가장 최신의 3.11.x 버전을 설치합니다</p>
+</blockquote>
+
+<h3 id="--pyenv-가상-환경-생성">- pyenv 가상 환경 생성</h3>
+
+<ol>
+  <li>
+    <p>현재 설치된 파이썬 버전 확인</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> pyenv versions
+ <span class="c"># example output</span>
+ <span class="o">&gt;</span> <span class="k">*</span> system <span class="o">(</span><span class="nb">set </span>by /home/xxx/.pyenv/version<span class="o">)</span>
+ <span class="o">&gt;</span> 3.11.4
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>virtualenv 생성</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># pyenv virtualenv &lt;version&gt; &lt;name&gt;</span>
+pyenv virtualenv 3.11.4 myenv
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h3 id="--pyenv-주요-명령어">- pyenv 주요 명령어</h3>
+
+<ul>
+  <li>
+    <p>시스템 전체의 파이썬 버전 설정:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pyenv global &lt;PYTHON_VERSION&gt;
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>현재 디렉토리의 파이썬 버전 설정 (로컬 설정):</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pyenv <span class="nb">local</span> &lt;PYTHON_VERSION&gt;
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>설치된 파이썬 버전 삭제:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pyenv uninstall &lt;PYTHON_VERSION&gt;
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>현재 사용 중인 파이썬 버전 확인:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pyenv version
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="--pyenv-virtualenv-관련-명령어">- pyenv-virtualenv 관련 명령어</h3>
+
+<ul>
+  <li>
+    <p>가상환경 활성화 / 비활성화:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># pyenv activate &lt;name&gt;</span>
+pyenv activate myenv
+</code></pre></div>    </div>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pyenv deactivate
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>설치된 가상 환경 목록 확인:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pyenv virtualenvs
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>가상 환경 제거:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># pyenv uninstall &lt;NAME&gt;</span>
+pyenv uninstall myenv
+</code></pre></div>    </div>
+  </li>
+</ul>]]></content><author><name>Brother_Gyu</name></author><category term="DevTools" /><category term="DevTools" /><category term="Pyenv" /><summary type="html"><![CDATA[Ubuntu 환경에서 pyenv 가상환경 생성하기]]></summary></entry><entry><title type="html">[Setting] python / pyenv 설치</title><link href="https://brothergyu.github.io/ubuntu_server/python_pyenv_setting/" rel="alternate" type="text/html" title="[Setting] python / pyenv 설치" /><published>2023-08-22T00:00:00+09:00</published><updated>2023-08-22T00:00:00+09:00</updated><id>https://brothergyu.github.io/ubuntu_server/python_pyenv_setting</id><content type="html" xml:base="https://brothergyu.github.io/ubuntu_server/python_pyenv_setting/"><![CDATA[<h1 id="setting-python--pyenv-설치">[Setting] python / pyenv 설치</h1>
+
+<h2 id="--python-설치">- python 설치</h2>
+
+<blockquote>
+  <p>Ubuntu 서버는 기본적으로 Python을 포함하고 있지만, 최신 버전을 설치하거나 확인하려면 아래 과정을 거치면 됩니다.</p>
+</blockquote>
+
+<ul>
+  <li>
+    <p>python 버전 확인:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3 <span class="nt">--version</span>
+</code></pre></div>    </div>
+
+    <blockquote>
+      <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt update
+<span class="nb">sudo </span>apt <span class="nb">install </span>python-is-python3
+python <span class="nt">--version</span>
+</code></pre></div>      </div>
+
+      <p><code class="language-plaintext highlighter-rouge">python-is-python3</code> 패키지를 설치하여 <code class="language-plaintext highlighter-rouge">python</code> 명령어를 <code class="language-plaintext highlighter-rouge">python3</code>로 연결할 수 있습니다.</p>
+    </blockquote>
+  </li>
+  <li>
+    <p><strong>패키지 관리자를 사용한 기본 Python 설치</strong>:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt update
+<span class="nb">sudo </span>apt <span class="nb">install </span>python3
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="--pip-설치">- pip 설치</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get <span class="nb">install </span>python3-pip
+</code></pre></div></div>
+
+<h2 id="--pyenv-설치">- pyenv 설치</h2>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">pyenv</code>는 여러 버전의 파이썬을 간편하게 설치하고 관리할 수 있는 툴입니다.</p>
+</blockquote>
+
+<ul>
+  <li>
+    <p>패키지의 최신 목록 업데이트 및 사전 준비</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt update
+<span class="c"># 필요한 의존성 및 라이브러리를 설치</span>
+<span class="c"># pyenv를 사용하여 파이썬을 컴파일할 때 필요한 패키지들이 포함</span>
+<span class="nb">sudo </span>apt <span class="nb">install</span> <span class="nt">-y</span> build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python3-openssl git
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>pyenv 설치</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl https://pyenv.run | bash
+</code></pre></div>    </div>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>WARNING: seems you still have not added <span class="s1">'pyenv'</span> to the load path.
+<span class="c"># Load pyenv automatically by appending</span>
+<span class="c"># the following to </span>
+~/.bash_profile <span class="k">if </span>it exists, otherwise ~/.profile <span class="o">(</span><span class="k">for </span>login shells<span class="o">)</span>
+and ~/.bashrc <span class="o">(</span><span class="k">for </span>interactive shells<span class="o">)</span> :
+  
+<span class="nb">export </span><span class="nv">PYENV_ROOT</span><span class="o">=</span><span class="s2">"</span><span class="nv">$HOME</span><span class="s2">/.pyenv"</span>
+<span class="nb">command</span> <span class="nt">-v</span> pyenv <span class="o">&gt;</span>/dev/null <span class="o">||</span> <span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">"</span><span class="nv">$PYENV_ROOT</span><span class="s2">/bin:</span><span class="nv">$PATH</span><span class="s2">"</span>
+<span class="nb">eval</span> <span class="s2">"</span><span class="si">$(</span>pyenv init -<span class="si">)</span><span class="s2">"</span>
+  
+<span class="c"># Restart your shell for the changes to take effect.</span>
+  
+<span class="c"># Load pyenv-virtualenv automatically by adding</span>
+<span class="c"># the following to ~/.bashrc:</span>
+  
+<span class="nb">eval</span> <span class="s2">"</span><span class="si">$(</span>pyenv virtualenv-init -<span class="si">)</span><span class="s2">"</span>
+</code></pre></div>    </div>
+
+    <blockquote>
+      <p>설치를 완료하면 <code class="language-plaintext highlighter-rouge">pyenv</code>와 <code class="language-plaintext highlighter-rouge">pyenv-virtualenv</code>가 정상적으로 작동하기 위해 필요한 환경 변수와 초기화 스크립트를 쉘 설정 파일에 추가하는 방법 안내 메세지가 출력됩니다.</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>pyenv 환경 변수 설정</p>
+
+    <p>- vi 편집기로 추가</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vi ~/.bashrc <span class="c"># or (~/.bash_profile, ~/.zshrc)</span>
+  
+<span class="c"># ~/.bashrc 파일에 아래의 명령어 추가</span>
+<span class="nb">export </span><span class="nv">PYENV_ROOT</span><span class="o">=</span><span class="s2">"</span><span class="nv">$HOME</span><span class="s2">/.pyenv"</span>
+<span class="nb">command</span> <span class="nt">-v</span> pyenv <span class="o">&gt;</span>/dev/null <span class="o">||</span> <span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">"</span><span class="nv">$PYENV_ROOT</span><span class="s2">/bin:</span><span class="nv">$PATH</span><span class="s2">"</span>
+<span class="nb">eval</span> <span class="s2">"</span><span class="si">$(</span>pyenv init -<span class="si">)</span><span class="s2">"</span>
+<span class="nb">eval</span> <span class="s2">"</span><span class="si">$(</span>pyenv virtualenv-init -<span class="si">)</span><span class="s2">"</span>
+  
+  
+<span class="c"># 위의 명령어를 ~/.bashrc에 입력 후 저장</span>
+<span class="nb">source</span> ~/.bashrc <span class="c"># or ( source ~/.bash_profile, source ~/.zshrc)</span>
+<span class="c"># shell 재실행</span>
+<span class="nb">exec</span> <span class="nv">$SHELL</span>
+</code></pre></div>    </div>
+
+    <p>- echo로 한번에 추가 [~/.bashrc]</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nb">echo</span> <span class="s1">'# ---------- pyenv setting ---------- #'</span> <span class="o">&gt;&gt;</span> ~/.bashrc
+  <span class="nb">echo</span> <span class="s1">'export PYENV_ROOT="$HOME/.pyenv"'</span> <span class="o">&gt;&gt;</span> ~/.bashrc
+  <span class="nb">echo</span> <span class="s1">'command -v pyenv &gt;/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"'</span> <span class="o">&gt;&gt;</span> ~/.bashrc
+  <span class="nb">echo</span> <span class="s1">'eval "$(pyenv init -)"'</span> <span class="o">&gt;&gt;</span> ~/.bashrc
+  <span class="nb">echo</span> <span class="s1">'eval "$(pyenv virtualenv-init -)"'</span> <span class="o">&gt;&gt;</span> ~/.bashrc
+  <span class="nb">echo</span> <span class="s1">'# ----------------------------------- #'</span> <span class="o">&gt;&gt;</span> ~/.bashrc
+  <span class="nb">source</span> ~/.bashrc
+  <span class="nb">exec</span> <span class="nv">$SHELL</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>pyenv 버전확인</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pyenv <span class="nt">--version</span>
+</code></pre></div>    </div>
+
+    <blockquote>
+      <p>정상적으로 pyenv의 버전이 출력된다면 설치가 완료된 것입니다.</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h2 id="--pyenv-설정-및-가상환경-생성">- pyenv 설정 및 가상환경 생성</h2>
+<blockquote>
+  <p>이동하기 - [<a href="https://brothergyu.github.io/devtools/pyenv_setting/">Pyenv] pyenv 가상환경 생성</a></p>
+</blockquote>]]></content><author><name>Brother_Gyu</name></author><category term="Ubuntu_Server" /><category term="Ubuntu Server" /><category term="Setting" /><summary type="html"><![CDATA[python 설치 / pyenv 설치]]></summary></entry><entry><title type="html">[Troubleshooting] ubuntu server에서 wifi 인식이 안될 때</title><link href="https://brothergyu.github.io/ubuntu_server/fast_booting/" rel="alternate" type="text/html" title="[Troubleshooting] ubuntu server에서 wifi 인식이 안될 때" /><published>2023-08-21T00:00:00+09:00</published><updated>2023-08-21T00:00:00+09:00</updated><id>https://brothergyu.github.io/ubuntu_server/fast_booting</id><content type="html" xml:base="https://brothergyu.github.io/ubuntu_server/fast_booting/"><![CDATA[<h1 id="troubleshooting-ubuntu-server에서-wifi-인식이-안될-때">[Troubleshooting] ubuntu server에서 wifi 인식이 안될 때</h1>
+
+<blockquote>
+  <p>네트워크 연결하는 과정에서 랜카드는 인식이 되었는데 wlan이 인식이 안되는 문제가 발생했었습니다<br />
+해결하기 위해서 아래 그림처럼 우분투 미러 서버에서 직접 네트워크 관련 패키지들을 수동으로 설치 하여 문제 해결을 해보려 했지만 해결이 되지 않았습니다</p>
+
+  <p><img src="../../images/Ubuntu_Server/2023-08-21-fast_booting/image-20230821182425580.png" alt="image-20230821182425580" /></p>
+</blockquote>
+
+<h2 id="--해결-방법">- 해결 방법</h2>
+
+<blockquote>
+  <p>윈도우와 메인보드의 빠른 부팅 설정을 해제하니 문제가 해결 되었습니다</p>
+</blockquote>
+
+<h3 id="1-메인보드-바이오스-설정에서-빠른-부팅-설정-끄기">1. 메인보드 바이오스 설정에서 빠른 부팅 설정 끄기</h3>
+
+<p>제조사 별로 바이오스 화면이 다르지만 바이오스 설정 진입 후 부팅 메뉴 - Fast Boost[빠른 부팅] 설정을 비활성화 합니다</p>
+
+<h3 id="2-윈도우-전원-관리-빠른-부팅-설정-끄기">2. 윈도우 전원 관리 빠른 부팅 설정 끄기</h3>
+
+<ol>
+  <li>
+    <p>윈도우 + R로 “실행”창을 켠 후에 <strong>powercfg.cpl</strong>을 입력합니다:</p>
+
+    <p><img src="../../images/Ubuntu_Server/2023-08-21-fast_booting/image.png" alt="image" /></p>
+  </li>
+  <li>
+    <p><strong>전원 단추 작동 설정</strong>으로 이동합니다:</p>
+
+    <p><img src="../../images/Ubuntu_Server/2023-08-21-fast_booting/image-20230821192139482.png" alt="img" /></p>
+  </li>
+  <li>
+    <p><strong>현재 사용할 수 있는 설정 변경</strong>을 클릭하여, <strong>빠른 시작</strong>을 끄로 <strong>변경 내용 저장</strong>을 합니다:</p>
+
+    <p><img src="../../images/Ubuntu_Server/2023-08-21-fast_booting/image-20230821192324570.png" alt="img" /></p>
+  </li>
+</ol>
+
+<hr />
+
+<blockquote>
+  <p>Reference - <a href="https://askubuntu.com/questions/1234118/wifi-adapter-not-found-in-ubuntu-20-04">https://askubuntu.com/questions/1234118/wifi-adapter-not-found-in-ubuntu-20-04</a></p>
+
+  <p><img src="../../images/Ubuntu_Server/2023-08-21-fast_booting/image-20230821194000290.png" alt="image-20230821194000290" /></p>
+
+  <p>Ubuntu와 Windows 10을 설치하면 Windows 시스템이 Wi-Fi 카드를 차단한다고 합니다,</p>
+</blockquote>]]></content><author><name>Brother_Gyu</name></author><category term="Ubuntu_Server" /><category term="Ubuntu Server" /><category term="Troubleshooting" /><summary type="html"><![CDATA[lan 포트로는 연결이 되는데 wifi를 찾지 못하는 경우]]></summary></entry><entry><title type="html">[Troubleshooting] PasswordAuthentication no not work</title><link href="https://brothergyu.github.io/ubuntu_server/PasswordAuthentication/" rel="alternate" type="text/html" title="[Troubleshooting] PasswordAuthentication no not work" /><published>2023-08-20T03:00:00+09:00</published><updated>2023-08-20T03:00:00+09:00</updated><id>https://brothergyu.github.io/ubuntu_server/PasswordAuthentication</id><content type="html" xml:base="https://brothergyu.github.io/ubuntu_server/PasswordAuthentication/"><![CDATA[<h1 id="troubleshooting-passwordauthentication-no-not-work">[Troubleshooting] PasswordAuthentication no not work</h1>
+
+<blockquote>
+  <p>SSH(Secure Shell)는 원격으로 시스템에 접속하고 관리하는 데 사용되는 보안 프로토콜<br />
+“PasswordAuthentication no”라는 옵션은 SSH 서버 구성에서 중요한 부분으로, 이를 통해 비밀번호를 사용한 인증을 비활성화하는 것이 가능<br />
+설정하는 과정에서 PasswordAuthentication no를 추가해도 작동하지 않았고 이에 따른 해결 과정 기록</p>
+</blockquote>
+
+<ul>
+  <li>
+    <p>sshd_config 파일 열기</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>vi /etc/ssh/sshd_config
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>PasswordAuthentication no 작성</p>
+
+    <p><img src="../../images/Ubuntu_Server/2023-08-20_PasswordAuthentication/image-20230820181645952.png" alt="image-20230820181645952" /></p>
+  </li>
+  <li>
+    <p>재시작</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>service sshd restart
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="troubleshooting">Troubleshooting</h2>
+
+<blockquote>
+  <p>재시작을 완료 했는 데도 password로 계속 접속이 되는 현상 발생</p>
+</blockquote>
+
+<ul>
+  <li>
+    <p>폴더 확인</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">ls</span> /etc/ssh/sshd_config.d
+</code></pre></div>    </div>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> 50-cloud-init.conf
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>파일 수정</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>vi /etc/ssh/sshd_config.d/50-cloud-init.conf
+</code></pre></div>    </div>
+
+    <p><img src="../../images/Ubuntu_Server/2023-08-20_PasswordAuthentication/image-20230820182132105.png" alt="image-20230820182132105" /></p>
+
+    <blockquote>
+      <p>yes가 되어 있는 것을 확인 no로 수정 후 저장 [:wq]</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>재시작</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>service sshd restart
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="result">Result</h2>
+
+<p><img src="../../images/Ubuntu_Server/2023-08-20_PasswordAuthentication/image-20230820182235220.png" alt="image-20230820182235220" /></p>
+
+<blockquote>
+  <p>정확한 원인은 sshd_config 안에서 /sshd_config.d 폴더 안의 conf 파일들이 Include되는 과정에서 PasswordAuthentication yes가 먼저 선언 되었기 때문이였습니다.</p>
+</blockquote>]]></content><author><name>Brother_Gyu</name></author><category term="Ubuntu_Server" /><category term="Ubuntu Server" /><category term="Troubleshooting" /><summary type="html"><![CDATA[패스워드를 사용하지 않고 rsa를 사용해서 서버 접속]]></summary></entry><entry><title type="html">[Setting] Ubuntu Server 22.04.3 LTS Wifi 설정 &amp;amp; Static IP</title><link href="https://brothergyu.github.io/ubuntu_server/wifi_setting_static_ip/" rel="alternate" type="text/html" title="[Setting] Ubuntu Server 22.04.3 LTS Wifi 설정 &amp;amp; Static IP" /><published>2023-08-20T02:00:00+09:00</published><updated>2023-08-20T02:00:00+09:00</updated><id>https://brothergyu.github.io/ubuntu_server/wifi_setting_static_ip</id><content type="html" xml:base="https://brothergyu.github.io/ubuntu_server/wifi_setting_static_ip/"><![CDATA[<h1 id="setting-ubuntu-22043-lts-wifi-설정--static-ip">[Setting] Ubuntu 22.04.3 LTS Wifi 설정 &amp; Static IP</h1>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">netplan</code>은 Ubuntu 18.04 버전부터 도입된 네트워크 설정 도구로, 여러 네트워크 설정을 YAML 파일 형식으로 정의하고 적용할 수 있게 해줍니다.</p>
+</blockquote>
+
+<ul>
+  <li>
+    <p><strong>시스템에 있는 모든 네트워크 인터페이스의 정보 확인</strong></p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">ls</span> /sys/class/net/
+</code></pre></div>    </div>
+
+    <p><img src="../../images/Ubuntu_Server/2023-08-20-wifi_setting_static_ip/image-20230820213133114.png" alt="image-20230820213133114" /></p>
+  </li>
+  <li>
+    <p><strong>Netplan 설정 파일 위치 확인</strong></p>
+
+    <blockquote>
+      <p>기본적으로 <code class="language-plaintext highlighter-rouge">netplan</code> 설정 파일은 <code class="language-plaintext highlighter-rouge">/etc/netplan/</code> 디렉토리에 위치합니다. 이 디렉토리를 확인해보면 기본 설정 파일을 볼 수 있습니다.</p>
+    </blockquote>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">ls</span> /etc/netplan/
+</code></pre></div>    </div>
+
+    <p><img src="../../images/Ubuntu_Server/2023-08-20-wifi_setting_static_ip/image-20230820213416639.png" alt="image-20230820213416639" /></p>
+  </li>
+  <li>
+    <p><strong>Netplan 설정 파일 수정</strong></p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>nano /etc/netplan/파일이름.yaml
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><strong>YAML 형식으로 네트워크 설정</strong></p>
+
+    <blockquote>
+      <p>기본적인 정적 IP 설정 예제</p>
+    </blockquote>
+
+    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># This is the network config written by 'subiquity'</span>
+<span class="na">network</span><span class="pi">:</span>
+  <span class="na">version</span><span class="pi">:</span> <span class="m">2</span>
+  <span class="na">wifis</span><span class="pi">:</span>
+    <span class="na">wlp6s0</span><span class="pi">:</span> <span class="c1"># wlan device 이름 입력</span>
+      <span class="na">addresses</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">192.168.0.100/24</span> <span class="c1"># 고정 ip 주소 입력</span>
+      <span class="na">routes</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">to</span><span class="pi">:</span> <span class="s">0.0.0.0/0</span>
+          <span class="na">via</span><span class="pi">:</span> <span class="s">192.168.0.1</span> <span class="c1"># gateway 주소 입력</span>
+      <span class="na">nameservers</span><span class="pi">:</span>
+        <span class="na">addresses</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">8.8.8.8</span><span class="pi">,</span> <span class="nv">8.8.4.4</span><span class="pi">]</span>
+      <span class="na">access-points</span><span class="pi">:</span>
+        <span class="na">test_wifi</span><span class="pi">:</span> <span class="c1"># wifi 이름 입력</span>
+          <span class="na">password</span><span class="pi">:</span> <span class="m">00000000</span> <span class="c1"># wifi 비밀 번호 입력</span>
+      <span class="na">dhcp4</span><span class="pi">:</span> <span class="kc">true</span>
+</code></pre></div>    </div>
+
+    <blockquote>
+      <p>띄어 쓰기 주의 : tab하고 스페이스가 섞이면 구문 에러 발생</p>
+    </blockquote>
+  </li>
+  <li>
+    <p><strong>Netplan 설정 적용</strong></p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>netplan apply
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><strong>네트워크 설정 확인</strong></p>
+
+    <blockquote>
+      <p><code class="language-plaintext highlighter-rouge">ip a</code> 또는 <code class="language-plaintext highlighter-rouge">ip route</code> 명령을 사용하여 네트워크 설정을 확인</p>
+    </blockquote>
+  </li>
+</ul>]]></content><author><name>Brother_Gyu</name></author><category term="Ubuntu_Server" /><category term="Ubuntu Server" /><category term="Setting" /><summary type="html"><![CDATA[wifi 설정 및 고정 ip 설정하기]]></summary></entry><entry><title type="html">[Setting] Ubuntu Server 22.04.3 LTS 초기 설정</title><link href="https://brothergyu.github.io/ubuntu_server/ubuntu/" rel="alternate" type="text/html" title="[Setting] Ubuntu Server 22.04.3 LTS 초기 설정" /><published>2023-08-20T00:00:00+09:00</published><updated>2023-08-20T00:00:00+09:00</updated><id>https://brothergyu.github.io/ubuntu_server/ubuntu</id><content type="html" xml:base="https://brothergyu.github.io/ubuntu_server/ubuntu/"><![CDATA[<h1 id="setting-ubuntu-server-22043-lts-초기-설정">[Setting] Ubuntu Server 22.04.3 LTS 초기 설정</h1>
+
+<h2 id="ubuntu-server-설치">Ubuntu Server 설치</h2>
+
+<ul>
+  <li>
+    <p>Reference</p>
+
+    <blockquote>
+      <p>[Linux] 우분투 Ubuntu server 설치 - <a href="https://servermon.tistory.com/268">https://servermon.tistory.com/268</a></p>
+
+      <p>[[Linux] Ubuntu 20.04 server 설치 과정 - <a href="https://heroeswillnotdie.tistory.com/22">https://heroeswillnotdie.tistory.com/22</a></p>
+
+      <p>두 개의 블로그를 참고하여 설치 - Rufus 유틸을 사용해서 USB 드라이브 만들었습니다</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h2 id="ubuntu-drivers-설치">ubuntu-drivers 설치</h2>
+
+<ul>
+  <li>
+    <p><strong>1. devices 확인</strong></p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ubuntu-drivers devices
+</code></pre></div>    </div>
+
+    <p><img src="../../images/Ubuntu_Server/2023-08-20-ubuntu/image-20230820220817302.png" alt="image-20230820220817302" /></p>
+
+    <blockquote>
+      <p>만약 aplay 관련 error나 warning이 발생했을 때:</p>
+
+      <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># aplay가 존재하는지 확인</span>
+which aplay
+<span class="c"># /usr/bin/aplay가 없을 경우 설치</span>
+<span class="nb">sudo </span>apt-get <span class="nb">install </span>alsa-utils
+</code></pre></div>      </div>
+    </blockquote>
+  </li>
+  <li>
+    <p><strong>2. drivers autoinstall</strong></p>
+
+    <blockquote>
+      <p><code class="language-plaintext highlighter-rouge">sudo ubuntu-drivers autoinstall</code> 명령은 Ubuntu에서 사용되는 명령어로, 시스템에 설치된 하드웨어에 가장 잘 맞는 드라이버들을 자동으로 탐지하고 설치하는 기능을 수행</p>
+
+      <p>자세한 기능 설명은 다음과 같습니다:</p>
+
+      <ol>
+        <li><strong>자동 탐지</strong>: <code class="language-plaintext highlighter-rouge">ubuntu-drivers</code> 도구는 현재 시스템에 연결된 하드웨어 (특히 그래픽 카드, 네트워크 카드, 사운드 카드 등)를 검사하여 해당 하드웨어에 최적화된 드라이버가 무엇인지 탐지</li>
+        <li><strong>추천 드라이버 설치</strong>: <code class="language-plaintext highlighter-rouge">autoinstall</code> 옵션을 사용하면, 시스템에 가장 잘 맞는 드라이버를 자동으로 선택하고 설치<br />
+예를 들어, NVIDIA 그래픽 카드가 있는 경우, 가장 적절한 NVIDIA 드라이버 버전을 자동으로 선택하여 설치합니다.</li>
+        <li><strong>의존성 관리</strong>: 드라이버를 설치할 때 필요한 의존성 패키지들도 자동으로 함께 설치</li>
+        <li><strong>커널 모듈 및 서비스 관리</strong>: 드라이버 설치 후 필요한 커널 모듈이나 관련 서비스가 있다면, 이를 자동으로 로드하거나 시작</li>
+      </ol>
+    </blockquote>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>ubuntu-drivers autoinstall
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="선택-apt-저장소-변경">(선택) apt 저장소 변경</h2>
+
+<blockquote>
+  <p>설치 과정에서 <strong>Configure Ubuntu crchive mirror</strong> 페이지에서 별도로 주소를 설정하지 않았다면 <strong>kr.archive.ubuntu.com</strong>로 되어 있을 수 있다</p>
+
+  <p><strong>mirror.kakao.com</strong>으로 변경하면 좀 더 빠르게 apt 설치를 할 수 있다</p>
+</blockquote>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>vi /etc/apt/sources.list
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>:%s/kr.archive.ubuntu.com/mirror.kakao.com/
+</code></pre></div></div>
+
+<blockquote>
+  <p>vi 문자열 변경 기능 사용 - 변경후 :wq [저장 후 나가기]</p>
+</blockquote>
+
+<p><img src="../../images/Ubuntu_Server/2023-08-20-ubuntu/image-20230820222550495.png" alt="image-20230820222550495" /></p>
+
+<ul>
+  <li>
+    <p><strong>변경 확인</strong></p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get update
+</code></pre></div>    </div>
+
+    <p><img src="../../images/Ubuntu_Server/2023-08-20-ubuntu/image-20230820222934409.png" alt="image-20230820222934409" /></p>
+  </li>
+</ul>
+
+<h2 id="시스템-시간-변경">시스템 시간 변경</h2>
+
+<blockquote>
+  <p>Ubuntu Server를 설치 할 때 English로 설치하면서 한국시간이 아닌 다른 나라 시간으로 잡혀있을 때 설정</p>
+</blockquote>
+
+<ul>
+  <li>
+    <p><strong>1. 현재 시스템의 날짜 및 시간 정보 확인</strong>:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">date</span>
+</code></pre></div>    </div>
+
+    <p><img src="../../images/Ubuntu_Server/2023-08-20-ubuntu/image-20230820220119542.png" alt="image-20230820220119542" /></p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>timedatectl
+</code></pre></div>    </div>
+
+    <p><img src="../../images/Ubuntu_Server/2023-08-20-ubuntu/image-20230820220145953.png" alt="image-20230820220145953" /></p>
+  </li>
+  <li>
+    <p><strong>2. 시간대를 한국 시간으로 설정</strong>:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>timedatectl set-timezone Asia/Seoul
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><strong>3. 변경 사항 확인</strong>:</p>
+
+    <p><img src="../../images/Ubuntu_Server/2023-08-20-ubuntu/image-20230820220256409.png" alt="image-20230820220256409" /></p>
+  </li>
+</ul>]]></content><author><name>Brother_Gyu</name></author><category term="Ubuntu_Server" /><category term="Ubuntu Server" /><category term="Setting" /><summary type="html"><![CDATA[Ubuntu Server 22.04.3 LTS 초기 설정]]></summary></entry></feed>

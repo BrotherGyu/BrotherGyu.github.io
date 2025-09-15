@@ -1,0 +1,1326 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[dis] dis 모듈을 활용해서 바이트코드 분석하기 | BrotherGyu</title>
+<meta name="description" content="dis 모듈을 활용해서 바이트코드 분석하기">
+
+
+  <meta name="author" content="Brother_Gyu">
+  
+  <meta property="article:author" content="Brother_Gyu">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="BrotherGyu">
+<meta property="og:title" content="[dis] dis 모듈을 활용해서 바이트코드 분석하기">
+<meta property="og:url" content="https://brothergyu.github.io/python_module/Dis/">
+
+
+  <meta property="og:description" content="dis 모듈을 활용해서 바이트코드 분석하기">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-06-20T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://brothergyu.github.io/python_module/Dis/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Brother_Gyu",
+      "url": "https://brothergyu.github.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="BrotherGyu Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<link rel="apple-touch-icon" sizes="180x180" href="../../assets/logo.ico/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../assets/logo.ico/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../assets/logo.ico/favicon-16x16.png">
+<link rel="mask-icon" href="../../assets/logo.ico/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/brother_gyu_logo_image.png" alt="BrotherGyu"></a>
+        
+        <a class="site-title" href="/">
+          BrotherGyu
+          <span class="site-subtitle">Devlog_</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/index.html">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tag</a>
+            </li><li class="masthead__menu-item">
+              <a href="/portfolio/">Portfolio</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#python_module" itemprop="item"><span itemprop="name">Python_module</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">[dis] dis 모듈을 활용해서 바이트코드 분석하기</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="https://brothergyu.github.io/">
+        <img src="/assets/images/brother_gyu_profile_image.png" alt="Brother_Gyu" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="https://brothergyu.github.io/" itemprop="url">Brother_Gyu</a>
+    </h3>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <!-- 팔로우 버튼 제거 -->
+    <!-- <button class="btn btn--inverse">팔로우</button> -->
+    <ul class="author__urls social-icons">
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+    
+      <nav class="nav__list">
+  <!-- 토글 버튼 제거 -->
+  <input id="ac-toc" name="accordion-toc" type="checkbox" checked/>
+  <!-- 예전 코드 -->
+  <!-- <input id="ac-toc" name="accordion-toc" type="checkbox"/> -->
+  <!-- <label for="ac-toc">Toggle menu</label> -->
+  <ul class="nav__items" id="category_tag_menu">
+    <li>
+      <span>Category List</span>
+    </li>  
+    <li>
+        <span class="nav__sub-title">study</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/BoostCamp_AI" class="">NaverBoostCamp AI [11]</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+              
+                  
+                      <li><a href="/categories/CleanCode_Python" class="">CleanCode Python [5]</a></li>
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/AI" class="">AI [2]</a></li>
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/Pytorch" class="">Pytorch [3]</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/Ubuntu_Server" class="">Ubuntu Server [7]</a></li>
+                    
+                
+                    
+                
+            </ul>
+
+        <span class="nav__sub-title">python</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/Python_Module" class="">Python Module [3]</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        <span class="nav__sub-title">etc</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/DevTools" class="">DevTools [9]</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                        <li><a href="/categories/TIL" class="">TIL [7]</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/ETC" class="">ETC [1]</a></li>
+                    
+                
+            </ul>
+      </li>
+  </ul>
+</nav>
+    
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[dis] dis 모듈을 활용해서 바이트코드 분석하기">
+    <meta itemprop="description" content="dis 모듈을 활용해서 바이트코드 분석하기">
+    <meta itemprop="datePublished" content="2023-06-20T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="https://brothergyu.github.io/python_module/Dis/" class="u-url" itemprop="url">[dis] dis 모듈을 활용해서 바이트코드 분석하기
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-06-20T00:00:00+09:00">2023-06-20 Tuesday</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-fas fa-list-ul"></i> 목차</h4></header>
+              <!-- toc 인식 범위 수정 -->
+              <!-- <ul class="toc__menu"><li><a href="#dis-모듈을-활용해서-바이트코드-분석하기">dis 모듈을 활용해서 바이트코드 분석하기</a><ul><li><a href="#--바이트코드에-익숙하지-않다면-이해하기-어렵다">- 바이트코드에 익숙하지 않다면 이해하기 어렵다</a></li><li><a href="#--이럴-때-사용할-수-있는-모듈이-dis">- 이럴 때 사용할 수 있는 모듈이 dis</a></li><li><a href="#--리스트-값-확인">- 리스트 값 확인</a></li><li><a href="#--더-쉽게-보고-싶다면">- 더 쉽게 보고 싶다면</a></li></ul></li></ul></li></ul></li><li><a href="#사용-예시">사용 예시</a></li><li><a href="#비교-해보기">비교 해보기</a></li></ul>
+ -->
+              <ul class="toc__menu"><li><a href="#dis-모듈을-활용해서-바이트코드-분석하기">dis 모듈을 활용해서 바이트코드 분석하기</a></li><li><a href="#사용-예시">사용 예시</a></li><li><a href="#비교-해보기">비교 해보기</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h1 id="dis-모듈을-활용해서-바이트코드-분석하기">dis 모듈을 활용해서 바이트코드 분석하기</h1>
+
+<blockquote>
+  <p>파이썬 코드 리뷰 꿀팁, 김동현 - PyCon Korea 2022 [https://youtu.be/dzp0-5lInw0]<br />
+[파이썬] dis모듈로 바이트 코드 확인 - dis - [https://aia1235.tistory.com/60]</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">func</span><span class="p">():</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+    <span class="k">return</span> <span class="n">c</span>
+</code></pre></div></div>
+
+<hr />
+
+<h4 id="--바이트코드에-익숙하지-않다면-이해하기-어렵다">- 바이트코드에 익숙하지 않다면 이해하기 어렵다</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="n">func</span><span class="p">.</span><span class="n">__code__</span><span class="p">.</span><span class="n">co_code</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">list</span><span class="p">(</span><span class="n">func</span><span class="p">.</span><span class="n">__code__</span><span class="p">.</span><span class="n">co_code</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p>- output -</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>b<span class="s1">'\x97\x00d\x01}\x00d\x02}\x01|\x00|\x01z\x00\x00\x00}\x02|\x02S\x00'</span>
+<span class="o">[</span>151, 0, 100, 1, 125, 0, 100, 2, 125, 1, 124, 0, 124, 1, 122, 0, 0, 0, 125, 2, 124, 2, 83, 0]
+</code></pre></div></div>
+
+<hr />
+
+<h4 id="--이럴-때-사용할-수-있는-모듈이-dis">- 이럴 때 사용할 수 있는 모듈이 dis</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">dis</span>
+<span class="kn">import</span> <span class="n">timeit</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dis</span><span class="p">.</span><span class="nf">dis</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>- output -</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1           0 RESUME                   0
+
+2           2 LOAD_CONST               1 <span class="o">(</span>1<span class="o">)</span>
+            4 STORE_FAST               0 <span class="o">(</span>a<span class="o">)</span>
+
+3           6 LOAD_CONST               2 <span class="o">(</span>2<span class="o">)</span>
+            8 STORE_FAST               1 <span class="o">(</span>b<span class="o">)</span>
+
+4          10 LOAD_FAST                0 <span class="o">(</span>a<span class="o">)</span>
+           12 LOAD_FAST                1 <span class="o">(</span>b<span class="o">)</span>
+           14 BINARY_OP                0 <span class="o">(</span>+<span class="o">)</span>
+           18 STORE_FAST               2 <span class="o">(</span>c<span class="o">)</span>
+
+5          20 LOAD_FAST                2 <span class="o">(</span>c<span class="o">)</span>
+           22 RETURN_VALUE
+</code></pre></div></div>
+
+<hr />
+
+<h4 id="--리스트-값-확인">- 리스트 값 확인</h4>
+
+<blockquote>
+  <p>[151, 0, 100, 1, 125, 0, 100, 2, 125, 1, 124, 0, 124, 1, 122, 0, 0, 0, 125, 2, 124, 2, 83, 0]</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">'</span><span class="s">151: </span><span class="si">{</span><span class="n">dis</span><span class="p">.</span><span class="n">opname</span><span class="p">[</span><span class="mi">125</span><span class="p">]</span><span class="si">}</span><span class="sh">'</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">'</span><span class="s">100: </span><span class="si">{</span><span class="n">dis</span><span class="p">.</span><span class="n">opname</span><span class="p">[</span><span class="mi">100</span><span class="p">]</span><span class="si">}</span><span class="sh">'</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">'</span><span class="s">125: </span><span class="si">{</span><span class="n">dis</span><span class="p">.</span><span class="n">opname</span><span class="p">[</span><span class="mi">125</span><span class="p">]</span><span class="si">}</span><span class="sh">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>- output -</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>151: STORE_FAST
+100: LOAD_CONST
+125: STORE_FAST
+</code></pre></div></div>
+
+<hr />
+
+<h4 id="--더-쉽게-보고-싶다면">- 더 쉽게 보고 싶다면</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dis</span><span class="p">.</span><span class="nf">show_code</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>- output -</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Name:              func
+Filename:          /tmp/ipykernel_30725/21688586.py
+Argument count:    0
+Positional-only arguments: 0
+Kw-only arguments: 0
+Number of locals:  3
+Stack size:        2
+Flags:             OPTIMIZED, NEWLOCALS
+Constants:
+   0: None
+   1: 1
+   2: 2
+Variable names:
+   0: a
+   1: b
+   2: c
+</code></pre></div></div>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h1 id="사용-예시">사용 예시</h1>
+
+<blockquote>
+  <p>어떤게 더 효율적인지 비교</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ee</span><span class="o">=</span><span class="p">{}</span>
+<span class="n">ee</span><span class="p">[</span><span class="sh">'</span><span class="s">3</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">32</span>
+<span class="n">ee</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ew</span><span class="o">=</span><span class="p">{}</span>
+<span class="n">ew</span><span class="p">.</span><span class="nf">update</span><span class="p">({</span><span class="sh">'</span><span class="s">3</span><span class="sh">'</span><span class="p">:</span> <span class="mi">32</span><span class="p">})</span>
+<span class="n">ew</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>둘 다 <strong>{‘3’: 32}</strong> 반환</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 서브스크립션
+</span><span class="n">dis</span><span class="p">.</span><span class="nf">dis</span><span class="p">(</span><span class="sh">'</span><span class="s">d[k] = v</span><span class="sh">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>- output -</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0           0 RESUME                   0
+
+1           2 LOAD_NAME                0 <span class="o">(</span>v<span class="o">)</span>
+            4 LOAD_NAME                1 <span class="o">(</span>d<span class="o">)</span>
+            6 LOAD_NAME                2 <span class="o">(</span>k<span class="o">)</span>
+            8 STORE_SUBSCR
+           12 LOAD_CONST               0 <span class="o">(</span>None<span class="o">)</span>
+           14 RETURN_VALUE
+</code></pre></div></div>
+
+<blockquote>
+  <p>0 RESUME 0: 이는 코드의 첫 번째 라인을 나타냅니다. RESUME은 실행을 재개하는 지점을 나타내는 명령입니다. 여기서는 실행을 계속 진행합니다.<br />
+2 LOAD_NAME 0 (v): 변수 v를 로드합니다.<br />
+4 LOAD_NAME 1 (d): 변수 d를 로드합니다.<br />
+6 LOAD_NAME 2 (k): 변수 k를 로드합니다.<br />
+8 STORE_SUBSCR: 변수 d의 k번째 요소에 변수 v를 할당합니다.<br />
+12 LOAD_CONST 0 (None): 상수 None을 로드합니다.<br />
+14 RETURN_VALUE: None을 반환하고 코드 실행을 종료합니다.</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dis</span><span class="p">.</span><span class="nf">dis</span><span class="p">(</span><span class="sh">'</span><span class="s">d.update({k: v})</span><span class="sh">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>- output -</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0           0 RESUME                   0
+
+1           2 LOAD_NAME                0 <span class="o">(</span>d<span class="o">)</span>
+            4 LOAD_METHOD              1 <span class="o">(</span>update<span class="o">)</span>
+           26 LOAD_NAME                2 <span class="o">(</span>k<span class="o">)</span>
+           28 LOAD_NAME                3 <span class="o">(</span>v<span class="o">)</span>
+           30 BUILD_MAP                1
+           32 PRECALL                  1
+           36 CALL                     1
+           46 RETURN_VALUE
+</code></pre></div></div>
+
+<blockquote>
+  <p>0 RESUME 0: 이는 코드의 첫 번째 라인을 나타냅니다. RESUME은 실행을 재개하는 지점을 나타내는 명령입니다. 여기서는 실행을 계속 진행합니다.<br />
+2 LOAD_NAME 0 (d): 변수 d를 로드합니다.<br />
+4 LOAD_METHOD 1 (update): update라는 메서드를 로드합니다. 이는 변수 d의 값을 업데이트하는 메서드일 수 있습니다.<br />
+26 LOAD_NAME 2 (k): 변수 k를 로드합니다.<br />
+28 LOAD_NAME 3 (v): 변수 v를 로드합니다.<br />
+30 BUILD_MAP 1: 로드한 변수 k와 v를 사용하여 사전 형태의 매핑을 만듭니다.<br />
+32 PRECALL 1: 메서드 호출을 준비합니다.<br />
+36 CALL 1: update 메서드를 호출하고, 변수 d에 매개변수로 생성한 매핑을 전달합니다. 이를 통해 변수 d를 업데이트합니다.<br />
+46 RETURN_VALUE: 결과값을 반환하고 코드 실행을 종료합니다.</p>
+</blockquote>
+
+<p>하지만, 각각의 상황에 맞추어서 사용하는 것이 중요</p>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h1 id="비교-해보기">비교 해보기</h1>
+
+<ul>
+  <li>
+    <p>Func_else</p>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">Func_else</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">False</span>
+<span class="n">dis</span><span class="p">.</span><span class="nf">dis</span><span class="p">(</span><span class="n">Func_else</span><span class="p">)</span>
+  
+<span class="c1">## -------------------- output -------------------- ##
+</span><span class="mi">1</span>           <span class="mi">0</span> <span class="n">RESUME</span>                   <span class="mi">0</span>
+  
+<span class="mi">2</span>           <span class="mi">2</span> <span class="n">LOAD_FAST</span>                <span class="mi">0</span> <span class="p">(</span><span class="n">n</span><span class="p">)</span>
+            <span class="mi">4</span> <span class="n">LOAD_CONST</span>               <span class="mi">1</span> <span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+            <span class="mi">6</span> <span class="n">BINARY_OP</span>                <span class="mi">6</span> <span class="p">(</span><span class="o">%</span><span class="p">)</span>
+           <span class="mi">10</span> <span class="n">LOAD_CONST</span>               <span class="mi">2</span> <span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+           <span class="mi">12</span> <span class="n">COMPARE_OP</span>               <span class="mi">2</span> <span class="p">(</span><span class="o">==</span><span class="p">)</span>
+           <span class="mi">18</span> <span class="n">POP_JUMP_FORWARD_IF_FALSE</span>     <span class="mi">2</span> <span class="p">(</span><span class="n">to</span> <span class="mi">24</span><span class="p">)</span>
+  
+<span class="mi">3</span>          <span class="mi">20</span> <span class="n">LOAD_CONST</span>               <span class="mi">3</span> <span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+           <span class="mi">22</span> <span class="n">RETURN_VALUE</span>
+  
+<span class="mi">5</span>     <span class="o">&gt;&gt;</span>   <span class="mi">24</span> <span class="n">LOAD_CONST</span>               <span class="mi">4</span> <span class="p">(</span><span class="bp">False</span><span class="p">)</span>
+           <span class="mi">26</span> <span class="n">RETURN_VALUE</span>
+<span class="c1">## ------------------------------------------------ ##
+</span></code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Func_elif</p>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">Func_elif</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">True</span>
+    <span class="k">elif</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">False</span>
+<span class="n">dis</span><span class="p">.</span><span class="nf">dis</span><span class="p">(</span><span class="n">Func_elif</span><span class="p">)</span>
+  
+<span class="c1">## -------------------- output -------------------- ##
+</span><span class="mi">1</span>           <span class="mi">0</span> <span class="n">RESUME</span>                   <span class="mi">0</span>
+  
+<span class="mi">2</span>           <span class="mi">2</span> <span class="n">LOAD_FAST</span>                <span class="mi">0</span> <span class="p">(</span><span class="n">n</span><span class="p">)</span>
+            <span class="mi">4</span> <span class="n">LOAD_CONST</span>               <span class="mi">1</span> <span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+            <span class="mi">6</span> <span class="n">BINARY_OP</span>                <span class="mi">6</span> <span class="p">(</span><span class="o">%</span><span class="p">)</span>
+           <span class="mi">10</span> <span class="n">LOAD_CONST</span>               <span class="mi">2</span> <span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+           <span class="mi">12</span> <span class="n">COMPARE_OP</span>               <span class="mi">2</span> <span class="p">(</span><span class="o">==</span><span class="p">)</span>
+           <span class="mi">18</span> <span class="n">POP_JUMP_FORWARD_IF_FALSE</span>     <span class="mi">2</span> <span class="p">(</span><span class="n">to</span> <span class="mi">24</span><span class="p">)</span>
+  
+<span class="mi">3</span>          <span class="mi">20</span> <span class="n">LOAD_CONST</span>               <span class="mi">3</span> <span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+           <span class="mi">22</span> <span class="n">RETURN_VALUE</span>
+  
+<span class="mi">4</span>     <span class="o">&gt;&gt;</span>   <span class="mi">24</span> <span class="n">LOAD_FAST</span>                <span class="mi">0</span> <span class="p">(</span><span class="n">n</span><span class="p">)</span>
+           <span class="mi">26</span> <span class="n">LOAD_CONST</span>               <span class="mi">1</span> <span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+           <span class="mi">28</span> <span class="n">BINARY_OP</span>                <span class="mi">6</span> <span class="p">(</span><span class="o">%</span><span class="p">)</span>
+           <span class="mi">32</span> <span class="n">LOAD_CONST</span>               <span class="mi">4</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+           <span class="mi">34</span> <span class="n">COMPARE_OP</span>               <span class="mi">2</span> <span class="p">(</span><span class="o">==</span><span class="p">)</span>
+           <span class="mi">40</span> <span class="n">POP_JUMP_FORWARD_IF_FALSE</span>     <span class="mi">2</span> <span class="p">(</span><span class="n">to</span> <span class="mi">46</span><span class="p">)</span>
+  
+<span class="mi">5</span>          <span class="mi">42</span> <span class="n">LOAD_CONST</span>               <span class="mi">5</span> <span class="p">(</span><span class="bp">False</span><span class="p">)</span>
+           <span class="mi">44</span> <span class="n">RETURN_VALUE</span>
+  
+<span class="mi">4</span>     <span class="o">&gt;&gt;</span>   <span class="mi">46</span> <span class="n">LOAD_CONST</span>               <span class="mi">0</span> <span class="p">(</span><span class="bp">None</span><span class="p">)</span>
+           <span class="mi">48</span> <span class="n">RETURN_VALUE</span>
+<span class="c1">## ------------------------------------------------ ##
+</span></code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Func_if</p>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">Func_if</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">True</span>
+    <span class="k">return</span> <span class="bp">False</span>
+<span class="n">dis</span><span class="p">.</span><span class="nf">dis</span><span class="p">(</span><span class="n">Func_if</span><span class="p">)</span>
+  
+<span class="c1">## -------------------- output -------------------- ##
+</span><span class="mi">1</span>           <span class="mi">0</span> <span class="n">RESUME</span>                   <span class="mi">0</span>
+  
+<span class="mi">2</span>           <span class="mi">2</span> <span class="n">LOAD_FAST</span>                <span class="mi">0</span> <span class="p">(</span><span class="n">n</span><span class="p">)</span>
+            <span class="mi">4</span> <span class="n">LOAD_CONST</span>               <span class="mi">1</span> <span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+            <span class="mi">6</span> <span class="n">BINARY_OP</span>                <span class="mi">6</span> <span class="p">(</span><span class="o">%</span><span class="p">)</span>
+           <span class="mi">10</span> <span class="n">LOAD_CONST</span>               <span class="mi">2</span> <span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+           <span class="mi">12</span> <span class="n">COMPARE_OP</span>               <span class="mi">2</span> <span class="p">(</span><span class="o">==</span><span class="p">)</span>
+           <span class="mi">18</span> <span class="n">POP_JUMP_FORWARD_IF_FALSE</span>     <span class="mi">2</span> <span class="p">(</span><span class="n">to</span> <span class="mi">24</span><span class="p">)</span>
+  
+<span class="mi">3</span>          <span class="mi">20</span> <span class="n">LOAD_CONST</span>               <span class="mi">3</span> <span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+           <span class="mi">22</span> <span class="n">RETURN_VALUE</span>
+  
+<span class="mi">4</span>     <span class="o">&gt;&gt;</span>   <span class="mi">24</span> <span class="n">LOAD_CONST</span>               <span class="mi">4</span> <span class="p">(</span><span class="bp">False</span><span class="p">)</span>
+           <span class="mi">26</span> <span class="n">RETURN_VALUE</span>
+<span class="c1">## ------------------------------------------------ ##
+</span></code></pre></div>    </div>
+  </li>
+  <li>
+    <p>전체 실행 시간 측정</p>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 실행 시간 측정 함수
+</span><span class="k">def</span> <span class="nf">measure_execution_time</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="n">start_time</span> <span class="o">=</span> <span class="n">timeit</span><span class="p">.</span><span class="nf">default_timer</span><span class="p">()</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="nf">func</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">end_time</span> <span class="o">=</span> <span class="n">timeit</span><span class="p">.</span><span class="nf">default_timer</span><span class="p">()</span>
+    <span class="n">execution_time</span> <span class="o">=</span> <span class="n">end_time</span> <span class="o">-</span> <span class="n">start_time</span>
+    <span class="k">return</span> <span class="n">execution_time</span><span class="p">,</span> <span class="n">result</span>
+  
+<span class="c1"># 실행 시간 측정
+</span><span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># 테스트할 값
+</span>  
+<span class="c1"># Func_else(n)의 실행 시간 측정
+</span><span class="n">execution_time_else</span><span class="p">,</span> <span class="n">result_else</span> <span class="o">=</span> <span class="nf">measure_execution_time</span><span class="p">(</span><span class="n">Func_else</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Func_else 실행 시간: </span><span class="si">{</span><span class="n">execution_time_else</span><span class="si">}</span><span class="s"> 초</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Func_else 결과: </span><span class="si">{</span><span class="n">result_else</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+  
+<span class="c1"># Func_elif(n)의 실행 시간 측정
+</span><span class="n">execution_time_elif</span><span class="p">,</span> <span class="n">result_elif</span> <span class="o">=</span> <span class="nf">measure_execution_time</span><span class="p">(</span><span class="n">Func_elif</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Func_elif 실행 시간: </span><span class="si">{</span><span class="n">execution_time_elif</span><span class="si">}</span><span class="s"> 초</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Func_elif 결과: </span><span class="si">{</span><span class="n">result_elif</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+  
+  
+<span class="c1"># Func_if(n)의 실행 시간 측정
+</span><span class="n">execution_time_if</span><span class="p">,</span> <span class="n">result_if</span> <span class="o">=</span> <span class="nf">measure_execution_time</span><span class="p">(</span><span class="n">Func_if</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Func_if 실행 시간: </span><span class="si">{</span><span class="n">execution_time_if</span><span class="si">}</span><span class="s"> 초</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Func_if 결과: </span><span class="si">{</span><span class="n">result_if</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div>    </div>
+
+    <p>- result -</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Func_else 실행 시간: 1.989305019378662e-06 초
+Func_else 결과: False
+Func_elif 실행 시간: 1.5348196029663086e-06 초
+Func_elif 결과: False
+Func_if 실행 시간: 1.4528632164001465e-06 초
+Func_if 결과: False
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#python-module" class="page__taxonomy-item p-category" rel="tag">Python_Module</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#python-module" class="page__taxonomy-item p-category" rel="tag">Python_Module</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-06-20T00:00:00+09:00">2023-06-20 Tuesday</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%5Bdis%5D+dis+%EB%AA%A8%EB%93%88%EC%9D%84+%ED%99%9C%EC%9A%A9%ED%95%B4%EC%84%9C+%EB%B0%94%EC%9D%B4%ED%8A%B8%EC%BD%94%EB%93%9C+%EB%B6%84%EC%84%9D%ED%95%98%EA%B8%B0%20https%3A%2F%2Fbrothergyu.github.io%2Fpython_module%2FDis%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fbrothergyu.github.io%2Fpython_module%2FDis%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fbrothergyu.github.io%2Fpython_module%2FDis%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      <!-- 
+  <nav class="pagination">
+    
+      <a href="/boostcamp_ai/DKT_Modeling/" class="pagination--pager" title="[Project] DKT 대회 - Modeling
+">이전</a>
+    
+    
+      <a href="/devtools/retry_script/" class="pagination--pager" title="[Shell Script] retry_script.sh - 코드 자동 재실행 쉘 스크립트
+">다음</a>
+    
+  </nav>
+ -->
+
+
+
+
+  
+
+  
+  	
+  	
+  	
+  	
+  	
+
+
+  <nav class="pagination_prev_next">
+    
+      <a href="/python_module/Combinatoric_iterators/" class="pagination_prev_next--pager_left"><span class="prev_next">이전 포스트<br></span>[itertools] Combinatoric iterators</a>
+    
+    
+    
+      <a href="/boostcamp_ai/python_module/Mongodb_image_file/" class="pagination_prev_next--pager_right"><span class="prev_next">다음 포스트<br></span>[Final Project] MongoDB에 이미지 저장하기 [python]</a>
+    
+    
+  </nav>
+
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">댓글남기기</h4>
+      <section id="utterances-comments"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">최근 포스트</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ubuntu_server/cuda_install/" rel="permalink">[Setting] cuda/cudnn 설치하기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-08-25T00:00:00+09:00">2023-08-25 Friday</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">cuda 설치하기
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ubuntu_server/userful_util/" rel="permalink">[Util] 알면 편한 유틸리티들
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-08-24T00:00:00+09:00">2023-08-24 Thursday</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">알면 편한 유틸리티들
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/etc/ram_overclock/" rel="permalink">[Desktop Setting] Ram Overclock
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-08-24T00:00:00+09:00">2023-08-24 Thursday</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">램 오버클럭 수치 기록
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ai/cosine_similarity/" rel="permalink">[sklearn] cosine_similarity
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-08-24T00:00:00+09:00">2023-08-24 Thursday</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">[sklearn] cosine_similarity
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+    
+    <aside class="sidebar__top">
+      <a href="#site-nav"> <i class="fas fa-angle-up fa-2x"></i></a>
+    </aside>
+    
+      <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="mailto:brothergyu98@gmail.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+        
+      
+        
+          <li><a href="https://github.com/BrotherGyu/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 Brother_Gyu. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BDHERKJ7W3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-BDHERKJ7W3', { 'anonymize_ip': false});
+</script>
+
+
+
+
+
+
+    <script>
+  'use strict';
+
+  (function() {
+    var commentContainer = document.querySelector('#utterances-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://utteranc.es/client.js');
+    script.setAttribute('repo', 'BrotherGyu/BrotherGyu.github.io_comments');
+    script.setAttribute('issue-term', 'pathname');
+    
+    script.setAttribute('theme', 'github-light');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+    <script type="text/javascript">
+    window.MathJax = {
+   tex: {
+     packages: ['base', 'ams']
+   },
+   loader: {
+     load: ['ui/menu', '[tex]/ams']
+   },
+   startup: {
+     ready() {
+       MathJax.startup.defaultReady();
+       const Macro = MathJax._.input.tex.Symbol.Macro;
+       const MapHandler = MathJax._.input.tex.MapHandler.MapHandler;
+       const Array = MathJax._.input.tex.ams.AmsMethods.default.Array;
+       const env = new Macro('psmallmatrix', Array, [null, '(', ')', 'c', '.333em', '.2em', 'S', 1]);
+       MapHandler.getMap('AMSmath-environment').add('psmallmatrix', env);
+     }
+   }
+    };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async
+   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+  </body>
+</html>

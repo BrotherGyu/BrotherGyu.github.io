@@ -1,0 +1,1342 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Beyond the Basic Stuff with Python [Chapter 05] | BrotherGyu</title>
+<meta name="description" content="INDING CODE SMELLS [코드 악취 감지]">
+
+
+  <meta name="author" content="Brother_Gyu">
+  
+  <meta property="article:author" content="Brother_Gyu">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="BrotherGyu">
+<meta property="og:title" content="Beyond the Basic Stuff with Python [Chapter 05]">
+<meta property="og:url" content="https://brothergyu.github.io/cleancode_python/CleanCode_week_03/">
+
+
+  <meta property="og:description" content="INDING CODE SMELLS [코드 악취 감지]">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-02-21T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://brothergyu.github.io/cleancode_python/CleanCode_week_03/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Brother_Gyu",
+      "url": "https://brothergyu.github.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="BrotherGyu Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<link rel="apple-touch-icon" sizes="180x180" href="../../assets/logo.ico/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../assets/logo.ico/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../assets/logo.ico/favicon-16x16.png">
+<link rel="mask-icon" href="../../assets/logo.ico/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/brother_gyu_logo_image.png" alt="BrotherGyu"></a>
+        
+        <a class="site-title" href="/">
+          BrotherGyu
+          <span class="site-subtitle">Devlog_</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/index.html">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tag</a>
+            </li><li class="masthead__menu-item">
+              <a href="/portfolio/">Portfolio</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#cleancode_python" itemprop="item"><span itemprop="name">Cleancode_python</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">Beyond the Basic Stuff with Python [Chapter 05]</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="https://brothergyu.github.io/">
+        <img src="/assets/images/brother_gyu_profile_image.png" alt="Brother_Gyu" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="https://brothergyu.github.io/" itemprop="url">Brother_Gyu</a>
+    </h3>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <!-- 팔로우 버튼 제거 -->
+    <!-- <button class="btn btn--inverse">팔로우</button> -->
+    <ul class="author__urls social-icons">
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+    
+      <nav class="nav__list">
+  <!-- 토글 버튼 제거 -->
+  <input id="ac-toc" name="accordion-toc" type="checkbox" checked/>
+  <!-- 예전 코드 -->
+  <!-- <input id="ac-toc" name="accordion-toc" type="checkbox"/> -->
+  <!-- <label for="ac-toc">Toggle menu</label> -->
+  <ul class="nav__items" id="category_tag_menu">
+    <li>
+      <span>Category List</span>
+    </li>  
+    <li>
+        <span class="nav__sub-title">study</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/BoostCamp_AI" class="">NaverBoostCamp AI [11]</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+              
+                  
+                      <li><a href="/categories/CleanCode_Python" class="">CleanCode Python [5]</a></li>
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/AI" class="">AI [2]</a></li>
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/Pytorch" class="">Pytorch [3]</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/Ubuntu_Server" class="">Ubuntu Server [7]</a></li>
+                    
+                
+                    
+                
+            </ul>
+
+        <span class="nav__sub-title">python</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/Python_Module" class="">Python Module [3]</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        <span class="nav__sub-title">etc</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/DevTools" class="">DevTools [9]</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                        <li><a href="/categories/TIL" class="">TIL [7]</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/ETC" class="">ETC [1]</a></li>
+                    
+                
+            </ul>
+      </li>
+  </ul>
+</nav>
+    
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Beyond the Basic Stuff with Python [Chapter 05]">
+    <meta itemprop="description" content="INDING CODE SMELLS [코드 악취 감지]">
+    <meta itemprop="datePublished" content="2023-02-21T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="https://brothergyu.github.io/cleancode_python/CleanCode_week_03/" class="u-url" itemprop="url">Beyond the Basic Stuff with Python [Chapter 05]
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-02-21T00:00:00+09:00">2023-02-21 Tuesday</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-fas fa-list-ul"></i> 목차</h4></header>
+              <!-- toc 인식 범위 수정 -->
+              <!-- <ul class="toc__menu"><li><a href="#chapter-5---finding-code-smells-코드-악취-감지">Chapter 5 - FINDING CODE SMELLS [코드 악취 감지]</a><ul><li><a href="#51_-duplicate-code-중복-코드">5.1_ Duplicate Code [중복 코드]</a><ul><li><a href="#해결법-1--중복-코드를-함수로-이동한-다음-해당-함수를-반복해서-호출">해결법 1 : 중복 코드를 함수로 이동한 다음 해당 함수를 반복해서 호출</a></li><li><a href="#해결법-2--중복-코드를-루프로-이동">해결법 2 : 중복 코드를 루프로 이동</a></li><li><a href="#해결법-3--두-기술을-결합하여-함수와-루프를-사용">해결법 3 : 두 기술을 결합하여 함수와 루프를 사용</a></li></ul></li></ul></li><li><a href="#52_-magic-numbers-매직-넘버">5.2_ Magic Numbers [매직 넘버]</a></li><li><a href="#53_-commented-out-code-and-dead-code-주석-코드--죽은-코드">5.3_ Commented-Out Code and Dead Code [주석 코드 &amp; 죽은 코드]</a></li><li><a href="#54_-print-debugging-디버깅-출력">5.4_ Print Debugging [디버깅 출력]</a></li><li><a href="#55_-variables-with-numeric-suffixes-숫자-접미사가-있는-변수">5.5_ Variables with Numeric Suffixes [숫자 접미사가 있는 변수]</a></li><li><a href="#56_-classes-that-should-just-be-functions-or-modules-함수-또는-모듈이어야-하는-클래스">5.6_ Classes That Should Just Be Functions or Modules [함수 또는 모듈이어야 하는 클래스]</a></li><li><a href="#57_-list-comprehensions-within-list-comprehensions-리스트-컴프리헨션-내의-리스트-컴프리헨션">5.7_ List Comprehensions Within List Comprehensions [리스트 컴프리헨션 내의 리스트 컴프리헨션]</a></li><li><a href="#58_-empty-except-blocks-and-poor-error-messages-빈-예외처리--부족한-에러-메세지">5.8_ Empty except Blocks and Poor Error Messages [빈 예외처리 &amp; 부족한 에러 메세지]</a></li></ul></li><li><a href="#마무리">마무리</a></li><li><a href="#reference">Reference</a></li></ul>
+ -->
+              <ul class="toc__menu"><li><a href="#chapter-5---finding-code-smells-코드-악취-감지">Chapter 5 - FINDING CODE SMELLS [코드 악취 감지]</a><ul><li><a href="#51_-duplicate-code-중복-코드">5.1_ Duplicate Code [중복 코드]</a></li><li><a href="#52_-magic-numbers-매직-넘버">5.2_ Magic Numbers [매직 넘버]</a></li><li><a href="#53_-commented-out-code-and-dead-code-주석-코드--죽은-코드">5.3_ Commented-Out Code and Dead Code [주석 코드 &amp; 죽은 코드]</a></li><li><a href="#54_-print-debugging-디버깅-출력">5.4_ Print Debugging [디버깅 출력]</a></li><li><a href="#55_-variables-with-numeric-suffixes-숫자-접미사가-있는-변수">5.5_ Variables with Numeric Suffixes [숫자 접미사가 있는 변수]</a></li><li><a href="#56_-classes-that-should-just-be-functions-or-modules-함수-또는-모듈이어야-하는-클래스">5.6_ Classes That Should Just Be Functions or Modules [함수 또는 모듈이어야 하는 클래스]</a></li><li><a href="#57_-list-comprehensions-within-list-comprehensions-리스트-컴프리헨션-내의-리스트-컴프리헨션">5.7_ List Comprehensions Within List Comprehensions [리스트 컴프리헨션 내의 리스트 컴프리헨션]</a></li><li><a href="#58_-empty-except-blocks-and-poor-error-messages-빈-예외처리--부족한-에러-메세지">5.8_ Empty except Blocks and Poor Error Messages [빈 예외처리 &amp; 부족한 에러 메세지]</a></li></ul></li><li><a href="#마무리">마무리</a></li><li><a href="#reference">Reference</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p><img src="../../images/CleanCode_Python/CleanCode_Python.jpeg" alt="CleanCode_Python" style="zoom: 67%;" /></p>
+
+<h1 id="chapter-5---finding-code-smells-코드-악취-감지">Chapter 5 - FINDING CODE SMELLS [코드 악취 감지]</h1>
+
+<blockquote>
+  <p>코드 악취 : 잠재적인 버그를 나타내는 소스 코드 패턴, 코드 냄새가 난다고 해서 반드시 문제가 있다는 의미는 아니지만 프로그램을 조사해야 한다는 의미</p>
+
+  <p>나중에 버그를 발견하고 이해하고 수정하는 것보다 버그를 방지하는 데 훨씬 적은 시간과 노력이 듭니다. 모든 프로그래머는 디버깅에만 시간을 소비한 이야기를 가지고 있습니다. 한 줄의 코드 변경과 관련된 수정 사항을 찾았습니다. 이러한 이유로 잠재적인 버그의 조그마한 냄새라도 잠시 멈추어 향후 문제를 일으키지 않는지 다시 확인하라는 메시지를 표시해야 합니다.</p>
+
+  <p>물론 코드 냄새가 반드시 문제가 되는 것은 아닙니다. 궁극적으로 코드 냄새를 처리할지 아니면 무시할지 여부는 사용자가 판단해야 합니다.</p>
+</blockquote>
+
+<h2 id="51_-duplicate-code-중복-코드">5.1_ Duplicate Code [중복 코드]</h2>
+
+<p>중복 코드 : 프로그램에 다른 코드를 복사하여 붙여넣어 생성할 수 있는 모든 소스 코드</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">Good morning!</span><span class="sh">'</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">How are you feeling?</span><span class="sh">'</span><span class="p">)</span>
+<span class="n">feeling</span> <span class="o">=</span> <span class="nf">input</span><span class="p">()</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">I am happy to hear that you are feeling </span><span class="sh">'</span> <span class="o">+</span> <span class="n">feeling</span> <span class="o">+</span> <span class="sh">'</span><span class="s">.</span><span class="sh">'</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">Good afternoon!</span><span class="sh">'</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">How are you feeling?</span><span class="sh">'</span><span class="p">)</span>
+<span class="n">feeling</span> <span class="o">=</span> <span class="nf">input</span><span class="p">()</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">I am happy to hear that you are feeling </span><span class="sh">'</span> <span class="o">+</span> <span class="n">feeling</span> <span class="o">+</span> <span class="sh">'</span><span class="s">.</span><span class="sh">'</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">Good evening!</span><span class="sh">'</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">How are you feeling?</span><span class="sh">'</span><span class="p">)</span>
+<span class="n">feeling</span> <span class="o">=</span> <span class="nf">input</span><span class="p">()</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">I am happy to hear that you are feeling </span><span class="sh">'</span> <span class="o">+</span> <span class="n">feeling</span> <span class="o">+</span> <span class="sh">'</span><span class="s">.</span><span class="sh">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>중복 코드는 코드 변경을 어렵게 만들기 때문에 문제입니다. 중복 코드의 복사본 하나를 변경하면 프로그램의 모든 복사본에 변경 사항이 적용되어야 합니다. 어딘가에서 변경하는 것을 잊어버리거나 다른 복사본을 다르게 변경하면 프로그램에 버그가 생길 수 있습니다.</p>
+
+  <p>중복 코드에 대한 해결책은 중복을 <em>제거하는</em> 것</p>
+</blockquote>
+
+<h4 id="해결법-1--중복-코드를-함수로-이동한-다음-해당-함수를-반복해서-호출">해결법 1 : 중복 코드를 함수로 이동한 다음 해당 함수를 반복해서 호출</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">askFeeling</span><span class="p">():</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">How are you feeling?</span><span class="sh">'</span><span class="p">)</span>
+    <span class="n">feeling</span> <span class="o">=</span> <span class="nf">input</span><span class="p">()</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">I am happy to hear that you are feeling </span><span class="sh">'</span> <span class="o">+</span> <span class="n">feeling</span> <span class="o">+</span> <span class="sh">'</span><span class="s">.</span><span class="sh">'</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">Good morning!</span><span class="sh">'</span><span class="p">)</span>
+<span class="nf">askFeeling</span><span class="p">()</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">Good afternoon!</span><span class="sh">'</span><span class="p">)</span>
+<span class="nf">askFeeling</span><span class="p">()</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">Good evening!</span><span class="sh">'</span><span class="p">)</span>
+<span class="nf">askFeeling</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h4 id="해결법-2--중복-코드를-루프로-이동">해결법 2 : 중복 코드를 루프로 이동</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">timeOfDay</span> <span class="ow">in</span> <span class="p">[</span><span class="sh">'</span><span class="s">morning</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">afternoon</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">evening</span><span class="sh">'</span><span class="p">]:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">Good </span><span class="sh">'</span> <span class="o">+</span> <span class="n">timeOfDay</span> <span class="o">+</span> <span class="sh">'</span><span class="s">!</span><span class="sh">'</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">How are you feeling?</span><span class="sh">'</span><span class="p">)</span>
+    <span class="n">feeling</span> <span class="o">=</span> <span class="nf">input</span><span class="p">()</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">I am happy to hear that you are feeling </span><span class="sh">'</span> <span class="o">+</span> <span class="n">feeling</span> <span class="o">+</span> <span class="sh">'</span><span class="s">.</span><span class="sh">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h4 id="해결법-3--두-기술을-결합하여-함수와-루프를-사용">해결법 3 : 두 기술을 결합하여 함수와 루프를 사용</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">askFeeling</span><span class="p">(</span><span class="n">timeOfDay</span><span class="p">):</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">Good </span><span class="sh">'</span> <span class="o">+</span> <span class="n">timeOfDay</span> <span class="o">+</span> <span class="sh">'</span><span class="s">!</span><span class="sh">'</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">How are you feeling?</span><span class="sh">'</span><span class="p">)</span>
+    <span class="n">feeling</span> <span class="o">=</span> <span class="nf">input</span><span class="p">()</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">I am happy to hear that you are feeling </span><span class="sh">'</span> <span class="o">+</span> <span class="n">feeling</span> <span class="o">+</span> <span class="sh">'</span><span class="s">.</span><span class="sh">'</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">timeOfDay</span> <span class="ow">in</span> <span class="p">[</span><span class="sh">'</span><span class="s">morning</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">afternoon</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">evening</span><span class="sh">'</span><span class="p">]:</span>
+    <span class="nf">askFeeling</span><span class="p">(</span><span class="n">timeOfDay</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="52_-magic-numbers-매직-넘버">5.2_ Magic Numbers [매직 넘버]</h2>
+
+<p>프로그래밍에 숫자가 포함되는 일이 있지만, 소스 코드에 나타나는 일부 숫자는 다른 프로그래머(또는 작성한 후 몇 주 후에)를 혼란스럽게 할 수 있다</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># before
+</span><span class="n">expiration</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="nf">time</span><span class="p">()</span> <span class="o">+</span> <span class="mi">604800</span>
+
+<span class="c1"># after
+</span><span class="n">expiration</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="nf">time</span><span class="p">()</span> <span class="o">+</span> <span class="mi">604800</span>  <span class="c1"># Expire in one week.
+</span></code></pre></div></div>
+
+<blockquote>
+  <p>다음과 같이 주석을 사용하여 expiration(만료기간)이 일주일 뒤인것을 나타 낼 수 있다</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Set up constants for different time amounts:
+</span><span class="n">SECONDS_PER_MINUTE</span> <span class="o">=</span> <span class="mi">60</span>
+<span class="n">SECONDS_PER_HOUR</span>   <span class="o">=</span> <span class="mi">60</span> <span class="o">*</span> <span class="n">SECONDS_PER_MINUTE</span>
+<span class="n">SECONDS_PER_DAY</span>    <span class="o">=</span> <span class="mi">24</span> <span class="o">*</span> <span class="n">SECONDS_PER_HOUR</span>
+<span class="n">SECONDS_PER_WEEK</span>   <span class="o">=</span> <span class="mi">7</span>  <span class="o">*</span> <span class="n">SECONDS_PER_DAY</span>
+
+<span class="o">--</span><span class="n">snip</span><span class="o">--</span>
+
+<span class="n">expiration</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="nf">time</span><span class="p">()</span> <span class="o">+</span> <span class="n">SECONDS_PER_WEEK</span>  <span class="c1"># Expire in one week.
+</span></code></pre></div></div>
+
+<blockquote>
+  <p>다음과 같이 <strong>Magic Number</strong>를 상수로 대체하는 것이 더 좋은 해결 법이다</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">NUM_CARDS_IN_DECK</span> <span class="o">=</span> <span class="mi">53</span>
+<span class="n">NUM_WEEKS_IN_YEAR</span> <span class="o">=</span> <span class="mi">52</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>지금은 값이 같더라도 다르게 사용이 될 수 있다면 분리해서 선언해야 된다</p>
+</blockquote>
+
+<p><strong>- Magic number는 숫자가 아닌 값(문자열, …)등에도 적용 될 수 있다</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">Set solar panel direction:</span><span class="sh">'</span><span class="p">)</span>
+    <span class="n">direction</span> <span class="o">=</span> <span class="nf">input</span><span class="p">().</span><span class="nf">lower</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">direction</span> <span class="ow">in</span> <span class="p">(</span><span class="sh">'</span><span class="s">north</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">south</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">east</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">west</span><span class="sh">'</span><span class="p">):</span>
+        <span class="k">break</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">Solar panel heading set to:</span><span class="sh">'</span><span class="p">,</span> <span class="n">direction</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">direction</span> <span class="o">==</span> <span class="sh">'</span><span class="s">nrth</span><span class="sh">'</span><span class="p">:</span> <span class="c1"># &lt;- 오타
+</span>    <span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">Warning: Facing north is inefficient for this panel.</span><span class="sh">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>‘north’를 입력 받으면 경고를 출력 하려했지만 조건문에서 오타로 ‘nrth’가 입력 되었다<br />
+오타는 여전히 문법적으로 올바르기 때문에 감지하기 어려울 수 있다.</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Set up constants for each cardinal direction:
+</span><span class="n">NORTH</span> <span class="o">=</span> <span class="sh">'</span><span class="s">north</span><span class="sh">'</span>
+<span class="n">SOUTH</span> <span class="o">=</span> <span class="sh">'</span><span class="s">south</span><span class="sh">'</span>
+<span class="n">EAST</span> <span class="o">=</span> <span class="sh">'</span><span class="s">east</span><span class="sh">'</span>
+<span class="n">WEST</span> <span class="o">=</span> <span class="sh">'</span><span class="s">west</span><span class="sh">'</span>
+
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">Set solar panel direction:</span><span class="sh">'</span><span class="p">)</span>
+    <span class="n">direction</span> <span class="o">=</span> <span class="nf">input</span><span class="p">().</span><span class="nf">lower</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">direction</span> <span class="ow">in</span> <span class="p">(</span><span class="n">NORTH</span><span class="p">,</span> <span class="n">SOUTH</span><span class="p">,</span> <span class="n">EAST</span><span class="p">,</span> <span class="n">WEST</span><span class="p">):</span>
+        <span class="k">break</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">Solar panel heading set to:</span><span class="sh">'</span><span class="p">,</span> <span class="n">direction</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">direction</span> <span class="o">==</span> <span class="n">NRTH</span><span class="p">:</span> <span class="c1"># &lt;- 오타
+</span>    <span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">Warning: Facing north is inefficient for this panel.</span><span class="sh">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># --------------- output --------------- #</span>
+Set solar panel direction:
+west
+Solar panel heading <span class="nb">set </span>to: west
+Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
+  File <span class="s2">"panelset.py"</span>, line 14, <span class="k">in</span> &lt;module&gt;
+    <span class="k">if </span>direction <span class="o">==</span> NRTH:
+NameError: name <span class="s1">'NRTH'</span> is not defined
+</code></pre></div></div>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">NameError</code> 이 있는 코드 라인에서 발생한 예외는 이 프로그램을 실행할 때 버그를 명확하게 표시해준다</p>
+</blockquote>
+
+<p>매직 넘버는 목적을 전달하지 않기 때문에 코드 악취이며, 코드 가독성을 떨어뜨린다. 추가로 업데이트하기 어렵게 만들고 감지할 수 없는 오타가 발생하기 쉽다. 해결 방법은 상수 변수를 대신 사용하는 것이다.</p>
+
+<h2 id="53_-commented-out-code-and-dead-code-주석-코드--죽은-코드">5.3_ Commented-Out Code and Dead Code [주석 코드 &amp; 죽은 코드]</h2>
+
+<ul>
+  <li>
+    <p>주석 코드</p>
+
+    <blockquote>
+      <p>함수나 코드 설명을 위한 주석을 하는 것은 나쁜것은 아니다. 하지만 흔히 테스트 과정에서 다른 기능을 테스트하고 싶을 때 해당 코드를 주석처리하면 나중에 쉽게 되돌릴 수 있다.<br />
+하지만 주석 처리된 코드가 그대로 남아있는 것은 좋지않다. 그렇게 되면 왜 코드에서 제거됐는지, 나중에 어떤 조건에서 다시 필요해지는 지 모르는 상태가 된다. 사용하지 않는 코드는 지우는 것을 권장한다.</p>
+    </blockquote>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">create_dataframe</span><span class="p">()</span>
+<span class="c1">#preprocess_dataframe()
+</span><span class="nf">create_new_dataframe</span><span class="p">()</span>
+<span class="nf">preprocess_dataframe</span><span class="p">()</span>
+</code></pre></div>    </div>
+
+    <blockquote>
+      <p>예시 코드지만 극단적으로 표현하자면, preprocess_dataframe()가 왜 두 번 나오는지, 그리고 뒤에 create_new_dataframe()을 호출한 뒤에 preprocess_dataframe()을 호출하는데 왜 앞에서 create_dataframe()일경우에는 preprocess_dataframe()를 호출하지 않는지 와 같은 의문이 생길 수 있다.</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>죽은 코드</p>
+
+    <blockquote>
+      <p>죽은 코드는 <strong>“도달할 수 없거나 논리적으로 실행 될 수 없는 코드”</strong>이다.</p>
+    </blockquote>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">true_or_false</span><span class="p">(</span><span class="nb">input</span><span class="p">:</span> <span class="nb">bool</span><span class="p">):</span>
+  <span class="k">if</span> <span class="nb">input</span> <span class="o">==</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="k">return</span> <span class="sh">'</span><span class="s">참입니다</span><span class="sh">'</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="k">return</span> <span class="sh">'</span><span class="s">거짓입니다</span><span class="sh">'</span>
+  <span class="k">return</span> <span class="sh">'</span><span class="s">아무것도 아닙니다</span><span class="sh">'</span> <span class="c1">#죽은 코드
+</span></code></pre></div>    </div>
+
+    <blockquote>
+      <p><code class="language-plaintext highlighter-rouge">return '아무것도 아닙니다'</code>는 논리적으로 실행 될 수 없는 죽은 코드이다.</p>
+    </blockquote>
+
+    <p>- 예외</p>
+
+    <blockquote>
+      <p>stub은 코드 악취 판단에서 예외합니다.<br />
+stub : 아직 구현되지 않은 함수나 클래스처럼 향후 코드가 작성될 위치를 나타내는 플레이스홀더이다.</p>
+    </blockquote>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 예시 1
+</span><span class="k">def</span> <span class="nf">preprocess_dataframe</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+  <span class="k">pass</span>
+<span class="c1"># 예시 2
+</span><span class="k">def</span> <span class="nf">preprocess_dataframe</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+  <span class="k">raise</span> <span class="nb">NotImplementedError</span>
+</code></pre></div>    </div>
+
+    <blockquote>
+      <p>2가지 방법으로 표현할 수 있지만, “예시 2”번의 방식으로 사용을 한다면 의도치 않게 호출 되었을 때 에러를 표시하여 실수를 예방할 수 있습니다.</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h2 id="54_-print-debugging-디버깅-출력">5.4_ Print Debugging [디버깅 출력]</h2>
+
+<blockquote>
+  <p>print debugging은 코드에 임시로 print() 호출을 넣어 중간에 값들을 출력하는 것을 의마한다.<br />
+처음에는 문제가 없는 것 처럼 보일 수 있지만 print()문이 많아지다 보면 호출 일부를 제거하는 것을 잊는 다면 다시 찾아서 제거를 해야되는 문제가 있다.</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">logging</span>
+<span class="n">logging</span><span class="p">.</span><span class="nf">basicConfig</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="sh">'</span><span class="s">log_filename.txt</span><span class="sh">'</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="p">.</span><span class="n">DEBUG</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="sh">'</span><span class="s">%(asctime)s - %(levelname)s - %(message)s</span><span class="sh">'</span><span class="p">)</span>
+<span class="n">logging</span><span class="p">.</span><span class="nf">debug</span><span class="p">(</span><span class="sh">'</span><span class="s">This is a log message.</span><span class="sh">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>위와 같이 logging 모듈을 가져와 print() 대신 logging.debug()로 호출하면 텍스트 파일에 정보를 저장할 수 있다.<br />
+또한 로그 파일은 프로그램에서 대량의 정보를 기록 할 수 있으므로 이전에 실행된 코드와 비교도 가능하다.</p>
+</blockquote>
+
+<h2 id="55_-variables-with-numeric-suffixes-숫자-접미사가-있는-변수">5.5_ Variables with Numeric Suffixes [숫자 접미사가 있는 변수]</h2>
+
+<blockquote>
+  <p>예를 들어 오타를 방지하기 위해 비밀번호를 2번 입력하는 경우가 있다고 할 때, <code class="language-plaintext highlighter-rouge">password1</code>, <code class="language-plaintext highlighter-rouge">password2</code>이런 변수명은 지양하고, <code class="language-plaintext highlighter-rouge">password</code>, <code class="language-plaintext highlighter-rouge">confirm_password</code>이런 방식으로 이름을 짓는 것을 권장한다.</p>
+</blockquote>
+
+<h2 id="56_-classes-that-should-just-be-functions-or-modules-함수-또는-모듈이어야-하는-클래스">5.6_ Classes That Should Just Be Functions or Modules [함수 또는 모듈이어야 하는 클래스]</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">random</span>
+<span class="k">class</span> <span class="nc">Dice</span><span class="p">:</span>
+  <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">sides</span><span class="o">=</span><span class="mi">6</span><span class="p">):</span>
+    <span class="n">self</span><span class="p">.</span><span class="n">sides</span> <span class="o">=</span> <span class="n">sides</span>
+  <span class="k">def</span> <span class="nf">roll</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">random</span><span class="p">.</span><span class="nf">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">sides</span><span class="p">)</span>
+
+<span class="n">d</span> <span class="o">=</span> <span class="nc">Dice</span><span class="p">()</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">You rolled a</span><span class="sh">'</span><span class="p">,</span> <span class="n">d</span><span class="p">.</span><span class="nf">roll</span><span class="p">())</span>
+
+<span class="o">&gt;</span> <span class="n">You</span> <span class="n">rolled</span> <span class="n">a</span> <span class="mi">1</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">You rolled a</span><span class="sh">'</span><span class="p">,</span> <span class="n">random</span><span class="p">.</span><span class="nf">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="o">&gt;</span> <span class="n">You</span> <span class="n">rolled</span> <span class="n">a</span> <span class="mi">6</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>같은 기능을 하지만 파이썬은 다른 언어에 비해 코드를 구성하는 것이 좀 더 자유롭다.<br />
+파이썬은 함수를 그룹화하기 위해 클래스가 아닌 모듈을 사용하기 때문에 위와 같은 경우는 오히려 파이썬 코드를 복잡하게 만들 수 있다.</p>
+</blockquote>
+
+<h2 id="57_-list-comprehensions-within-list-comprehensions-리스트-컴프리헨션-내의-리스트-컴프리헨션">5.7_ List Comprehensions Within List Comprehensions [리스트 컴프리헨션 내의 리스트 컴프리헨션]</h2>
+
+<blockquote>
+  <p>과도한 리스트 컴프리헨션은 오히려 코드 해석을 복잡하게 만들 수 있다.</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">nestedList</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]]</span>
+<span class="n">flatList</span> <span class="o">=</span> <span class="p">[</span><span class="n">num</span> <span class="k">for</span> <span class="n">sublist</span> <span class="ow">in</span> <span class="n">nestedList</span> <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">sublist</span><span class="p">]</span>
+<span class="n">flatList</span>
+<span class="o">&gt;</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">nestedList</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]]</span>
+<span class="n">flatList</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">sublist</span> <span class="ow">in</span> <span class="n">nestedList</span><span class="p">:</span>
+  <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">sublist</span><span class="p">:</span>
+    <span class="n">flatList</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+<span class="n">flatList</span>
+<span class="o">&gt;</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>첫번째 코드는 한 리스프 컴르리헨션안에 for 문이 2개가 들어가면서 코드 해석이 더 어렵게 되었다.<br />
+컴프리헨션은 구문론적으로 코드를 간결하게 만들 수 있지만, 남용하면 오히려 해석을 어렵게 만든다.</p>
+</blockquote>
+
+<h2 id="58_-empty-except-blocks-and-poor-error-messages-빈-예외처리--부족한-에러-메세지">5.8_ Empty except Blocks and Poor Error Messages [빈 예외처리 &amp; 부족한 에러 메세지]</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">try</span><span class="p">:</span>
+  <span class="n">num</span> <span class="o">=</span> <span class="nf">input</span><span class="p">(</span><span class="sh">'</span><span class="s">Enter a number: </span><span class="sh">'</span><span class="p">)</span>
+  <span class="n">num</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+<span class="k">except</span> <span class="nb">ValueError</span><span class="p">:</span>
+  <span class="k">pass</span>
+
+<span class="n">Enter</span> <span class="n">a</span> <span class="n">number</span><span class="p">:</span> <span class="n">forty</span> <span class="n">two</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">num</span>
+<span class="sh">'</span><span class="s">forty two</span><span class="sh">'</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>다음과 같이 pass로 구성하면 코드 자체는 계속 실행이 되지만, num이 문자열로 출력이 되어, 의도하지 않은 결과를 가져올 수 있습니다.</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">try</span><span class="p">:</span>
+  <span class="n">num</span> <span class="o">=</span> <span class="nf">input</span><span class="p">(</span><span class="sh">'</span><span class="s">Enter a number: </span><span class="sh">'</span><span class="p">)</span>
+  <span class="n">num</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+<span class="k">except</span> <span class="nb">ValueError</span><span class="p">:</span>
+  <span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">An incorrect value was passed to int()</span><span class="sh">'</span><span class="p">)</span>
+
+<span class="n">Enter</span> <span class="n">a</span> <span class="n">number</span><span class="p">:</span> <span class="n">forty</span> <span class="n">two</span>
+<span class="n">An</span> <span class="n">incorrect</span> <span class="n">value</span> <span class="n">was</span> <span class="n">passed</span> <span class="n">to</span> <span class="nf">int</span><span class="p">()</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>이전 코드보다는 나아졌지만, 해당 출력만으로는 사용자가 무슨 일이 일어났고, 어떤 일을 해야할지 파악이 어렵습니다.<br />
+에러 메세지는 <code class="language-plaintext highlighter-rouge">무슨 일이 일어났는 지</code>, <code class="language-plaintext highlighter-rouge">사용자가 해결을 위해 어떤 조치를 해야하는 지</code>가 포함되는 것을 권장합니다.</p>
+</blockquote>
+
+<h1 id="마무리">마무리</h1>
+
+<blockquote>
+  <p>저자는 이 장에 설명된 코드 악취도 프로젝트나 개인의 기본 설정에 따라 위에 정리한 내용을 지킨다고 무조건 좋은 코드가 나오는 것은 아니라고 마무리를 했습니다.<br />
+하지만 이 챕터를 공부하면서 느낀것은 클린코드는 다른 사람이 이해하기 좋은 코드라는 의미도 있지만, 코드를 작성하는 과정에서 발생하는 실수를 방지하고 유지 보수를 수월하게 할 수 있도록 하는 과정이라고 느꼈습니다.<br />
+그래서 클린코드는 기술 부채를 줄이기 위한 중요한 내용이라고 생각하지만, 예전에 배달의 민족 CEO분의 개발에 대한 인터뷰를 보았을 때가 생각이 났었습니다.<br />
+기술 부채는 서비스가 개발이 되었기에 생기는 것이니 우선은 주어진 문제를 해결하는 것도 중요하게 생각을 한다고 했었는데, 이러한 점을 보면 클린코드에 대해 정답을 없는 것 같고 앞으로 경험을 쌓으며 균형을 맞추어야 할 것 같습니다.</p>
+</blockquote>
+
+<p><br /></p>
+
+<h1 id="reference">Reference</h1>
+
+<hr />
+
+<p>[Beyond the Basic Stuff with Python_Al Sweigart] - <a href="https://inventwithpython.com/beyond/">https://inventwithpython.com/beyond/</a><br />
+[Chapter 5 - Code Formatting with Black] - <a href="https://inventwithpython.com/beyond/chapter5.html">https://inventwithpython.com/beyond/chapter5.html</a><br />
+CC License - [CC BY-NC-SA 3.0]</p>
+
+<p>Translator - ChatGPT</p>
+
+<hr />
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#cleancode-python" class="page__taxonomy-item p-category" rel="tag">CleanCode_Python</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#cleancode-python" class="page__taxonomy-item p-category" rel="tag">CleanCode_Python</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-02-21T00:00:00+09:00">2023-02-21 Tuesday</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Beyond+the+Basic+Stuff+with+Python+%5BChapter+05%5D%20https%3A%2F%2Fbrothergyu.github.io%2Fcleancode_python%2FCleanCode_week_03%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fbrothergyu.github.io%2Fcleancode_python%2FCleanCode_week_03%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fbrothergyu.github.io%2Fcleancode_python%2FCleanCode_week_03%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      <!-- 
+  <nav class="pagination">
+    
+      <a href="/cleancode_python/CleanCode_week_02/" class="pagination--pager" title="Beyond the Basic Stuff with Python [Chapter 03 ~ 04]
+">이전</a>
+    
+    
+      <a href="/cleancode_python/CleanCode_week_04/" class="pagination--pager" title="Beyond the Basic Stuff with Python [Chapter 06]
+">다음</a>
+    
+  </nav>
+ -->
+
+
+
+
+  
+
+  
+  	
+  	
+  	
+  	
+  	
+
+
+  <nav class="pagination_prev_next">
+    
+      <a href="/cleancode_python/CleanCode_week_02/" class="pagination_prev_next--pager_left"><span class="prev_next">이전 포스트<br></span>Beyond the Basic Stuff with Python [Chapter 03 ~ 04]</a>
+    
+    
+    
+      <a href="/cleancode_python/CleanCode_week_04/" class="pagination_prev_next--pager_right"><span class="prev_next">다음 포스트<br></span>Beyond the Basic Stuff with Python [Chapter 06]</a>
+    
+    
+  </nav>
+
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">댓글남기기</h4>
+      <section id="utterances-comments"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">최근 포스트</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ubuntu_server/cuda_install/" rel="permalink">[Setting] cuda/cudnn 설치하기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-08-25T00:00:00+09:00">2023-08-25 Friday</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">cuda 설치하기
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ubuntu_server/userful_util/" rel="permalink">[Util] 알면 편한 유틸리티들
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-08-24T00:00:00+09:00">2023-08-24 Thursday</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">알면 편한 유틸리티들
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/etc/ram_overclock/" rel="permalink">[Desktop Setting] Ram Overclock
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-08-24T00:00:00+09:00">2023-08-24 Thursday</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">램 오버클럭 수치 기록
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ai/cosine_similarity/" rel="permalink">[sklearn] cosine_similarity
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-08-24T00:00:00+09:00">2023-08-24 Thursday</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">[sklearn] cosine_similarity
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+    
+    <aside class="sidebar__top">
+      <a href="#site-nav"> <i class="fas fa-angle-up fa-2x"></i></a>
+    </aside>
+    
+      <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="mailto:brothergyu98@gmail.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+        
+      
+        
+          <li><a href="https://github.com/BrotherGyu/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 Brother_Gyu. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BDHERKJ7W3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-BDHERKJ7W3', { 'anonymize_ip': false});
+</script>
+
+
+
+
+
+
+    <script>
+  'use strict';
+
+  (function() {
+    var commentContainer = document.querySelector('#utterances-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://utteranc.es/client.js');
+    script.setAttribute('repo', 'BrotherGyu/BrotherGyu.github.io_comments');
+    script.setAttribute('issue-term', 'pathname');
+    
+    script.setAttribute('theme', 'github-light');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+    <script type="text/javascript">
+    window.MathJax = {
+   tex: {
+     packages: ['base', 'ams']
+   },
+   loader: {
+     load: ['ui/menu', '[tex]/ams']
+   },
+   startup: {
+     ready() {
+       MathJax.startup.defaultReady();
+       const Macro = MathJax._.input.tex.Symbol.Macro;
+       const MapHandler = MathJax._.input.tex.MapHandler.MapHandler;
+       const Array = MathJax._.input.tex.ams.AmsMethods.default.Array;
+       const env = new Macro('psmallmatrix', Array, [null, '(', ')', 'c', '.333em', '.2em', 'S', 1]);
+       MapHandler.getMap('AMSmath-environment').add('psmallmatrix', env);
+     }
+   }
+    };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async
+   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+  </body>
+</html>

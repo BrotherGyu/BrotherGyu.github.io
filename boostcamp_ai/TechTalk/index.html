@@ -1,0 +1,1709 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[TechTalk] 이메일에 쓰던 @가 왜 코드에 있나요? | BrotherGyu</title>
+<meta name="description" content="Decorator TechTalk 준비 과정">
+
+
+  <meta name="author" content="Brother_Gyu">
+  
+  <meta property="article:author" content="Brother_Gyu">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="BrotherGyu">
+<meta property="og:title" content="[TechTalk] 이메일에 쓰던 @가 왜 코드에 있나요?">
+<meta property="og:url" content="https://brothergyu.github.io/boostcamp_ai/TechTalk/">
+
+
+  <meta property="og:description" content="Decorator TechTalk 준비 과정">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-07-04T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://brothergyu.github.io/boostcamp_ai/TechTalk/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Brother_Gyu",
+      "url": "https://brothergyu.github.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="BrotherGyu Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<link rel="apple-touch-icon" sizes="180x180" href="../../assets/logo.ico/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../assets/logo.ico/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../assets/logo.ico/favicon-16x16.png">
+<link rel="mask-icon" href="../../assets/logo.ico/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/brother_gyu_logo_image.png" alt="BrotherGyu"></a>
+        
+        <a class="site-title" href="/">
+          BrotherGyu
+          <span class="site-subtitle">Devlog_</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/index.html">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tag</a>
+            </li><li class="masthead__menu-item">
+              <a href="/portfolio/">Portfolio</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#boostcamp_ai" itemprop="item"><span itemprop="name">Boostcamp_ai</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">[TechTalk] 이메일에 쓰던 @가 왜 코드에 있나요?</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="https://brothergyu.github.io/">
+        <img src="/assets/images/brother_gyu_profile_image.png" alt="Brother_Gyu" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="https://brothergyu.github.io/" itemprop="url">Brother_Gyu</a>
+    </h3>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <!-- 팔로우 버튼 제거 -->
+    <!-- <button class="btn btn--inverse">팔로우</button> -->
+    <ul class="author__urls social-icons">
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+    
+      <nav class="nav__list">
+  <!-- 토글 버튼 제거 -->
+  <input id="ac-toc" name="accordion-toc" type="checkbox" checked/>
+  <!-- 예전 코드 -->
+  <!-- <input id="ac-toc" name="accordion-toc" type="checkbox"/> -->
+  <!-- <label for="ac-toc">Toggle menu</label> -->
+  <ul class="nav__items" id="category_tag_menu">
+    <li>
+      <span>Category List</span>
+    </li>  
+    <li>
+        <span class="nav__sub-title">study</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/BoostCamp_AI" class="">NaverBoostCamp AI [11]</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+              
+                  
+                      <li><a href="/categories/CleanCode_Python" class="">CleanCode Python [5]</a></li>
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/AI" class="">AI [2]</a></li>
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/Pytorch" class="">Pytorch [3]</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/Ubuntu_Server" class="">Ubuntu Server [7]</a></li>
+                    
+                
+                    
+                
+            </ul>
+
+        <span class="nav__sub-title">python</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/Python_Module" class="">Python Module [3]</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        <span class="nav__sub-title">etc</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/DevTools" class="">DevTools [9]</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                        <li><a href="/categories/TIL" class="">TIL [7]</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/ETC" class="">ETC [1]</a></li>
+                    
+                
+            </ul>
+      </li>
+  </ul>
+</nav>
+    
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[TechTalk] 이메일에 쓰던 @가 왜 코드에 있나요?">
+    <meta itemprop="description" content="Decorator TechTalk 준비 과정">
+    <meta itemprop="datePublished" content="2023-07-04T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="https://brothergyu.github.io/boostcamp_ai/TechTalk/" class="u-url" itemprop="url">[TechTalk] 이메일에 쓰던 @가 왜 코드에 있나요?
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-07-04T00:00:00+09:00">2023-07-04 Tuesday</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-fas fa-list-ul"></i> 목차</h4></header>
+              <!-- toc 인식 범위 수정 -->
+              <!-- <ul class="toc__menu"><li><a href="#techtalk-이메일에-쓰던-가-왜-코드에-있나요">[TechTalk] 이메일에 쓰던 @가 왜 코드에 있나요?</a><ul><li><a href="#01-데코레이터를-테크톡-주제로-선정한-이유">01. 데코레이터를 테크톡 주제로 선정한 이유</a></li><li><a href="#02--데코레이터의-기능">02. @ 데코레이터의 기능</a></li><li><a href="#03-기본-개념-함수는-객체화되어있다">03. 기본 개념: 함수는 객체화되어있다</a></li><li><a href="#04--decorator">04. @ Decorator</a><ul><li><a href="#--04_01-데코레이터-사용">- 04_01 데코레이터 사용</a></li><li><a href="#--04_02-데코레이터-사용-x">- 04_02 데코레이터 사용 X</a></li><li><a href="#--04_03-주의할-점">- 04_03 주의할 점</a></li></ul></li><li><a href="#05--데코레이터가-함수처럼-사용-된다면">05. @ 데코레이터가 함수처럼 사용 된다면</a><ul><li><a href="#--05_01-데코레이터-사용">- 05_01 데코레이터 사용</a></li><li><a href="#--05_02-데코레이터-사용-x">- 05_02 데코레이터 사용 X</a></li><li><a href="#--05_03-데코레이터에-인자-사용-x">- 05_03 데코레이터에 인자 사용 X</a></li></ul></li><li><a href="#06-staticmethod">06. @staticmethod</a></li><li><a href="#07-classmethod">07. @classmethod</a><ul><li><a href="#--07_01-o_change-메서드-사용-classmethod-선언-x">- 07_01 “o_change” 메서드 사용 [@classmethod 선언 X]</a></li><li><a href="#--07_02-a_change-메서드-사용-classmethod-선언">- 07_02 “a_change” 메서드 사용 [@classmethod 선언]</a></li><li><a href="#--07_03-이유">- 07_03 이유</a></li></ul></li><li><a href="#08-property">08. @property</a></li><li><a href="#09-contextmanager">09. @contextmanager</a></li><li><a href="#10-wraps">10. @wraps</a><ul><li><a href="#--10_01-wrapsfunc-사용">- 10_01 @wraps(func) 사용</a></li><li><a href="#--10_02-wrapsfunc-사용-x">- 10_02 @wraps(func) 사용 X</a></li><li><a href="#--10_03-정리">- 10_03 정리</a></li></ul></li><li><a href="#11-abstractmethod">11. @abstractmethod</a><ul><li><a href="#--11_01-try-case">- 11_01 Try Case</a></li><li><a href="#--11_02-정리">- 11_02 정리</a></li></ul></li></ul></li><li><a href="#마치며">마치며</a></li><li><a href="#reference">Reference</a></li></ul>
+ -->
+              <ul class="toc__menu"><li><a href="#techtalk-이메일에-쓰던-가-왜-코드에-있나요">[TechTalk] 이메일에 쓰던 @가 왜 코드에 있나요?</a><ul><li><a href="#01-데코레이터를-테크톡-주제로-선정한-이유">01. 데코레이터를 테크톡 주제로 선정한 이유</a></li><li><a href="#02--데코레이터의-기능">02. @ 데코레이터의 기능</a></li><li><a href="#03-기본-개념-함수는-객체화되어있다">03. 기본 개념: 함수는 객체화되어있다</a></li><li><a href="#04--decorator">04. @ Decorator</a><ul><li><a href="#--04_01-데코레이터-사용">- 04_01 데코레이터 사용</a></li><li><a href="#--04_02-데코레이터-사용-x">- 04_02 데코레이터 사용 X</a></li><li><a href="#--04_03-주의할-점">- 04_03 주의할 점</a></li></ul></li><li><a href="#05--데코레이터가-함수처럼-사용-된다면">05. @ 데코레이터가 함수처럼 사용 된다면</a><ul><li><a href="#--05_01-데코레이터-사용">- 05_01 데코레이터 사용</a></li><li><a href="#--05_02-데코레이터-사용-x">- 05_02 데코레이터 사용 X</a></li><li><a href="#--05_03-데코레이터에-인자-사용-x">- 05_03 데코레이터에 인자 사용 X</a></li></ul></li><li><a href="#06-staticmethod">06. @staticmethod</a></li><li><a href="#07-classmethod">07. @classmethod</a><ul><li><a href="#--07_01-o_change-메서드-사용-classmethod-선언-x">- 07_01 “o_change” 메서드 사용 [@classmethod 선언 X]</a></li><li><a href="#--07_02-a_change-메서드-사용-classmethod-선언">- 07_02 “a_change” 메서드 사용 [@classmethod 선언]</a></li><li><a href="#--07_03-이유">- 07_03 이유</a></li></ul></li><li><a href="#08-property">08. @property</a></li><li><a href="#09-contextmanager">09. @contextmanager</a></li><li><a href="#10-wraps">10. @wraps</a><ul><li><a href="#--10_01-wrapsfunc-사용">- 10_01 @wraps(func) 사용</a></li><li><a href="#--10_02-wrapsfunc-사용-x">- 10_02 @wraps(func) 사용 X</a></li><li><a href="#--10_03-정리">- 10_03 정리</a></li></ul></li><li><a href="#11-abstractmethod">11. @abstractmethod</a><ul><li><a href="#--11_01-try-case">- 11_01 Try Case</a></li><li><a href="#--11_02-정리">- 11_02 정리</a></li></ul></li></ul></li><li><a href="#마치며">마치며</a></li><li><a href="#reference">Reference</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h1 id="techtalk-이메일에-쓰던-가-왜-코드에-있나요">[TechTalk] 이메일에 쓰던 @가 왜 코드에 있나요?</h1>
+
+<blockquote>
+  <p>Boostcamp AI tech 5th에서 테크톡 스피커에 선정 되어 발표를 하게 되었을 때, 사용한 코드 및 설명입니다<br />
+코드를 먼저 작성하고 아래 해설을 적는 방식으로 글을 작성하였는데, 해설을 바로 보는 것보다 코드를 보고 유추해보고 해설을 보는 것을 추천드려요</p>
+
+  <p>발표 영상 - <a href="https://youtu.be/rFgSqHlHZTw">https://youtu.be/rFgSqHlHZTw</a></p>
+</blockquote>
+
+<h2 id="01-데코레이터를-테크톡-주제로-선정한-이유">01. 데코레이터를 테크톡 주제로 선정한 이유</h2>
+
+<blockquote>
+  <p><img src="../../images/Boostcamp_AI/2023-07-04-TechTalk/image-20230821200615346.png" alt="image-20230821200615346" /></p>
+
+  <blockquote>
+    <p><a href="https://github.com/twitter/the-algorithm-ml/blob/main/core/train_pipeline.py">https://github.com/twitter/the-algorithm-ml/blob/main/core/train_pipeline.py</a></p>
+  </blockquote>
+
+  <p><img src="../../images/Boostcamp_AI/2023-07-04-TechTalk/image-20230821200622413.png" alt="image-20230821200622413" /></p>
+
+  <blockquote>
+    <p><a href="https://github.com/twitter/the-algorithm-ml/blob/main/tools/pq.py">https://github.com/twitter/the-algorithm-ml/blob/main/tools/pq.py</a></p>
+  </blockquote>
+
+  <p>오픈 소스 코드를 참고하기 위해서 코드를 읽을 때, 알 수 없는 @ 문법들이 있어서, 어려움을 겪었습니다.<br />
+데코레이터 문법은 각자 맡은 기능에 따라 다르게 작동하기 때문에, 모른다면 코드 해석이 안되는 경우가 생겨서 힘들었었고, 시행착오를 겪으면서 습득한 지식들을 정리해서 공유하면 도움이 될거라 생각해서 주제로 선정하게 되었습니다.</p>
+</blockquote>
+
+<h2 id="02--데코레이터의-기능">02. @ 데코레이터의 기능</h2>
+
+<blockquote>
+  <p>함수나 클래스의 동작을 수정하지 않고도 추가 기능을 부여<br />
+유연성은 코드의 재사용성과 유지보수성을 크게 향상</p>
+</blockquote>
+
+<h2 id="03-기본-개념-함수는-객체화되어있다">03. 기본 개념: 함수는 객체화되어있다</h2>
+
+<p>- 함수는 변수에 할당 가능하다:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">say_hello</span><span class="p">():</span> <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Hello!</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">greeting</span> <span class="o">=</span> <span class="n">say_hello</span>  <span class="c1"># 함수 할당
+</span><span class="nf">greeting</span><span class="p">()</span>  <span class="c1"># "Hello!" 출력
+</span>
+<span class="c1">## ----------------- output ----------------- ##
+</span><span class="o">&gt;</span> <span class="n">Hello</span><span class="err">!</span>
+</code></pre></div></div>
+
+<p>- 함수는 함수내에서 생성 가능하다:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">get_multiplier</span><span class="p">(</span><span class="n">factor</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">multiply</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">num</span> <span class="o">*</span> <span class="n">factor</span>
+    <span class="k">return</span> <span class="n">multiply</span>
+<span class="n">double</span> <span class="o">=</span> <span class="nf">get_multiplier</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># factor가 2인 multiply 함수 생성
+</span><span class="nf">print</span><span class="p">(</span><span class="nf">double</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>  <span class="c1"># 10 출력
+</span>
+<span class="c1">## ----------------- output ----------------- ##
+</span><span class="o">&gt;</span> <span class="mi">10</span>
+</code></pre></div></div>
+
+<p>- 함수는 다른 함수의 인자로 전달 가능하다:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">func</span><span class="p">):</span> <span class="nf">func</span><span class="p">()</span>  <span class="c1"># 전달받은 함수 호출
+</span><span class="k">def</span> <span class="nf">say_hello</span><span class="p">():</span> <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Hello!</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">greet</span><span class="p">(</span><span class="n">say_hello</span><span class="p">)</span>  <span class="c1"># "Hello!" 출력
+</span>
+<span class="c1">## ----------------- output ----------------- ##
+</span><span class="o">&gt;</span> <span class="n">Hello</span><span class="err">!</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>특히 마지막 “함수는 다른 함수의 인자로 전달 가능하다” 부분이 중요한데 데코레이터도 함수를 함수 인자로 활용한다고 할 수 있습니다</p>
+</blockquote>
+
+<h2 id="04--decorator">04. @ Decorator</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">deco</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">데코레이터</span><span class="sh">'</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">f</span>
+</code></pre></div></div>
+
+<h3 id="--04_01-데코레이터-사용">- 04_01 데코레이터 사용</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@deco</span>
+<span class="k">def</span> <span class="nf">double</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">2</span><span class="o">*</span><span class="n">num</span>
+  
+<span class="c1">## ----------------- output ----------------- ##
+</span><span class="o">&gt;</span> <span class="n">데코레이터</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>@deco가 실행되는 시점에서 deco 데코레이터 함수가 호출되고, deco 함수 내의 print(‘데코레이터’) 문장이 실행됩니다<br />
+이후 deco 함수는 인자로 전달받은 f 함수(여기서는 double 함수)를 그대로 반환합니다<br />
+따라서 출력 결과로 “데코레이터”가 출력됩니다</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="nf">double</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span>
+
+<span class="c1">## ----------------- output ----------------- ##
+</span><span class="o">&gt;</span> <span class="mi">40</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>그 후 double 함수에 인자를 20으로 주고 실행하면 20을 두배 한 값인 40이 출력됩니다</p>
+</blockquote>
+
+<h3 id="--04_02-데코레이터-사용-x">- 04_02 데코레이터 사용 X</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">double_</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">2</span><span class="o">*</span><span class="n">num</span>
+<span class="n">double_</span> <span class="o">=</span> <span class="nf">deco</span><span class="p">(</span><span class="n">double_</span><span class="p">)</span>
+
+<span class="c1">## ----------------- output ----------------- ##
+</span><span class="o">&gt;</span> <span class="n">데코레이터</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>데코레이터를 풀어서 설명한 코드입니다 앞의 @deco를 사용했던 코드와 같은 기능을 합니다<br />
+쉽게 말하자면 double_함수를 선언한 후에 double_ = deco(double_)을 했다고 생각하면 됩니다</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="nf">double_</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span>
+
+<span class="c1">## ----------------- output ----------------- ##
+</span><span class="o">&gt;</span> <span class="mi">40</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>결과도 데코레이터를 사용한 double 함수와 같은 값을 반환합니다</p>
+</blockquote>
+
+<h3 id="--04_03-주의할-점">- 04_03 주의할 점</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">deco</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">데코레이터</span><span class="sh">'</span><span class="p">)</span>
+    <span class="k">return</span> <span class="sh">'</span><span class="s">deco deco</span><span class="sh">'</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@deco</span>
+<span class="k">def</span> <span class="nf">double</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">2</span><span class="o">*</span><span class="n">num</span>
+  
+<span class="c1">## ----------------- output ----------------- ##
+</span><span class="o">&gt;</span> <span class="n">데코레이터</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="nf">double</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span>
+
+<span class="c1">## ----------------- output ----------------- ##
+</span><span class="o">---------------------------------------------------------------------------</span>
+<span class="nb">TypeError</span>                                 <span class="nc">Traceback </span><span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">41</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="o">----&gt;</span> <span class="mi">1</span> <span class="nf">print</span><span class="p">(</span><span class="nf">double</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span>
+
+<span class="nb">TypeError</span><span class="p">:</span> <span class="sh">'</span><span class="s">str</span><span class="sh">'</span> <span class="nb">object</span> <span class="ow">is</span> <span class="ow">not</span> <span class="nb">callable</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p><strong>- 타입 에러가 발생 -</strong><br />
+deco함수의 리턴이 “deco deco” 문자열이 되면서 이제는 double 함수가 아닌 문자열 “deco deco”로 변경됨<br />
+deco 함수에서 f를 그대로 반환하지 않으면 가로채버리는 결과가 나와버린다</p>
+</blockquote>
+
+<h2 id="05--데코레이터가-함수처럼-사용-된다면">05. @ 데코레이터가 함수처럼 사용 된다면</h2>
+
+<h3 id="--05_01-데코레이터-사용">- 05_01 데코레이터 사용</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">lol</span><span class="p">():</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">num</span><span class="p">):</span>
+        <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">'</span><span class="s">init: </span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="sh">'</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">num</span> <span class="o">=</span> <span class="n">num</span>
+    
+    <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">f</span><span class="p">):</span>
+        <span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">call</span><span class="sh">'</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">f</span>
+
+<span class="nd">@lol</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="c1"># @lol 데코레이터에 5를 인자로 넣어줌
+</span><span class="k">def</span> <span class="nf">damage</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">n</span>
+
+<span class="c1">## ----------------- output ----------------- ##
+</span><span class="o">&gt;</span> <span class="n">init</span><span class="p">:</span> <span class="mi">5</span>
+<span class="o">&gt;</span> <span class="n">call</span>
+</code></pre></div></div>
+
+<h3 id="--05_02-데코레이터-사용-x">- 05_02 데코레이터 사용 X</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">lol</span><span class="p">():</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">num</span><span class="p">):</span>
+        <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">'</span><span class="s">init: </span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="sh">'</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">num</span> <span class="o">=</span> <span class="n">num</span>
+    
+    <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">f</span><span class="p">):</span>
+        <span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">call</span><span class="sh">'</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">f</span>
+
+<span class="k">def</span> <span class="nf">damage</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">n</span>
+<span class="n">damage</span> <span class="o">=</span> <span class="nf">lol</span><span class="p">(</span><span class="mi">5</span><span class="p">)(</span><span class="n">damage</span><span class="p">)</span>
+
+<span class="c1">## ----------------- output ----------------- ##
+</span><span class="o">&gt;</span> <span class="n">init</span><span class="p">:</span> <span class="mi">5</span>
+<span class="o">&gt;</span> <span class="n">call</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>아까 설명한 방식과 똑같이 @뒤에 있는 것을 함수처럼 써서 재할당을 하고 있는 것을 볼 수 있다<br />
+그래서 damage는 lol(5)(damage)로 표현이 된다<br />
+이런 표현이 자연스럽게 나타날 수 있는 문법은 class이다<br />
+클래스가 처음 선언 될때 __init__이 선언되며, 이걸 다시 함수처럼 사용을 할 때에는 __call__ 함수가 실행<br />
+그래서 같은 결과로 둘다 init, call 순서로 출력이 된다</p>
+</blockquote>
+
+<h3 id="--05_03-데코레이터에-인자-사용-x">- 05_03 데코레이터에 인자 사용 X</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">lol</span><span class="p">():</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">num</span><span class="p">):</span>
+        <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">'</span><span class="s">init: </span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="sh">'</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">num</span> <span class="o">=</span> <span class="n">num</span>
+    
+    <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">f</span><span class="p">):</span>
+        <span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">call</span><span class="sh">'</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">f</span>
+
+<span class="nd">@lol</span>
+<span class="k">def</span> <span class="nf">damage</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">n</span>
+ 
+<span class="c1">## ----------------- output ----------------- ##
+</span><span class="o">&gt;</span> <span class="n">init</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">function</span> <span class="n">damage</span> <span class="n">at</span> <span class="mh">0x1051b84c0</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>인자를 사용 안해도 코드가 작동하는 등 다양하게 활용됨</p>
+</blockquote>
+
+<h2 id="06-staticmethod">06. @staticmethod</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">MathUtils</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">a</span> <span class="o">=</span> <span class="n">a</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">b</span> <span class="o">=</span> <span class="n">b</span>
+        
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+    
+    <span class="k">def</span> <span class="nf">multiply</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">self</span><span class="p">.</span><span class="n">a</span> <span class="o">*</span> <span class="n">self</span><span class="p">.</span><span class="n">b</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sum_result</span> <span class="o">=</span> <span class="n">MathUtils</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">sum_result</span><span class="p">)</span>
+
+<span class="c1">## ----------------- output ----------------- ##
+</span><span class="o">&gt;</span> <span class="mi">8</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>add 함수의 결과가 출력되어 3 + 5의 결과로 8이 출력</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">product_result</span> <span class="o">=</span> <span class="n">MathUtils</span><span class="p">.</span><span class="nf">multiply</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">product_result</span><span class="p">)</span>
+
+<span class="c1">## ----------------- output ----------------- ##
+</span><span class="o">---------------------------------------------------------------------------</span>
+<span class="nb">TypeError</span>                                 <span class="nc">Traceback </span><span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="o">----&gt;</span> <span class="mi">1</span> <span class="n">product_result</span> <span class="o">=</span> <span class="n">MathUtils</span><span class="p">.</span><span class="nf">multiply</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+      <span class="mi">2</span> <span class="nf">print</span><span class="p">(</span><span class="n">product_result</span><span class="p">)</span>
+
+<span class="nb">TypeError</span><span class="p">:</span> <span class="nf">multiply</span><span class="p">()</span> <span class="n">takes</span> <span class="mi">1</span> <span class="n">positional</span> <span class="n">argument</span> <span class="n">but</span> <span class="mi">2</span> <span class="n">were</span> <span class="n">given</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>1개의 포지션에 2개의 값이 주어졌다며 TypeError가 발생</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">product_result</span> <span class="o">=</span> <span class="n">MathUtils</span><span class="p">.</span><span class="nf">multiply</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">product_result</span><span class="p">)</span>
+
+<span class="c1">## ----------------- output ----------------- ##
+</span><span class="o">---------------------------------------------------------------------------</span>
+<span class="nb">AttributeError</span>                            <span class="nc">Traceback </span><span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">66</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="o">----&gt;</span> <span class="mi">1</span> <span class="n">product_result</span> <span class="o">=</span> <span class="n">MathUtils</span><span class="p">.</span><span class="nf">multiply</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+      <span class="mi">2</span> <span class="nf">print</span><span class="p">(</span><span class="n">product_result</span><span class="p">)</span>
+
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">55</span><span class="p">],</span> <span class="n">line</span> <span class="mi">11</span><span class="p">,</span> <span class="ow">in</span> <span class="n">MathUtils</span><span class="p">.</span><span class="nf">multiply</span><span class="p">(</span><span class="n">self</span><span class="p">)</span>
+     <span class="mi">10</span> <span class="k">def</span> <span class="nf">multiply</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+<span class="o">---&gt;</span> <span class="mi">11</span>     <span class="k">return</span> <span class="n">self</span><span class="p">.</span><span class="n">a</span> <span class="o">*</span> <span class="n">self</span><span class="p">.</span><span class="n">b</span>
+
+<span class="nb">AttributeError</span><span class="p">:</span> <span class="sh">'</span><span class="s">int</span><span class="sh">'</span> <span class="nb">object</span> <span class="n">has</span> <span class="n">no</span> <span class="n">attribute</span> <span class="sh">'</span><span class="s">a</span><span class="sh">'</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>MathUtils 클래스의 multiply() 메서드를 호출할 때 인자가 부족하여 AttributeError 발생</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 클래스 인스턴스 생성
+</span><span class="n">math_utils</span> <span class="o">=</span> <span class="nc">MathUtils</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<span class="c1"># 일반 메서드 호출
+</span><span class="n">product_result</span> <span class="o">=</span> <span class="n">math_utils</span><span class="p">.</span><span class="nf">multiply</span><span class="p">()</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">product_result</span><span class="p">)</span>
+
+<span class="c1">## ----------------- output ----------------- ##
+</span><span class="o">&gt;</span> <span class="mi">15</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>다음 코드를 실행시키려면 평소에 하던 것처럼 오른쪽과 같이 클래스 인스턴스를 생성하고 호출을 해야 된다<br />
+정적 메소드의 경우 주로 유틸리티성 함수를 위한 용도로 사용이 되며, 클래스의 속성에 변화를 일으키지 않는 함수<br />
+그러면 왜 사용하는지 의문점이 들 수 있다<br />
+이 부분에 대해서는 각자의 취향 차이이며, 클래스와 연관이 깊은 함수라고 의미를 부여하는 방법으로 사용할 수 있다<br />
+그래서 이 부분에는 협업시에 규칙을 정할 필요가 있다</p>
+</blockquote>
+
+<h2 id="07-classmethod">07. @classmethod</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">BoostCamp</span><span class="p">:</span>
+    <span class="n">camper_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Booduck</span><span class="sh">"</span>
+
+    <span class="k">def</span> <span class="nf">o_change</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">camper_name</span> <span class="o">=</span> <span class="n">name</span>
+    
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">a_change</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="n">cls</span><span class="p">.</span><span class="n">camper_name</span> <span class="o">=</span> <span class="n">name</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="nc">BoostCamp</span><span class="p">(),</span> <span class="nc">BoostCamp</span><span class="p">()</span>
+<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">a: </span><span class="si">{</span><span class="n">a</span><span class="p">.</span><span class="n">camper_name</span><span class="si">}</span><span class="s">, b: </span><span class="si">{</span><span class="n">b</span><span class="p">.</span><span class="n">camper_name</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="c1">## ----------------- output ----------------- ##
+</span><span class="o">&gt;</span> <span class="n">a</span><span class="p">:</span> <span class="n">Booduck</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">Booduck</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>클래스의 인스턴스인 a와 b를 생성하고 둘 다 camper_name은 초기값인 “Booduck＂인것을 확인 할 수 있다</p>
+</blockquote>
+
+<h3 id="--07_01-o_change-메서드-사용-classmethod-선언-x">- 07_01 “o_change” 메서드 사용 [@classmethod 선언 X]</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span><span class="p">.</span><span class="nf">o_change</span><span class="p">(</span><span class="sh">"</span><span class="s">DuckDuck</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">a: </span><span class="si">{</span><span class="n">a</span><span class="p">.</span><span class="n">camper_name</span><span class="si">}</span><span class="s">, b: </span><span class="si">{</span><span class="n">b</span><span class="p">.</span><span class="n">camper_name</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="c1">## ----------------- output ----------------- ##
+</span><span class="o">&gt;</span> <span class="n">a</span><span class="p">:</span> <span class="n">DuckDuck</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">Booduck</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>a의 camper_name 속성이 “DuckDuck”으로 변경되었지만, b의 camper_name 속성은 변경되지 않았다<br />
+이는 o_change 메서드가 a 인스턴스의 속성을 변경한 것이기 때문이다<br />
+클래스 변수인 camper_name은 인스턴스 간에 공유되지 않으므로 b의 camper_name은 여전히 “Booduck”으로 유지된다</p>
+</blockquote>
+
+<h3 id="--07_02-a_change-메서드-사용-classmethod-선언">- 07_02 “a_change” 메서드 사용 [@classmethod 선언]</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span><span class="p">.</span><span class="nf">a_change</span><span class="p">(</span><span class="sh">"</span><span class="s">DuckDuck</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">a: </span><span class="si">{</span><span class="n">a</span><span class="p">.</span><span class="n">camper_name</span><span class="si">}</span><span class="s">, b: </span><span class="si">{</span><span class="n">b</span><span class="p">.</span><span class="n">camper_name</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="c1">## ----------------- output ----------------- ##
+</span><span class="n">a</span><span class="p">:</span> <span class="n">DuckDuck</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">DuckDuck</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>a와 b의 camper_name 속성 값이 모두 “DuckDuck＂으로 변경 되었다</p>
+</blockquote>
+
+<h3 id="--07_03-이유">- 07_03 이유</h3>
+
+<p><img src="../../images/Boostcamp_AI/2023-07-04-TechTalk/image-20230822002751764.png" alt="image-20230822002751764" /></p>
+
+<blockquote>
+  <p>일반 메소드인 o_change를 선언하면 자기 자신의 인스턴스를 가리키게 된다<br />
+@classmethod를 붙이면 첫번째 인자가 자기 자신 인스턴스가 아니라 자기자신의 소속 클래스를 가리키게 되며, 그래서 어떤 인스턴스의 classmethod에서 첫번째 인자에 접근해서 값을 수정하게 된다면 다른 인스턴스에도 영향을 끼치게 된다</p>
+</blockquote>
+
+<h2 id="08-property">08. @property</h2>
+
+<blockquote>
+  <p>@property는 간단하게 설명하자면 함수를 변수처럼 사용하게 해준다고 생각하면 된다</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Circle</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">radius</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">_radius</span> <span class="o">=</span> <span class="n">radius</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">radius</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">self</span><span class="p">.</span><span class="n">_radius</span>
+
+    <span class="nd">@radius.setter</span>
+    <span class="k">def</span> <span class="nf">radius</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="nc">ValueError</span><span class="p">(</span><span class="sh">"</span><span class="s">Radius cannot be negative</span><span class="sh">"</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">_radius</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">area</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mf">3.14</span> <span class="o">*</span> <span class="n">self</span><span class="p">.</span><span class="n">_radius</span> <span class="o">*</span> <span class="n">self</span><span class="p">.</span><span class="n">_radius</span>
+      
+      
+<span class="c1"># 인스턴스 생성
+</span><span class="n">my_circle</span> <span class="o">=</span> <span class="nc">Circle</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="c1"># 속성 접근
+</span><span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">'</span><span class="s">my_circle.radius: </span><span class="si">{</span><span class="n">my_circle</span><span class="p">.</span><span class="n">radius</span><span class="si">}</span><span class="sh">'</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">'</span><span class="s">my_circle.area: </span><span class="si">{</span><span class="n">my_circle</span><span class="p">.</span><span class="n">area</span><span class="si">}</span><span class="sh">'</span><span class="p">)</span>
+<span class="c1"># 속성 변경
+</span><span class="n">my_circle</span><span class="p">.</span><span class="n">radius</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">'</span><span class="s">my_circle.radius: </span><span class="si">{</span><span class="n">my_circle</span><span class="p">.</span><span class="n">radius</span><span class="si">}</span><span class="sh">'</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">'</span><span class="s">my_circle.area: </span><span class="si">{</span><span class="n">my_circle</span><span class="p">.</span><span class="n">area</span><span class="si">}</span><span class="sh">'</span><span class="p">)</span>
+
+<span class="c1">## ----------------- output ----------------- ##
+</span><span class="o">&gt;</span> <span class="n">my_circle</span><span class="p">.</span><span class="n">radius</span><span class="p">:</span> <span class="mi">5</span>
+<span class="o">&gt;</span> <span class="n">my_circle</span><span class="p">.</span><span class="n">area</span><span class="p">:</span> <span class="mf">78.5</span>
+<span class="o">&gt;</span> <span class="n">my_circle</span><span class="p">.</span><span class="n">radius</span><span class="p">:</span> <span class="mi">7</span>
+<span class="o">&gt;</span> <span class="n">my_circle</span><span class="p">.</span><span class="n">area</span><span class="p">:</span> <span class="mf">153.86</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>Circle 클래스에는 radius와 area라는 두 개의 속성이 있다. radius 속성은 @property 데코레이터를 사용하여 읽기 전용으로 정의되었다<br />
+이렇게 하면 my_circle.radius와 같이 속성에 접근할 때 메서드처럼 호출되지만 실제로는 해당 속성의 값을 반환한다</p>
+
+  <p>radius 속성에는 @radius.setter 데코레이터를 사용하여 설정 메서드를 정의<br />
+이렇게 하면 my_circle.radius = 7과 같이 속성에 값을 할당할 때 호출되는 메서드<br />
+이 설정 메서드에서는 입력된 값이 음수인지 검사하고, 음수인 경우 ValueError 예외를 발생시키며, 그렇지 않은 경우에만 속성 값을 변경한다</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_circle</span><span class="p">.</span><span class="n">area</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="c1">## ----------------- output ----------------- ##
+</span><span class="o">---------------------------------------------------------------------------</span>
+<span class="nb">AttributeError</span>                            <span class="nc">Traceback </span><span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">35</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="o">----&gt;</span> <span class="mi">1</span> <span class="n">my_circle</span><span class="p">.</span><span class="n">area</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="nb">AttributeError</span><span class="p">:</span> <span class="nb">property</span> <span class="sh">'</span><span class="s">area</span><span class="sh">'</span> <span class="n">of</span> <span class="sh">'</span><span class="s">Circle</span><span class="sh">'</span> <span class="nb">object</span> <span class="n">has</span> <span class="n">no</span> <span class="n">setter</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>property를 사용할 때 setter를 정의하지 않으면 해당 속성은 읽기 전용이 된다<br />
+즉, 속성에 값을 할당하려고 시도하면 오류가 발생하게 된다</p>
+
+  <p>그래서 property를 사용할 때는 해당 속성이 읽기 전용인지 또는 값을 변경할 수 있는지에 대해 정확히 구현해야 한다
+정리하자면 @property를 사용하면서 setter를 정의하지 않는 경우 해당 속성은 읽기 전용이 되어 값을 변경할 수 없다</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_circle</span><span class="p">.</span><span class="n">radius</span> <span class="o">=</span> <span class="mi">8</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>*.radius는 정상 실행이 된다</p>
+</blockquote>
+
+<h2 id="09-contextmanager">09. @contextmanager</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">contextlib</span> <span class="kn">import</span> <span class="n">contextmanager</span>
+<span class="kn">import</span> <span class="n">os</span>
+
+<span class="nd">@contextmanager</span>
+<span class="k">def</span> <span class="nf">file_open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">mode</span><span class="p">):</span>
+    <span class="c1"># -------------- 사전 처리 -------------- #
+</span>    <span class="n">dir_name</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">dirname</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">isdir</span><span class="p">(</span><span class="n">dir_name</span><span class="p">):</span>
+        <span class="n">os</span><span class="p">.</span><span class="nf">makedirs</span><span class="p">(</span><span class="n">dir_name</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">1: 파일 열기</span><span class="sh">'</span><span class="p">)</span>
+    <span class="nb">file</span> <span class="o">=</span> <span class="nf">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">2: 파일 객체 반환</span><span class="sh">'</span><span class="p">)</span>
+    <span class="c1"># ------------------------------------- #
+</span>        <span class="k">yield</span> <span class="nb">file</span>
+    <span class="c1"># -------------- 사후 처리 -------------- #
+</span>    <span class="k">finally</span><span class="p">:</span>
+        <span class="nb">file</span><span class="p">.</span><span class="nf">close</span><span class="p">()</span>
+        <span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">4: 파일 닫기</span><span class="sh">'</span><span class="p">)</span>
+    <span class="c1"># ------------------------------------- #
+</span></code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 컨텍스트 관리자를 사용하여 파일 열기
+</span><span class="k">with</span> <span class="nf">file_open</span><span class="p">(</span><span class="sh">'</span><span class="s">data/example.txt</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">w</span><span class="sh">'</span><span class="p">)</span> <span class="k">as</span> <span class="nb">file</span><span class="p">:</span>
+    <span class="nb">file</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="sh">'</span><span class="s">Hello, Booduck!!</span><span class="sh">'</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">3: 파일 작성</span><span class="sh">'</span><span class="p">)</span>
+    
+<span class="c1">## ----------------- output ----------------- ##
+</span><span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span> <span class="n">파일</span> <span class="n">열기</span>
+<span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span> <span class="n">파일</span> <span class="n">객체</span> <span class="n">반환</span>
+<span class="o">&gt;</span> <span class="mi">3</span><span class="p">:</span> <span class="n">파일</span> <span class="n">작성</span>
+<span class="o">&gt;</span> <span class="mi">4</span><span class="p">:</span> <span class="n">파일</span> <span class="n">닫기</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>예를 들어 데이터셋 파일을 저장하는 과정에서 폴더를 지정했는데 없을 경우에는 에러가 발생한다<br />
+그럴때에는 폴더를 확인하고 없으면 생성하는 코드가 필요하며, 이러한 것들을 간단하게 해주는 것이 contextmanger이다</p>
+
+  <p>쉽게 말하면 사전 처리와 사후 처리를 한번에 해준다고 생각하면 된다</p>
+
+  <p>yield를 기준으로 사전처리, 사후처리를 해준다</p>
+
+  <p>추가로 Yield는 return과 달리 반환을 하고 나서도 파이썬 상에서 위치를 기억하고 있다고 생각하면 쉽게 이해 할 수 잇다<br />
+그래서 사전처리 후에 with로 돌아가서 파일을 작성한후에 다시 되돌아와서 파일을 닫는 과정까지 가능하게 한다</p>
+
+  <p>추가로 try, finally를 사용하고 있는데 그냥 에러가 발생해도 finally는 실행하고 에러를 띄우라는 뜻이다</p>
+
+  <p>이외에도 다양한 방식으로 사용되며, 여러 가지 케이스들은 코드를 접해가며 경험을 쌓아야된다</p>
+</blockquote>
+
+<h2 id="10-wraps">10. @wraps</h2>
+
+<h3 id="--10_01-wrapsfunc-사용">- 10_01 @wraps(func) 사용</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">functools</span> <span class="kn">import</span> <span class="n">wraps</span>
+<span class="k">def</span> <span class="nf">logger</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="nd">@wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>  <span class="c1"># 원본 함수의 메타데이터 유지
+</span>    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sh">"""</span><span class="s">이제부터 이 함수는 wrapper입니다</span><span class="sh">"""</span>
+        <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Calling function: </span><span class="si">{</span><span class="n">func</span><span class="p">.</span><span class="n">__name__</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="nf">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Function </span><span class="si">{</span><span class="n">func</span><span class="p">.</span><span class="n">__name__</span><span class="si">}</span><span class="s"> returned: </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span>
+    <span class="k">return</span> <span class="n">wrapper</span>
+
+<span class="nd">@logger</span>
+<span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="sh">"""</span><span class="s">두 수를 더하는 함수입니다.</span><span class="sh">"""</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+
+<span class="c1"># 데코레이터를 적용한 함수 호출
+</span><span class="n">result</span> <span class="o">=</span> <span class="nf">add</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">result: </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+<span class="c1"># 메타데이터 유지 확인
+</span><span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">add.__name__: </span><span class="si">{</span><span class="n">add</span><span class="p">.</span><span class="n">__name__</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">add.__doc__: </span><span class="si">{</span><span class="n">add</span><span class="p">.</span><span class="n">__doc__</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+
+
+<span class="c1">## ----------------- output ----------------- ##
+</span><span class="o">&gt;</span> <span class="n">Calling</span> <span class="n">function</span><span class="p">:</span> <span class="n">add</span>
+<span class="o">&gt;</span> <span class="n">Function</span> <span class="n">add</span> <span class="n">returned</span><span class="p">:</span> <span class="mi">7</span>
+<span class="o">&gt;</span> <span class="n">result</span><span class="p">:</span> <span class="mi">7</span>
+<span class="o">&gt;</span> <span class="n">add</span><span class="p">.</span><span class="n">__name__</span><span class="p">:</span> <span class="n">add</span>
+<span class="o">&gt;</span> <span class="n">add</span><span class="p">.</span><span class="n">__doc__</span><span class="p">:</span> <span class="n">두</span> <span class="n">수를</span> <span class="n">더하는</span> <span class="n">함수입니다</span><span class="p">.</span>
+</code></pre></div></div>
+
+<h3 id="--10_02-wrapsfunc-사용-x">- 10_02 @wraps(func) 사용 X</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">functools</span> <span class="kn">import</span> <span class="n">wraps</span>
+<span class="k">def</span> <span class="nf">logger</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sh">"""</span><span class="s">이제부터 이 함수는 wrapper입니다</span><span class="sh">"""</span>
+        <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Calling function: </span><span class="si">{</span><span class="n">func</span><span class="p">.</span><span class="n">__name__</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="nf">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Function </span><span class="si">{</span><span class="n">func</span><span class="p">.</span><span class="n">__name__</span><span class="si">}</span><span class="s"> returned: </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span>
+    <span class="k">return</span> <span class="n">wrapper</span>
+
+<span class="nd">@logger</span>
+<span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="sh">"""</span><span class="s">두 수를 더하는 함수입니다.</span><span class="sh">"""</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+
+<span class="c1"># 데코레이터를 적용한 함수 호출
+</span><span class="n">result</span> <span class="o">=</span> <span class="nf">add</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">result: </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+<span class="c1"># 메타데이터 유지 확인
+</span><span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">add.__name__: </span><span class="si">{</span><span class="n">add</span><span class="p">.</span><span class="n">__name__</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">add.__doc__: </span><span class="si">{</span><span class="n">add</span><span class="p">.</span><span class="n">__doc__</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+
+
+<span class="c1">## ----------------- output ----------------- ##
+</span><span class="o">&gt;</span> <span class="n">Calling</span> <span class="n">function</span><span class="p">:</span> <span class="n">add</span>
+<span class="o">&gt;</span> <span class="n">Function</span> <span class="n">add</span> <span class="n">returned</span><span class="p">:</span> <span class="mi">7</span>
+<span class="o">&gt;</span> <span class="n">result</span><span class="p">:</span> <span class="mi">7</span>
+<span class="o">&gt;</span> <span class="n">add</span><span class="p">.</span><span class="n">__name__</span><span class="p">:</span> <span class="n">wrapper</span>
+<span class="o">&gt;</span> <span class="n">add</span><span class="p">.</span><span class="n">__doc__</span><span class="p">:</span> <span class="n">이제부터</span> <span class="n">이</span> <span class="n">함수는</span> <span class="n">wrapper입니다</span><span class="p">.</span>
+</code></pre></div></div>
+
+<h3 id="--10_03-정리">- 10_03 정리</h3>
+
+<blockquote>
+  <p>Return 해주는 함수 위에 wraps에 함수를 인자로 받아서 데코레이터로 사용하는 것은 함수의 겉껍데이(이름, doc)만 변경한다</p>
+
+  <p>- @wraps가 사용된 경우 -<br />
+add.__name__: add<br />
+add.__doc__: 두 수를 더하는 함수입니다.</p>
+
+  <p>- @wraps가 없는 경우 -<br />
+add.__name__: wrapper<br />
+add.__doc__: 이제부터 이 함수는 wrapper입니다</p>
+
+  <p>@wraps가 없는 경우 함수의 이름이 wrapper로 변경되어 있는 것을 확인할 수 있다<br />
+이렇게 되면 나중에 다른 사람이 디버깅하는 과정에서 함수의 이름을 확인할 때 파악이 힘들 수가 있다<br />
+그래서 함수 껍데기를 옮겨주겠다는 뜻인 @wrap을 설정해주면 함수의 이름을 확인할 때 편하게 확인할 수 있다</p>
+</blockquote>
+
+<h2 id="11-abstractmethod">11. @abstractmethod</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">abc</span> <span class="kn">import</span> <span class="n">ABC</span><span class="p">,</span> <span class="n">abstractclassmethod</span>
+
+<span class="k">class</span> <span class="nc">BoostCamper</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>
+    <span class="nd">@abstractclassmethod</span>
+    <span class="k">def</span> <span class="nf">track</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+    
+    <span class="nd">@abstractclassmethod</span>
+    <span class="k">def</span> <span class="nf">team_number</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+</code></pre></div></div>
+
+<h3 id="--11_01-try-case">- 11_01 Try Case</h3>
+
+<blockquote>
+  <p>시도한 케이스들을 보고 @abstractclassmethod에 파악해 보세요</p>
+</blockquote>
+
+<p>- Try 01:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">booduck</span> <span class="o">=</span> <span class="nc">BoostCamper</span><span class="p">()</span>
+
+<span class="c1">## ----------------- output ----------------- ##
+</span><span class="o">---------------------------------------------------------------------------</span>
+<span class="nb">TypeError</span>                                 <span class="nc">Traceback </span><span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">175</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="o">----&gt;</span> <span class="mi">1</span> <span class="n">booduck</span> <span class="o">=</span> <span class="nc">BoostCamper</span><span class="p">()</span>
+
+<span class="nb">TypeError</span><span class="p">:</span> <span class="n">Can</span><span class="sh">'</span><span class="s">t instantiate abstract class BoostCamper with abstract methods team_number, track
+</span></code></pre></div></div>
+
+<blockquote>
+  <p>TypeError : “추상 메서드 “team_number, track”을 사용하여 추상 클래스 “boostcamer”를 인스턴스화할 수 없습니다”</p>
+</blockquote>
+
+<p>- Try 02:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Booduck</span><span class="p">(</span><span class="n">BoostCamper</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">track</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">Recsys</span><span class="sh">'</span><span class="p">)</span>
+
+<span class="n">duck</span> <span class="o">=</span> <span class="nc">Booduck</span><span class="p">()</span>
+
+<span class="c1">## ----------------- output ----------------- ##
+</span><span class="o">---------------------------------------------------------------------------</span>
+<span class="nb">TypeError</span>                                 <span class="nc">Traceback </span><span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">170</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
+      <span class="mi">2</span>     <span class="k">def</span> <span class="nf">track</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+      <span class="mi">3</span>         <span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">Recsys</span><span class="sh">'</span><span class="p">)</span>
+<span class="o">----&gt;</span> <span class="mi">5</span> <span class="n">duck</span> <span class="o">=</span> <span class="nc">Booduck</span><span class="p">()</span>
+
+<span class="nb">TypeError</span><span class="p">:</span> <span class="n">Can</span><span class="sh">'</span><span class="s">t instantiate abstract class Booduck with abstract method team_number
+</span></code></pre></div></div>
+
+<blockquote>
+  <p>TypeError: “추상 메서드 “team_number”를 사용하여 추상 클래스 “Booduck”을 인스턴스화할 수 없습니다”</p>
+</blockquote>
+
+<p>- Try 03:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Booduck</span><span class="p">(</span><span class="n">BoostCamper</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">track</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">Recsys</span><span class="sh">'</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">team_number</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">10</span><span class="sh">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>정상적으로 선언이 된다</p>
+</blockquote>
+
+<h3 id="--11_02-정리">- 11_02 정리</h3>
+
+<blockquote>
+  <p>예를 들어, 보통 게임 같은 것을 만들때, 캐릭터가 여러개 있을때 클래스를 여러개 만들게 된다<br />
+그때 클래스의 클래스에 구현해야 될 기능들을 모아두고 상속을 받아오면 실수를 방지 할 수 있다</p>
+
+  <p>정리하자면 상속을 받을때 구현 해야 하는 것을 구현하지 않으면 에러를 띄워주는 기능을 한다</p>
+
+  <p>그래서 깃허브에서 abc.ABC를 선언하고 abstractmethod를 쓴 클래스는 직접 인스턴스로 선언되는게 아니라, 다른 클래스로 상속해주는 용도로 사용하겠다는 것이다</p>
+</blockquote>
+
+<p><br /></p>
+
+<h1 id="마치며">마치며</h1>
+
+<hr />
+
+<blockquote>
+  <p>데코레이터 테크톡을 준비하면서, 다양한 종류의 데코레이터들을 접하고 파이썬 버전이 업그레이드 되면서 새로운 데코레이터들이 등장하는 것을 보았습니다.</p>
+
+  <p>하지만 “데코레이터는 다른 함수나 메서드에 추가적인 기능을 주입할 수 있게 해주는 디자인 패턴”이라는 것을 잘 이해하고 있다면, document를 통해 어떻게 작동하는 지 잘 파악할 수 있을 것이라 생각합니다.</p>
+
+  <p>지금 당장 다 외우지는 못해도 위의 개념만 이해하고 있다면 경험을 통해 쌓아가면 된다고 생각합니다. 감사합니다.</p>
+</blockquote>
+
+<p><br /></p>
+
+<h1 id="reference">Reference</h1>
+
+<hr />
+
+<blockquote>
+  <p>PEP 318 – Decorators for Functions and Methods - <a href="https://peps.python.org/pep-0318/">https://peps.python.org/pep-0318/</a></p>
+
+  <p>PEP 557 – Data Classes - <a href="https://peps.python.org/pep-0557/">https://peps.python.org/pep-0557/</a></p>
+
+  <p>PEP 698 – Override Decorator for Static Typing - <a href="https://peps.python.org/pep-0698/">https://peps.python.org/pep-0698/</a></p>
+
+  <p>PEP 3129 – Class Decorators - <a href="https://peps.python.org/pep-3129/">https://peps.python.org/pep-3129/</a></p>
+
+  <p>코딩빌런  CodingVillain - <a href="https://youtube.com/playlist?list=PL6R2CbVlhcYtnLsypcisMzDN344c1Conr">https://youtube.com/playlist?list=PL6R2CbVlhcYtnLsypcisMzDN344c1Conr</a></p>
+
+  <p>+ ChatGPT</p>
+</blockquote>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#techtalk" class="page__taxonomy-item p-category" rel="tag">TechTalk</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#boostcamp-ai" class="page__taxonomy-item p-category" rel="tag">BoostCamp_AI</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-07-04T00:00:00+09:00">2023-07-04 Tuesday</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%5BTechTalk%5D+%EC%9D%B4%EB%A9%94%EC%9D%BC%EC%97%90+%EC%93%B0%EB%8D%98+%40%EA%B0%80+%EC%99%9C+%EC%BD%94%EB%93%9C%EC%97%90+%EC%9E%88%EB%82%98%EC%9A%94%3F%20https%3A%2F%2Fbrothergyu.github.io%2Fboostcamp_ai%2FTechTalk%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fbrothergyu.github.io%2Fboostcamp_ai%2FTechTalk%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fbrothergyu.github.io%2Fboostcamp_ai%2FTechTalk%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      <!-- 
+  <nav class="pagination">
+    
+      <a href="/boostcamp_ai/durundurun/" class="pagination--pager" title="[Talk] 두런두런 회고
+">이전</a>
+    
+    
+      <a href="/devtools/MongoDB_install/" class="pagination--pager" title="[MongoDB] MongoDB - 기본 설치
+">다음</a>
+    
+  </nav>
+ -->
+
+
+
+
+  
+
+  
+
+  
+  	
+  	
+  	
+  	
+  	
+
+
+  <nav class="pagination_prev_next">
+    
+      <a href="/boostcamp_ai/durundurun/" class="pagination_prev_next--pager_left"><span class="prev_next">이전 포스트<br></span>[Talk] 두런두런 회고</a>
+    
+    
+    
+      <a href="/boostcamp_ai/python_module/Mongodb_image_file/" class="pagination_prev_next--pager_right"><span class="prev_next">다음 포스트<br></span>[Final Project] MongoDB에 이미지 저장하기 [python]</a>
+    
+    
+  </nav>
+
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">댓글남기기</h4>
+      <section id="utterances-comments"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">최근 포스트</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ubuntu_server/cuda_install/" rel="permalink">[Setting] cuda/cudnn 설치하기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-08-25T00:00:00+09:00">2023-08-25 Friday</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">cuda 설치하기
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ubuntu_server/userful_util/" rel="permalink">[Util] 알면 편한 유틸리티들
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-08-24T00:00:00+09:00">2023-08-24 Thursday</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">알면 편한 유틸리티들
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/etc/ram_overclock/" rel="permalink">[Desktop Setting] Ram Overclock
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-08-24T00:00:00+09:00">2023-08-24 Thursday</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">램 오버클럭 수치 기록
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ai/cosine_similarity/" rel="permalink">[sklearn] cosine_similarity
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-08-24T00:00:00+09:00">2023-08-24 Thursday</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">[sklearn] cosine_similarity
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+    
+    <aside class="sidebar__top">
+      <a href="#site-nav"> <i class="fas fa-angle-up fa-2x"></i></a>
+    </aside>
+    
+      <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="mailto:brothergyu98@gmail.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+        
+      
+        
+          <li><a href="https://github.com/BrotherGyu/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 Brother_Gyu. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BDHERKJ7W3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-BDHERKJ7W3', { 'anonymize_ip': false});
+</script>
+
+
+
+
+
+
+    <script>
+  'use strict';
+
+  (function() {
+    var commentContainer = document.querySelector('#utterances-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://utteranc.es/client.js');
+    script.setAttribute('repo', 'BrotherGyu/BrotherGyu.github.io_comments');
+    script.setAttribute('issue-term', 'pathname');
+    
+    script.setAttribute('theme', 'github-light');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+    <script type="text/javascript">
+    window.MathJax = {
+   tex: {
+     packages: ['base', 'ams']
+   },
+   loader: {
+     load: ['ui/menu', '[tex]/ams']
+   },
+   startup: {
+     ready() {
+       MathJax.startup.defaultReady();
+       const Macro = MathJax._.input.tex.Symbol.Macro;
+       const MapHandler = MathJax._.input.tex.MapHandler.MapHandler;
+       const Array = MathJax._.input.tex.ams.AmsMethods.default.Array;
+       const env = new Macro('psmallmatrix', Array, [null, '(', ')', 'c', '.333em', '.2em', 'S', 1]);
+       MapHandler.getMap('AMSmath-environment').add('psmallmatrix', env);
+     }
+   }
+    };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async
+   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+  </body>
+</html>

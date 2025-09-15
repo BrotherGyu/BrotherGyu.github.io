@@ -1,0 +1,1234 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Boostcamp Week 05 [TIL] | BrotherGyu</title>
+<meta name="description" content="Week 05 [04.03 ~ 04.07]">
+
+
+  <meta name="author" content="Brother_Gyu">
+  
+  <meta property="article:author" content="Brother_Gyu">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="BrotherGyu">
+<meta property="og:title" content="Boostcamp Week 05 [TIL]">
+<meta property="og:url" content="https://brothergyu.github.io/til/Week_05_TIL/">
+
+
+  <meta property="og:description" content="Week 05 [04.03 ~ 04.07]">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-04-03T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://brothergyu.github.io/til/Week_05_TIL/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Brother_Gyu",
+      "url": "https://brothergyu.github.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="BrotherGyu Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<link rel="apple-touch-icon" sizes="180x180" href="../../assets/logo.ico/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../assets/logo.ico/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../assets/logo.ico/favicon-16x16.png">
+<link rel="mask-icon" href="../../assets/logo.ico/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/brother_gyu_logo_image.png" alt="BrotherGyu"></a>
+        
+        <a class="site-title" href="/">
+          BrotherGyu
+          <span class="site-subtitle">Devlog_</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/index.html">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tag</a>
+            </li><li class="masthead__menu-item">
+              <a href="/portfolio/">Portfolio</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#til" itemprop="item"><span itemprop="name">Til</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">Boostcamp Week 05 [TIL]</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="https://brothergyu.github.io/">
+        <img src="/assets/images/brother_gyu_profile_image.png" alt="Brother_Gyu" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="https://brothergyu.github.io/" itemprop="url">Brother_Gyu</a>
+    </h3>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <!-- 팔로우 버튼 제거 -->
+    <!-- <button class="btn btn--inverse">팔로우</button> -->
+    <ul class="author__urls social-icons">
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+    
+      <nav class="nav__list">
+  <!-- 토글 버튼 제거 -->
+  <input id="ac-toc" name="accordion-toc" type="checkbox" checked/>
+  <!-- 예전 코드 -->
+  <!-- <input id="ac-toc" name="accordion-toc" type="checkbox"/> -->
+  <!-- <label for="ac-toc">Toggle menu</label> -->
+  <ul class="nav__items" id="category_tag_menu">
+    <li>
+      <span>Category List</span>
+    </li>  
+    <li>
+        <span class="nav__sub-title">study</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/BoostCamp_AI" class="">NaverBoostCamp AI [11]</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+              
+                  
+                      <li><a href="/categories/CleanCode_Python" class="">CleanCode Python [5]</a></li>
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/AI" class="">AI [2]</a></li>
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/Pytorch" class="">Pytorch [3]</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/Ubuntu_Server" class="">Ubuntu Server [7]</a></li>
+                    
+                
+                    
+                
+            </ul>
+
+        <span class="nav__sub-title">python</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/Python_Module" class="">Python Module [3]</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        <span class="nav__sub-title">etc</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/DevTools" class="">DevTools [9]</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                        <li><a href="/categories/TIL" class="">TIL [7]</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/ETC" class="">ETC [1]</a></li>
+                    
+                
+            </ul>
+      </li>
+  </ul>
+</nav>
+    
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Boostcamp Week 05 [TIL]">
+    <meta itemprop="description" content="Week 05 [04.03 ~ 04.07]">
+    <meta itemprop="datePublished" content="2023-04-03T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="https://brothergyu.github.io/til/Week_05_TIL/" class="u-url" itemprop="url">Boostcamp Week 05 [TIL]
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-04-03T00:00:00+09:00">2023-04-03 Monday</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-fas fa-list-ul"></i> 목차</h4></header>
+              <!-- toc 인식 범위 수정 -->
+              <!-- <ul class="toc__menu"><li><a href="#0403-월">04.03 (월)</a><ul><li><a href="#recommender-system-with-gnn">Recommender System with GNN</a></li><li><a href="#recommender-system-with-rnn">Recommender System with RNN</a></li></ul></li></ul></li></ul></li><li><a href="#0404-화">04.04 (화)</a><ul><li><a href="#생활코딩이고잉님의-git특강">생활코딩[이고잉]님의 Git특강</a></li></ul></li></ul></li></ul></li><li><a href="#0405-수--0406-목">04.05 (수) ~ 04.06 (목)</a><ul><li><a href="#factorization-machinefm--field-aware-factorization-machineffm">Factorization Machine(FM) &amp; Field-aware Factorization Machine(FFM)</a></li></ul></li></ul></li></ul></li><li><a href="#0407금">04.07(금)</a><ul><li><a href="#오피스-아워">오피스 아워</a></li></ul></li></ul></li></ul></li></ul>
+ -->
+              <ul class="toc__menu"><li><a href="#0403-월">04.03 (월)</a></li><li><a href="#0404-화">04.04 (화)</a></li><li><a href="#0405-수--0406-목">04.05 (수) ~ 04.06 (목)</a></li><li><a href="#0407금">04.07(금)</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h1 id="0403-월">04.03 (월)</h1>
+
+<hr />
+
+<h4 id="recommender-system-with-gnn">Recommender System with GNN</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>GNN</th>
+      <th>NGCF</th>
+      <th>LightGCN</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Basic Concept</td>
+      <td>Neural networks operating on graph data</td>
+      <td>Collaborative filtering using graph neural networks</td>
+      <td>Simplified version of NGCF</td>
+    </tr>
+    <tr>
+      <td>Primary Use Cases</td>
+      <td>Node classification, link prediction, graph classification</td>
+      <td>추천 시스템, 사용자 항목 상호 작용 예측</td>
+      <td>추천 시스템, 사용자 항목 상호 작용 예측</td>
+    </tr>
+    <tr>
+      <td>Key Components</td>
+      <td>Graph convolutions, aggregating neighbor features</td>
+      <td>Graph convolutions, 유저와 아이템의 임베딩, 상호작용 모델링</td>
+      <td>Graph convolutions, embedding propagation</td>
+    </tr>
+    <tr>
+      <td>Complexity</td>
+      <td>아키텍처에 따라 다름</td>
+      <td>LightGCN에 비해 더 높은 복잡성</td>
+      <td>NGCF에 비해 복잡성 감소</td>
+    </tr>
+    <tr>
+      <td>Interpretability</td>
+      <td>보통, 아키텍처에 따라 다름</td>
+      <td>여러 구성 요소로 인해 보통</td>
+      <td>단순화로 인한 높은 해석성</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="recommender-system-with-rnn">Recommender System with RNN</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>기능</th>
+      <th>GRU4Rec</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>기본 개념</td>
+      <td>세션 기반 추천을 위한 GRU(Gated Recurrent Unit) 기반 모델</td>
+    </tr>
+    <tr>
+      <td>주요 사용 사례</td>
+      <td>특히 세션 기반 추천을 위한 추천 시스템</td>
+    </tr>
+    <tr>
+      <td>주요 구성 요소</td>
+      <td>GRU(Gated Recurrent Unit), 세션 병렬 미니 배치 학습, 순위 손실 함수</td>
+    </tr>
+    <tr>
+      <td>복잡성</td>
+      <td>다른 RNN에 비해 중간 정도의 복잡성</td>
+    </tr>
+    <tr>
+      <td>해석 가능성</td>
+      <td>GRU의 특성으로 인한 중간 정도의 해석 가능성</td>
+    </tr>
+    <tr>
+      <td>세션 시퀸스 처리</td>
+      <td>추천 시스템에서 세션 기반 시퀀스를 처리하도록 설계</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br /></p>
+
+<h1 id="0404-화">04.04 (화)</h1>
+
+<hr />
+
+<h4 id="생활코딩이고잉님의-git특강">생활코딩[이고잉]님의 Git특강</h4>
+
+<p>Github를 사용하는 방법에 대해서 2번째 특강이 있었습니다.</p>
+
+<p>간단하게 명령어를 정리하였습니다.</p>
+
+<blockquote>
+  <p>링크 : <a href="https://BrotherGyu.github.io/boostcamp_ai/GitHub_Command_Summary/">[GitHub] Command summary</a></p>
+</blockquote>
+
+<p><br /></p>
+
+<h1 id="0405-수--0406-목">04.05 (수) ~ 04.06 (목)</h1>
+
+<hr />
+
+<h4 id="factorization-machinefm--field-aware-factorization-machineffm">Factorization Machine(FM) &amp; Field-aware Factorization Machine(FFM)</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>Factorization Machine (FM)</th>
+      <th>Field-aware Factorization Machine (FFM)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Objective</td>
+      <td>Model pairwise feature interactions with lower complexity</td>
+      <td>Model pairwise feature interactions considering field information</td>
+    </tr>
+    <tr>
+      <td>Embedding dimension</td>
+      <td>모든 기능에 대한 전역</td>
+      <td>각 피쳐의 필드별</td>
+    </tr>
+    <tr>
+      <td>임베딩 수</td>
+      <td>기능당 1개</td>
+      <td>(필드 수 - 1) 기능당</td>
+    </tr>
+    <tr>
+      <td>모델 복잡성</td>
+      <td>Lower</td>
+      <td>Higher</td>
+    </tr>
+    <tr>
+      <td>해석 가능성</td>
+      <td>Moderate</td>
+      <td>Lower</td>
+    </tr>
+    <tr>
+      <td>Pairwise interaction</td>
+      <td>All features</td>
+      <td>Features from different fields</td>
+    </tr>
+    <tr>
+      <td>계산 복잡성</td>
+      <td>O(k * n)</td>
+      <td>O(k * n * f)</td>
+    </tr>
+    <tr>
+      <td>매개변수 크기</td>
+      <td>O(k * n)</td>
+      <td>O(k * n * f)</td>
+    </tr>
+    <tr>
+      <td>Latent factor vectors</td>
+      <td>모든 필드에서 공유</td>
+      <td>Unique for each field</td>
+    </tr>
+    <tr>
+      <td>적합한 경우</td>
+      <td>적은 필드의 Sparse 데이터</td>
+      <td>더 많은 필드와 복잡한 상호 작용이 있는 Sparse 데이터</td>
+    </tr>
+    <tr>
+      <td>교육 시간</td>
+      <td>Faster</td>
+      <td>Slower (due to increased complexity)</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <ul>
+    <li>FM 수식</li>
+  </ul>
+
+\[y(x) = w_0 + \sum_{i=1}^{n}(w_ix_i) + \sum_{i=1}^{n}\sum_{j=i+1}^{n}&lt;v_i,v_j&gt;x_ix_j\]
+
+  <ul>
+    <li>FMM 수식</li>
+  </ul>
+
+\[y(x) = w_0 + \sum_{i=1}^{n}(w_ix_i) + \sum_{i=1}^{n}\sum_{j=i+1}^{n}&lt;v_{i,{f_j}},v_{j,{f_i}}&gt;x_ix_j\]
+</blockquote>
+
+<p><br /></p>
+
+<h1 id="0407금">04.07(금)</h1>
+
+<hr />
+
+<h4 id="오피스-아워">오피스 아워</h4>
+
+<ul>
+  <li>torch.mm과 torch.matmul의 차이</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>torch.mm</th>
+      <th>torch.matmul</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>기능</td>
+      <td>행렬 곱셈만 수행</td>
+      <td>행렬, 벡터 및 스칼라 곱셈 수행</td>
+    </tr>
+    <tr>
+      <td>Input Types</td>
+      <td>2D tensors only</td>
+      <td>Tensors with any dimensions</td>
+    </tr>
+    <tr>
+      <td>Broadcasting</td>
+      <td>Not supported</td>
+      <td>Supported</td>
+    </tr>
+    <tr>
+      <td>Output</td>
+      <td>Always 2D tensor</td>
+      <td>Output can be tensor with any dimensions depending on input</td>
+    </tr>
+    <tr>
+      <td>Use case</td>
+      <td>2D 텐서로 엄격한 행렬 곱셈을 수행하려는 경우</td>
+      <td>입력 차원, 브로드캐스팅 또는 스칼라 작업에 더 많은 유연성이 필요한 경우</td>
+    </tr>
+  </tbody>
+</table>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#boostcamp-ai" class="page__taxonomy-item p-category" rel="tag">BoostCamp_AI</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#til" class="page__taxonomy-item p-category" rel="tag">TIL</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-04-03T00:00:00+09:00">2023-04-03 Monday</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Boostcamp+Week+05+%5BTIL%5D%20https%3A%2F%2Fbrothergyu.github.io%2Ftil%2FWeek_05_TIL%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fbrothergyu.github.io%2Ftil%2FWeek_05_TIL%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fbrothergyu.github.io%2Ftil%2FWeek_05_TIL%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      <!-- 
+  <nav class="pagination">
+    
+      <a href="/til/Week_04_TIL/" class="pagination--pager" title="Boostcamp Week 04 [TIL]
+">이전</a>
+    
+    
+      <a href="/boostcamp_ai/GitHub_Command_Summary/" class="pagination--pager" title="[GitHub] Command summary
+">다음</a>
+    
+  </nav>
+ -->
+
+
+
+
+  
+
+  
+
+  
+  	
+  	
+  	
+  	
+  	
+
+
+  <nav class="pagination_prev_next">
+    
+      <a href="/til/Week_04_TIL/" class="pagination_prev_next--pager_left"><span class="prev_next">이전 포스트<br></span>Boostcamp Week 04 [TIL]</a>
+    
+    
+    
+      <a href="/til/Week_06_07_TIL/" class="pagination_prev_next--pager_right"><span class="prev_next">다음 포스트<br></span>Boostcamp Week 06 ~ 07 [TIL]</a>
+    
+    
+  </nav>
+
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">댓글남기기</h4>
+      <section id="utterances-comments"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">최근 포스트</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ubuntu_server/cuda_install/" rel="permalink">[Setting] cuda/cudnn 설치하기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-08-25T00:00:00+09:00">2023-08-25 Friday</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">cuda 설치하기
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ubuntu_server/userful_util/" rel="permalink">[Util] 알면 편한 유틸리티들
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-08-24T00:00:00+09:00">2023-08-24 Thursday</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">알면 편한 유틸리티들
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/etc/ram_overclock/" rel="permalink">[Desktop Setting] Ram Overclock
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-08-24T00:00:00+09:00">2023-08-24 Thursday</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">램 오버클럭 수치 기록
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ai/cosine_similarity/" rel="permalink">[sklearn] cosine_similarity
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-08-24T00:00:00+09:00">2023-08-24 Thursday</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">[sklearn] cosine_similarity
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+    
+    <aside class="sidebar__top">
+      <a href="#site-nav"> <i class="fas fa-angle-up fa-2x"></i></a>
+    </aside>
+    
+      <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="mailto:brothergyu98@gmail.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+        
+      
+        
+          <li><a href="https://github.com/BrotherGyu/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 Brother_Gyu. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BDHERKJ7W3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-BDHERKJ7W3', { 'anonymize_ip': false});
+</script>
+
+
+
+
+
+
+    <script>
+  'use strict';
+
+  (function() {
+    var commentContainer = document.querySelector('#utterances-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://utteranc.es/client.js');
+    script.setAttribute('repo', 'BrotherGyu/BrotherGyu.github.io_comments');
+    script.setAttribute('issue-term', 'pathname');
+    
+    script.setAttribute('theme', 'github-light');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+    <script type="text/javascript">
+    window.MathJax = {
+   tex: {
+     packages: ['base', 'ams']
+   },
+   loader: {
+     load: ['ui/menu', '[tex]/ams']
+   },
+   startup: {
+     ready() {
+       MathJax.startup.defaultReady();
+       const Macro = MathJax._.input.tex.Symbol.Macro;
+       const MapHandler = MathJax._.input.tex.MapHandler.MapHandler;
+       const Array = MathJax._.input.tex.ams.AmsMethods.default.Array;
+       const env = new Macro('psmallmatrix', Array, [null, '(', ')', 'c', '.333em', '.2em', 'S', 1]);
+       MapHandler.getMap('AMSmath-environment').add('psmallmatrix', env);
+     }
+   }
+    };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async
+   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+  </body>
+</html>

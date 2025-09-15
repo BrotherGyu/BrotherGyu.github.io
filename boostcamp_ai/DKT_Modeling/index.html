@@ -1,0 +1,1770 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[Project] DKT 대회 - Modeling | BrotherGyu</title>
+<meta name="description" content="Deep Knowledge Tracing Modeling">
+
+
+  <meta name="author" content="Brother_Gyu">
+  
+  <meta property="article:author" content="Brother_Gyu">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="BrotherGyu">
+<meta property="og:title" content="[Project] DKT 대회 - Modeling">
+<meta property="og:url" content="https://brothergyu.github.io/boostcamp_ai/DKT_Modeling/">
+
+
+  <meta property="og:description" content="Deep Knowledge Tracing Modeling">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-05-17T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://brothergyu.github.io/boostcamp_ai/DKT_Modeling/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Brother_Gyu",
+      "url": "https://brothergyu.github.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="BrotherGyu Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<link rel="apple-touch-icon" sizes="180x180" href="../../assets/logo.ico/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../assets/logo.ico/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../assets/logo.ico/favicon-16x16.png">
+<link rel="mask-icon" href="../../assets/logo.ico/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/brother_gyu_logo_image.png" alt="BrotherGyu"></a>
+        
+        <a class="site-title" href="/">
+          BrotherGyu
+          <span class="site-subtitle">Devlog_</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/index.html">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tag</a>
+            </li><li class="masthead__menu-item">
+              <a href="/portfolio/">Portfolio</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#boostcamp_ai" itemprop="item"><span itemprop="name">Boostcamp_ai</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">[Project] DKT 대회 - Modeling</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="https://brothergyu.github.io/">
+        <img src="/assets/images/brother_gyu_profile_image.png" alt="Brother_Gyu" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="https://brothergyu.github.io/" itemprop="url">Brother_Gyu</a>
+    </h3>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <!-- 팔로우 버튼 제거 -->
+    <!-- <button class="btn btn--inverse">팔로우</button> -->
+    <ul class="author__urls social-icons">
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+    
+      <nav class="nav__list">
+  <!-- 토글 버튼 제거 -->
+  <input id="ac-toc" name="accordion-toc" type="checkbox" checked/>
+  <!-- 예전 코드 -->
+  <!-- <input id="ac-toc" name="accordion-toc" type="checkbox"/> -->
+  <!-- <label for="ac-toc">Toggle menu</label> -->
+  <ul class="nav__items" id="category_tag_menu">
+    <li>
+      <span>Category List</span>
+    </li>  
+    <li>
+        <span class="nav__sub-title">study</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/BoostCamp_AI" class="">NaverBoostCamp AI [11]</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+              
+                  
+                      <li><a href="/categories/CleanCode_Python" class="">CleanCode Python [5]</a></li>
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/AI" class="">AI [2]</a></li>
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/Pytorch" class="">Pytorch [3]</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/Ubuntu_Server" class="">Ubuntu Server [7]</a></li>
+                    
+                
+                    
+                
+            </ul>
+
+        <span class="nav__sub-title">python</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/Python_Module" class="">Python Module [3]</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        <span class="nav__sub-title">etc</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/DevTools" class="">DevTools [9]</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                        <li><a href="/categories/TIL" class="">TIL [7]</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/ETC" class="">ETC [1]</a></li>
+                    
+                
+            </ul>
+      </li>
+  </ul>
+</nav>
+    
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[Project] DKT 대회 - Modeling">
+    <meta itemprop="description" content="Deep Knowledge Tracing Modeling">
+    <meta itemprop="datePublished" content="2023-05-17T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="https://brothergyu.github.io/boostcamp_ai/DKT_Modeling/" class="u-url" itemprop="url">[Project] DKT 대회 - Modeling
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-05-17T00:00:00+09:00">2023-05-17 Wednesday</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-fas fa-list-ul"></i> 목차</h4></header>
+              <!-- toc 인식 범위 수정 -->
+              <!-- <ul class="toc__menu"><li><a href="#deep-knowledge-tracing-modeling">Deep Knowledge Tracing Modeling</a><ul><li><a href="#01_-train_test_splitpy">01_ train_test_split.py</a></li><li><a href="#02_-modeling">02_ Modeling</a><ul><li><a href="#02_01-catboost_classifier">02_01 CatBoost_Classifier</a></li><li><a href="#02_02-catboost_regressor">02_02 CatBoost_Regressor</a></li><li><a href="#02_03-xgboost_classifier">02_03 XGBoost_Classifier</a></li></ul></li><li><a href="#03_-ensemble">03_ Ensemble</a><ul><li><a href="#03_01-base-model">03_01 Base Model</a></li><li><a href="#03_02-ensemble-result">03_02 Ensemble Result</a></li><li><a href="#03_03-결론">03_03 결론</a></li></ul></li></ul></li><li><a href="#--회고">- 회고</a></li></ul>
+ -->
+              <ul class="toc__menu"><li><a href="#deep-knowledge-tracing-modeling">Deep Knowledge Tracing Modeling</a><ul><li><a href="#01_-train_test_splitpy">01_ train_test_split.py</a></li><li><a href="#02_-modeling">02_ Modeling</a><ul><li><a href="#02_01-catboost_classifier">02_01 CatBoost_Classifier</a></li><li><a href="#02_02-catboost_regressor">02_02 CatBoost_Regressor</a></li><li><a href="#02_03-xgboost_classifier">02_03 XGBoost_Classifier</a></li></ul></li><li><a href="#03_-ensemble">03_ Ensemble</a><ul><li><a href="#03_01-base-model">03_01 Base Model</a></li><li><a href="#03_02-ensemble-result">03_02 Ensemble Result</a></li><li><a href="#03_03-결론">03_03 결론</a></li></ul></li></ul></li><li><a href="#--회고">- 회고</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h1 id="deep-knowledge-tracing-modeling"><strong>Deep Knowledge Tracing Modeling</strong></h1>
+
+<hr />
+
+<blockquote>
+  <p><strong>- 개발 환경</strong><br />
+OS : ubuntu 18.04.5 LTS<br />
+GPU : Tesla V100-SXM2-32GB  <br />
+cuda : 11.0.0</p>
+
+  <p><strong>- 버전 관리</strong><br />
+Git, HuggingFaceDatasets</p>
+
+  <p><strong>- version</strong></p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>python: 3.10.11</th>
+        <th> </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>catboost: 1.2<br />hydra-core: 1.3.2<br />numpy: 1.24.3<br />omegaconf: 2.3.0</td>
+        <td>xgboost: 1.7.5<br />pandas: 2.0.1<br />scikit-learn: 1.2.2<br /><br /></td>
+      </tr>
+    </tbody>
+  </table>
+
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ML_models.
+|-- log : [hydra log file]
+|-- src : [source code]
+|   |-- catboost
+|   |   |-- catboost_classifier.py
+|   |   `-- catboost_regressor.py
+|   |-- data_loader.py
+|   |-- data_process.py
+|   |-- submission.py
+|   |-- train_test_split.py
+|   `-- xgboost
+|       `-- xgboost_classifier.py
+|-- submit : [submission.csv]
+|-- __init__.py
+|-- train.py : [main file]
+`-- config_hydra.yaml : [hydra config file]
+</code></pre></div></div>
+
+<p><img src="../../images/Boostcamp_AI/2023-05-26-DKT_Modeling/image-20230526115325080.png" alt="image-20230526115325080" /></p>
+
+<h2 id="01_-train_test_splitpy">01_ train_test_split.py</h2>
+
+<blockquote>
+  <p>목표 : test셋의 데이터 크기와 구성에 따른 모델 성능 파악<br />
+참조 : <strong>Andrew ng - Structuring Machine Learning Projects [Sizeof Dev and Test Sets]</strong><br />
+Key point : 과거에 데이터가 작을 경우에는 7:3의 train/test split이 성능이 좋았지만, 데이터셋이 크면 1%의 데이터도 10,000이상이 되기 때문에 test 데이터의 비율을 줄이고 학습 데이터를 더 크게 하는 것이 성능향상에 도움이 되는 경향이 있다</p>
+</blockquote>
+
+<ul>
+  <li>
+    <p>config_hydra.yaml</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
+dataset_feature:
+  train_data_cut: head_tail_one # [all, head, tail], [head_tail_one, head_tail_group_one, head_one, tail_one] - userID별 첫 문제, 마지막 문제를 test에 사용
+  test_split: 0.1 # 1&gt; value &gt; 0
+  feature: [
+            # Base feature [base데이터 기반으로 검증을 하기 때문에 변경 금지]
+            'userID', 'assessmentItemID', 'testId', 'Timestamp',
+            'KnowledgeTag','LargeCategory',
+            'TimeElapsed', 'TimeElapsed_category',
+            ...,
+           ]
+  
+  # 정답 데이터
+  label: 'answerCode'
+  
+  # merge 할때 검증 데이터
+  valid_feature: ['userID', 'assessmentItemID', 'testId', 'KnowledgeTag', 'LargeCategory', 'TimeElapsed', 'answerCode']
+...
+</code></pre></div>    </div>
+
+    <blockquote>
+      <p>dataset_feature의 train_data_cut 기반으로 학습 데이터셋 생성</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>train_test_split</p>
+    <blockquote>
+      <p>- all</p>
+      <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="n">train_data_cut</span> <span class="o">==</span> <span class="sh">'</span><span class="s">all</span><span class="sh">'</span><span class="p">:</span>
+    <span class="n">test_dataset_tail</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">.</span><span class="nf">groupby</span><span class="p">(</span><span class="sh">'</span><span class="s">userID</span><span class="sh">'</span><span class="p">).</span><span class="nf">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">.</span><span class="nf">tail</span><span class="p">(</span><span class="nf">int</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="n">test_split</span><span class="p">))).</span><span class="nf">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">test_dataset_head</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">.</span><span class="nf">groupby</span><span class="p">(</span><span class="sh">'</span><span class="s">userID</span><span class="sh">'</span><span class="p">).</span><span class="nf">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">.</span><span class="nf">head</span><span class="p">(</span><span class="nf">int</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="n">test_split</span><span class="p">))).</span><span class="nf">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">test_dataset</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">concat</span><span class="p">([</span><span class="n">test_dataset_head</span><span class="p">,</span> <span class="n">test_dataset_tail</span><span class="p">],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</code></pre></div>      </div>
+      <blockquote>
+        <p>userID 그룹별 head에서 test_split%, tail에서 test_split%의 행들을 테스트 데이터로 사용</p>
+      </blockquote>
+
+      <p>- head</p>
+      <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">elif</span> <span class="n">train_data_cut</span> <span class="o">==</span> <span class="sh">'</span><span class="s">head</span><span class="sh">'</span><span class="p">:</span>
+        <span class="n">test_dataset</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">.</span><span class="nf">groupby</span><span class="p">(</span><span class="sh">'</span><span class="s">userID</span><span class="sh">'</span><span class="p">).</span><span class="nf">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">.</span><span class="nf">head</span><span class="p">(</span><span class="nf">int</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="n">test_split</span><span class="p">))).</span><span class="nf">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</code></pre></div>      </div>
+      <blockquote>
+        <p>userID 그룹별 head에서 test_split%의 행들을 테스트 데이터로 사용</p>
+      </blockquote>
+
+      <p>- tail</p>
+      <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">elif</span> <span class="n">train_data_cut</span> <span class="o">==</span> <span class="sh">'</span><span class="s">tail</span><span class="sh">'</span><span class="p">:</span>
+        <span class="n">test_dataset</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">.</span><span class="nf">groupby</span><span class="p">(</span><span class="sh">'</span><span class="s">userID</span><span class="sh">'</span><span class="p">).</span><span class="nf">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">.</span><span class="nf">tail</span><span class="p">(</span><span class="nf">int</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="n">test_split</span><span class="p">))).</span><span class="nf">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</code></pre></div>      </div>
+      <blockquote>
+        <p>userID 그룹별 tail에서  test_split%의 행들을 테스트 데이터로 사용</p>
+      </blockquote>
+
+      <p>- head_tail_one</p>
+
+      <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">elif</span> <span class="n">train_data_cut</span> <span class="o">==</span> <span class="sh">'</span><span class="s">head_tail_one</span><span class="sh">'</span><span class="p">:</span>
+        <span class="n">test_dataset_head</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">[</span><span class="n">dataset</span><span class="p">[</span><span class="sh">"</span><span class="s">userID</span><span class="sh">"</span><span class="p">]</span> <span class="o">!=</span> <span class="n">dataset</span><span class="p">[</span><span class="sh">"</span><span class="s">userID</span><span class="sh">"</span><span class="p">].</span><span class="nf">shift</span><span class="p">(</span><span class="mi">1</span><span class="p">)]</span>
+        <span class="n">test_dataset_tail</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">[</span><span class="n">dataset</span><span class="p">[</span><span class="sh">"</span><span class="s">userID</span><span class="sh">"</span><span class="p">]</span> <span class="o">!=</span> <span class="n">dataset</span><span class="p">[</span><span class="sh">"</span><span class="s">userID</span><span class="sh">"</span><span class="p">].</span><span class="nf">shift</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)]</span>
+        <span class="n">test_dataset</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">concat</span><span class="p">([</span><span class="n">test_dataset_head</span><span class="p">,</span> <span class="n">test_dataset_tail</span><span class="p">],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</code></pre></div>      </div>
+
+      <blockquote>
+        <p>userID 그룹별 head에서 1줄, tail에서 1줄의 행들을 테스트 데이터로 사용</p>
+      </blockquote>
+
+      <p>- head_tail_group_one</p>
+
+      <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">elif</span> <span class="n">train_data_cut</span> <span class="o">==</span> <span class="sh">'</span><span class="s">head_tail_group_one</span><span class="sh">'</span><span class="p">:</span>
+        <span class="n">test_dataset_head</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">.</span><span class="nf">groupby</span><span class="p">([</span><span class="sh">"</span><span class="s">userID</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">testId</span><span class="sh">"</span><span class="p">]).</span><span class="nf">head</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="nf">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        <span class="n">test_dataset_tail</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">.</span><span class="nf">groupby</span><span class="p">([</span><span class="sh">"</span><span class="s">userID</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">testId</span><span class="sh">"</span><span class="p">]).</span><span class="nf">tail</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="nf">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        <span class="n">test_dataset</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">concat</span><span class="p">([</span><span class="n">test_dataset_head</span><span class="p">,</span> <span class="n">test_dataset_tail</span><span class="p">],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</code></pre></div>      </div>
+
+      <blockquote>
+        <p>userID 그룹내의 testId별 head에서 1줄, tail에서 1줄의 행들을 테스트 데이터로 사용</p>
+      </blockquote>
+
+      <p>- head_one</p>
+
+      <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">elif</span> <span class="n">train_data_cut</span> <span class="o">==</span> <span class="sh">'</span><span class="s">head_one</span><span class="sh">'</span><span class="p">:</span>
+        <span class="n">test_dataset</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">[</span><span class="n">dataset</span><span class="p">[</span><span class="sh">"</span><span class="s">userID</span><span class="sh">"</span><span class="p">]</span> <span class="o">!=</span> <span class="n">dataset</span><span class="p">[</span><span class="sh">"</span><span class="s">userID</span><span class="sh">"</span><span class="p">].</span><span class="nf">shift</span><span class="p">(</span><span class="mi">1</span><span class="p">)]</span>
+</code></pre></div>      </div>
+
+      <blockquote>
+        <p>userID 그룹별 head에서 1줄의 행들을 테스트 데이터로 사용</p>
+      </blockquote>
+
+      <p>- tail_one</p>
+
+      <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">elif</span> <span class="n">train_data_cut</span> <span class="o">==</span> <span class="sh">'</span><span class="s">tail_one</span><span class="sh">'</span><span class="p">:</span>
+        <span class="n">test_dataset</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">[</span><span class="n">dataset</span><span class="p">[</span><span class="sh">"</span><span class="s">userID</span><span class="sh">"</span><span class="p">]</span> <span class="o">!=</span> <span class="n">dataset</span><span class="p">[</span><span class="sh">"</span><span class="s">userID</span><span class="sh">"</span><span class="p">].</span><span class="nf">shift</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)]</span>
+</code></pre></div>      </div>
+
+      <blockquote>
+        <p>userID 그룹별 tail에서 1줄의 행들을 테스트 데이터로 사용</p>
+      </blockquote>
+    </blockquote>
+  </li>
+</ul>
+
+<h2 id="02_-modeling">02_ Modeling</h2>
+
+<h3 id="02_01-catboost_classifier">02_01 CatBoost_Classifier</h3>
+<hr />
+
+<ul>
+  <li>
+    <p>feature_importances [head_tail_one]</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>피처</th>
+          <th>중요도</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>assessmentItemID</td>
+          <td>30.837479802165063</td>
+        </tr>
+        <tr>
+          <td>LargeCategory</td>
+          <td>20.379422848684584</td>
+        </tr>
+        <tr>
+          <td>userID</td>
+          <td>17.992163365480707</td>
+        </tr>
+        <tr>
+          <td>TimeElapsed</td>
+          <td>10.034321065891932</td>
+        </tr>
+        <tr>
+          <td>testId</td>
+          <td>9.408169387494867</td>
+        </tr>
+        <tr>
+          <td>TimeElapsed_category</td>
+          <td>8.54008358793767</td>
+        </tr>
+        <tr>
+          <td>KnowledgeTag</td>
+          <td>1.1509929524935065</td>
+        </tr>
+        <tr>
+          <td>weekday</td>
+          <td>0.8977411576214861</td>
+        </tr>
+        <tr>
+          <td>hour</td>
+          <td>0.7596258322302241</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <p>Learning Curve</p>
+
+    <blockquote>
+      <p>- all [userID group당 head: 5%, tail: 5%]</p>
+
+      <p><img src="../../images/Boostcamp_AI/2023-05-26-DKT_Modeling/image-20230529235622099.png" alt="image-20230529235622099" /></p>
+
+      <p>- head [userID group당 head: 10%]</p>
+
+      <p><img src="../../images/Boostcamp_AI/2023-05-26-DKT_Modeling/image-20230529235925165.png" alt="image-20230529235925165" /></p>
+
+      <p>- tail [userID group당 tail: 10%]</p>
+
+      <p><img src="../../images/Boostcamp_AI/2023-05-26-DKT_Modeling/image-20230530000026346.png" alt="image-20230530000026346" /></p>
+
+      <p>- head_tail_one [userID group당 head: 1, tail: 1]</p>
+
+      <p><img src="../../images/Boostcamp_AI/2023-05-26-DKT_Modeling/image-20230530000045274.png" alt="image-20230530000045274" /></p>
+
+      <p>- head_tail_group_one [userID group+assessmentItemID당 head: 1, tail: 1]</p>
+
+      <p><img src="../../images/Boostcamp_AI/2023-05-26-DKT_Modeling/image-20230530000356123.png" alt="image-20230530000356123" /></p>
+
+      <p>- head_one [userID group당 head: 1]</p>
+
+      <p><img src="../../images/Boostcamp_AI/2023-05-26-DKT_Modeling/image-20230530000310969.png" alt="image-20230530000310969" /></p>
+
+      <p>- tail_one [userID group당 tail: 1]</p>
+
+      <p><img src="../../images/Boostcamp_AI/2023-05-26-DKT_Modeling/image-20230530000329954.png" alt="image-20230530000329954" /></p>
+    </blockquote>
+  </li>
+  <li>
+    <p>결과 요약</p>
+    <blockquote>
+      <p>- Result Table [AUC 기준 정렬]</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>train/test split</th>
+            <th>[AUC]</th>
+            <th>ACC</th>
+            <th>Train data: 0</th>
+            <th>Train data: 1</th>
+            <th>Train data: 0/1 ratio</th>
+            <th>Test data: 0</th>
+            <th>Test data: 1</th>
+            <th>Test data: 0/1 ratio</th>
+            <th>Test data percentage</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>head_one</td>
+            <td>0.858163</td>
+            <td>0.818597</td>
+            <td>1648249</td>
+            <td>870263</td>
+            <td>1.89</td>
+            <td>5337</td>
+            <td>2105</td>
+            <td>2.54</td>
+            <td>0.40%</td>
+          </tr>
+          <tr>
+            <td>head_tail_one</td>
+            <td>0.851704</td>
+            <td>0.779024</td>
+            <td>1644588</td>
+            <td>866417</td>
+            <td>1.90</td>
+            <td>8958</td>
+            <td>5926</td>
+            <td>1.51</td>
+            <td>0.74%</td>
+          </tr>
+          <tr>
+            <td>all</td>
+            <td>0.832974</td>
+            <td>0.777895</td>
+            <td>1494743</td>
+            <td>784845</td>
+            <td>1.90</td>
+            <td>158303</td>
+            <td>87229</td>
+            <td>1.81</td>
+            <td>32.45%</td>
+          </tr>
+          <tr>
+            <td>tail</td>
+            <td>0.832326</td>
+            <td>0.771043</td>
+            <td>1497730</td>
+            <td>778199</td>
+            <td>1.93</td>
+            <td>155379</td>
+            <td>93904</td>
+            <td>1.66</td>
+            <td>38.01%</td>
+          </tr>
+          <tr>
+            <td>head</td>
+            <td>0.826128</td>
+            <td>0.780402</td>
+            <td>1486194</td>
+            <td>789710</td>
+            <td>1.88</td>
+            <td>166913</td>
+            <td>82370</td>
+            <td>2.03</td>
+            <td>33.16%</td>
+          </tr>
+          <tr>
+            <td>tail_one</td>
+            <td>0.816565</td>
+            <td>0.741064</td>
+            <td>1649927</td>
+            <td>868522</td>
+            <td>1.90</td>
+            <td>3821</td>
+            <td>3621</td>
+            <td>1.05</td>
+            <td>0.52%</td>
+          </tr>
+          <tr>
+            <td>head_tail_group_one</td>
+            <td>0.813343</td>
+            <td>0.765324</td>
+            <td>1117402</td>
+            <td>589584</td>
+            <td>1.90</td>
+            <td>533203</td>
+            <td>281175</td>
+            <td>1.90</td>
+            <td>68.92%</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <blockquote>
+        <p>ACC[accuracy]는 학습 완료 후 test 데이터셋을 통해 측정 하였습니다</p>
+      </blockquote>
+
+      <p>- hyperparameter</p>
+
+      <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">iterations</span><span class="p">:</span> <span class="mi">1500</span>
+<span class="n">learning_rate</span><span class="p">:</span> <span class="mf">0.1</span>
+<span class="n">eval_metric</span><span class="p">:</span> <span class="n">AUC</span>
+<span class="n">random_seed</span><span class="p">:</span> <span class="mi">42</span>
+<span class="n">use_best_model</span><span class="p">:</span> <span class="bp">True</span>
+<span class="n">bagging_temperature</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">border_count</span><span class="p">:</span> <span class="mi">254</span>
+</code></pre></div>      </div>
+
+      <p>대회에서의 public score은 head_tail_one가 가장 높게 나왔습니다. 로컬에서는 head_one가 성능이 가장 높게 나왔지만 public score은 head_tail_one에 비해 낮았습니다.<br />
+파악한 이유로는 학습 데이터 자체가 라벨인 0인 데이터가 많았고, 모델에서도 좀 더 빈번하게 학습을 하게 되었던 것으로 보이며, head_one의 0, 1 비율도 2.54로 가장 0이 많은 데이터였습니다.<br />
+또한 데이터의 원래 데이터셋이 Sequence한 데이터이기 같은 userID가 푼 문제를 고려해야하는 동시에 각자 푼 문제의 개수가 달라지고 임의의 수치로 집어 넣기 어려운 개인의 숙련도가 있기 때문에 단순하게 각각 유저의 첫번째 문제를 test데이터로 검증하고 조절하는 것이 좀 더 단순 했고 이 때문에 로컬 테스트 환경에서 모델의 해석 및 설명력에서 더 좋았고 AUC/ACC가 더 높을 것이라 추측 됩니다.<br />
+그래프를 통해서도 head_one의 Logloss_test가 Logloss_train보다 더 낮게 나오며 일반화가 빠르게 된것을 확인할 수 있었습니다.<br />
+모델의 일반화는 head_one가 잘 되었지만 test데이터 자체가 dkt대회의 의도인 마지막으로 푼 문제의 결과를 예측하는 것과는 정반대의 실험이였기 때문에 head_tail_one이 더 좋은 public score를 달성하였습니다.</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h3 id="02_02-catboost_regressor">02_02 CatBoost_Regressor</h3>
+
+<hr />
+
+<ul>
+  <li>
+    <p>feature_importances [head_tail_one]</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>피처</th>
+          <th>중요도</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>assessmentItemID</td>
+          <td>25.6370474484145</td>
+        </tr>
+        <tr>
+          <td>userID</td>
+          <td>23.34964132877283</td>
+        </tr>
+        <tr>
+          <td>TimeElapsed</td>
+          <td>23.117647780172927</td>
+        </tr>
+        <tr>
+          <td>LargeCategory</td>
+          <td>11.681206689716554</td>
+        </tr>
+        <tr>
+          <td>testId</td>
+          <td>6.881576643100849</td>
+        </tr>
+        <tr>
+          <td>TimeElapsed_category</td>
+          <td>6.672992232579046</td>
+        </tr>
+        <tr>
+          <td>hour</td>
+          <td>1.4462463208473804</td>
+        </tr>
+        <tr>
+          <td>weekday</td>
+          <td>0.6146904016820545</td>
+        </tr>
+        <tr>
+          <td>KnowledgeTag</td>
+          <td>0.5989511547139237</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <p>Learning Curve</p>
+
+    <blockquote>
+      <p>- all [userID group당 head: 5%, tail: 5%]</p>
+
+      <p><img src="../../images/Boostcamp_AI/2023-05-26-DKT_Modeling/image-20230530031533342.png" alt="image-20230530031533342" /></p>
+
+      <p>- head [userID group당 head: 10%]</p>
+
+      <p><img src="../../images/Boostcamp_AI/2023-05-26-DKT_Modeling/image-20230530031559582.png" alt="image-20230530031559582" /></p>
+
+      <p>- tail [userID group당 tail: 10%]</p>
+
+      <p><img src="../../images/Boostcamp_AI/2023-05-26-DKT_Modeling/image-20230530031632799.png" alt="image-20230530031632799" /></p>
+
+      <p>- head_tail_one [userID group당 head: 1, tail: 1]</p>
+
+      <p><img src="../../images/Boostcamp_AI/2023-05-26-DKT_Modeling/image-20230530031655334.png" alt="image-20230530031655334" /></p>
+
+      <p>- head_tail_group_one [userID group+assessmentItemID당 head: 1, tail: 1]</p>
+
+      <p><img src="../../images/Boostcamp_AI/2023-05-26-DKT_Modeling/image-20230530031740590.png" alt="image-20230530031740590" /></p>
+
+      <p>- head_one [userID group당 head: 1]</p>
+
+      <p><img src="../../images/Boostcamp_AI/2023-05-26-DKT_Modeling/image-20230530031757071.png" alt="image-20230530031757071" /></p>
+
+      <p>- tail_one [userID group당 tail: 1]</p>
+
+      <p><img src="../../images/Boostcamp_AI/2023-05-26-DKT_Modeling/image-20230530031813313.png" alt="image-20230530031813313" /></p>
+    </blockquote>
+  </li>
+  <li>
+    <p>결과 요약</p>
+    <blockquote>
+      <p>- Result Table [AUC 기준 정렬]</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>train/test split</th>
+            <th>RMSE</th>
+            <th>[AUC]</th>
+            <th>ACC</th>
+            <th>Train data: 0</th>
+            <th>Train data: 1</th>
+            <th>Train data: 0/1 ratio</th>
+            <th>Test data: 0</th>
+            <th>Test data: 1</th>
+            <th>Test data: 0/1 ratio</th>
+            <th>Test data percentage</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>head_one</td>
+            <td>0.361193</td>
+            <td>0.855990</td>
+            <td>0.821015</td>
+            <td>1648249</td>
+            <td>870263</td>
+            <td>1.89</td>
+            <td>5337</td>
+            <td>2105</td>
+            <td>2.54</td>
+            <td>0.40%</td>
+          </tr>
+          <tr>
+            <td>head_tail_one</td>
+            <td>0.391693</td>
+            <td>0.850371</td>
+            <td>0.779629</td>
+            <td>1644588</td>
+            <td>866417</td>
+            <td>1.90</td>
+            <td>8958</td>
+            <td>5926</td>
+            <td>1.51</td>
+            <td>0.74%</td>
+          </tr>
+          <tr>
+            <td>all</td>
+            <td>0.396145</td>
+            <td>0.831156</td>
+            <td>0.775251</td>
+            <td>1494743</td>
+            <td>784845</td>
+            <td>1.90</td>
+            <td>158303</td>
+            <td>87229</td>
+            <td>1.81</td>
+            <td>32.45%</td>
+          </tr>
+          <tr>
+            <td>tail</td>
+            <td>0.400726</td>
+            <td>0.830980</td>
+            <td>0.768504</td>
+            <td>1497730</td>
+            <td>778199</td>
+            <td>1.93</td>
+            <td>155379</td>
+            <td>93904</td>
+            <td>1.66</td>
+            <td>38.01%</td>
+          </tr>
+          <tr>
+            <td>head</td>
+            <td>0.393213</td>
+            <td>0.823580</td>
+            <td>0.778051</td>
+            <td>1486194</td>
+            <td>789710</td>
+            <td>1.88</td>
+            <td>166913</td>
+            <td>82370</td>
+            <td>2.03</td>
+            <td>33.16%</td>
+          </tr>
+          <tr>
+            <td>tail_one</td>
+            <td>0.421282</td>
+            <td>0.812667</td>
+            <td>0.734077</td>
+            <td>1649927</td>
+            <td>868522</td>
+            <td>1.90</td>
+            <td>3821</td>
+            <td>3621</td>
+            <td>1.05</td>
+            <td>0.52%</td>
+          </tr>
+          <tr>
+            <td>head_tail_group_one</td>
+            <td>0.437356</td>
+            <td>0.740576</td>
+            <td>0.710391</td>
+            <td>1117402</td>
+            <td>589584</td>
+            <td>1.90</td>
+            <td>533203</td>
+            <td>281175</td>
+            <td>1.90</td>
+            <td>68.92%</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <blockquote>
+        <p>CatBoost Regressor에서 AUC를 사용할 수 없기 때문에 RMSE를 기반으로 학습하여  AUC[Area Under Curve], ACC[accuracy]는 학습 완료 후 predict model과 test 데이터셋을 통해 측정 하였습니다</p>
+      </blockquote>
+
+      <p>- hyperparameter</p>
+
+      <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">iterations</span><span class="p">:</span> <span class="mi">1500</span>
+<span class="n">learning_rate</span><span class="p">:</span> <span class="mf">0.1</span>
+<span class="n">loss_function</span><span class="p">:</span> <span class="n">RMSE</span>
+<span class="n">random_seed</span><span class="p">:</span> <span class="mi">42</span>
+<span class="n">use_best_model</span><span class="p">:</span> <span class="n">true</span>
+<span class="n">task_type</span><span class="p">:</span> <span class="n">GPU</span>
+<span class="n">bagging_temperature</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">border_count</span><span class="p">:</span> <span class="mi">254</span>
+</code></pre></div>      </div>
+
+      <p>Catboost Classifier과 유사한 결과가 나왔습니다.<br />
+그래프를 통해서도 head_one의 RMSE_test가 RMSE_train보다 더 낮게 나오며 일반화가 빠르게 된것을 확인할 수 있었습니다.<br />
+모델의 일반화는 head_one가 잘 되었지만 test데이터 자체가 dkt대회의 의도인 마지막으로 푼 문제의 결과를 예측하는 것과는 정반대의 실험이였기 때문에 head_tail_one이 더 좋은 public score를 달성하였습니다.</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h3 id="02_03-xgboost_classifier">02_03 XGBoost_Classifier</h3>
+<hr />
+
+<blockquote>
+  <p>XGBoost Classifier 실험 과정에서, Catboost Classifier와 최대한 비슷한 파라미터와 데이터 처리로 실험을 하였지만, 성능이 20% 이상이 차이나서 실험을 중단하였습니다.</p>
+</blockquote>
+
+<h2 id="03_-ensemble">03_ Ensemble</h2>
+
+<h3 id="03_01-base-model">03_01 Base Model</h3>
+
+<hr />
+
+<blockquote>
+  <table>
+    <thead>
+      <tr>
+        <th>Model name</th>
+        <th>Public Score [AUC / ACC]</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>LGBM_regressor</td>
+        <td>[0.7850 / 0.7070]</td>
+      </tr>
+      <tr>
+        <td>Catboost_classifier</td>
+        <td>[0.7438 / 0.7419]</td>
+      </tr>
+      <tr>
+        <td>Catboost_regressor</td>
+        <td>[0.7930 / 0.7097]</td>
+      </tr>
+      <tr>
+        <td>lstm [kfold]</td>
+        <td>[0.7932 / 0.7151]</td>
+      </tr>
+      <tr>
+        <td>saint+ [kfold]</td>
+        <td>[0.8072 / 0.7339]</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>- 모델별 예측 결과 분포<br />
+<img src="../../images/Boostcamp_AI/2023-05-26-DKT_Modeling/image-20230530050350287.png" alt="image-20230530050350287" /></p>
+
+  <blockquote>
+    <p>catboost_regressor_clip의 경우 0이하의 값은 0으로, 1이상의 값은 1로 clip</p>
+  </blockquote>
+</blockquote>
+
+<h3 id="03_02-ensemble-result">03_02 Ensemble Result</h3>
+
+<hr />
+
+<table>
+  <thead>
+    <tr>
+      <th>ensemble</th>
+      <th style="text-align: center">ratio</th>
+      <th style="text-align: center">voting</th>
+      <th style="text-align: center">Public score<br />[AUC / ACC]</th>
+      <th style="text-align: center">Private score<br />[AUC / ACC]</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>saint+[kfold]<br />Catboost_regressor<br />Catboost_classifier</td>
+      <td style="text-align: center">7 : 2 : 1</td>
+      <td style="text-align: center">soft</td>
+      <td style="text-align: center">[1st]<br />0.8143 / 0.7554</td>
+      <td style="text-align: center"><br />0.8373 / 0.7473</td>
+    </tr>
+    <tr>
+      <td>saint+[kfold]<br />Catboost_regressor<br />Catboost_classifier</td>
+      <td style="text-align: center">5 : 3 : 2</td>
+      <td style="text-align: center">soft</td>
+      <td style="text-align: center">[2nd]<br />0.8137 / 0.7527</td>
+      <td style="text-align: center">[3rd]<br />0.8382 / 0.7581</td>
+    </tr>
+    <tr>
+      <td>saint+[kfold]<br />Catboost_regressor<br />Catboost_classifier</td>
+      <td style="text-align: center">1 : 1 : 1</td>
+      <td style="text-align: center">hard</td>
+      <td style="text-align: center">[3rd]]<br />0.8134 / 0.7419</td>
+      <td style="text-align: center"><br />0.8375 / 0.7581</td>
+    </tr>
+    <tr>
+      <td>saint+[kfold]<br />Catboost_regressor<br />Catboost_classifier</td>
+      <td style="text-align: center">1 : 1 : 1</td>
+      <td style="text-align: center">soft</td>
+      <td style="text-align: center">0.8133 / 0.7419</td>
+      <td style="text-align: center">0.8375 / 0.7581</td>
+    </tr>
+    <tr>
+      <td>saint+[kfold]<br />Catboost_regressor<br />Catboost_classifier<br />lstm[kfold]</td>
+      <td style="text-align: center">1 : 1 : 1 : 1</td>
+      <td style="text-align: center">soft</td>
+      <td style="text-align: center"><br />0.8105 / 0.7419</td>
+      <td style="text-align: center">[1st]<br />0.8390 / 0.7634</td>
+    </tr>
+    <tr>
+      <td>saint+[kfold]<br />Catboost_regressor<br />lstm[kfold]</td>
+      <td style="text-align: center">1 : 1 : 1</td>
+      <td style="text-align: center">soft</td>
+      <td style="text-align: center"><br />0.8084 / 0.7312</td>
+      <td style="text-align: center">[2nd]<br />0.8388 / 0.7581</td>
+    </tr>
+    <tr>
+      <td>saint+[kfold]<br />Catboost_regressor<br />LGBM_regressor</td>
+      <td style="text-align: center">1 : 1 : 1</td>
+      <td style="text-align: center">soft</td>
+      <td style="text-align: center">0.8067 / 0.8314</td>
+      <td style="text-align: center">0.7312 / 0.7527</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="03_03-결론">03_03 결론</h3>
+
+<hr />
+
+<blockquote>
+  <p>대회에서 등수를 상승을 목적으로 ensemble을 한다면, Ensemble 과정에서 public score에만 집중하여 ensemble을 하였는 데, 결과적으로는 다양한 모델이 ensemble되는 것이 좋은 결과를 보였다.<br />
+대회에서는 2개를 선택하여 제출하는 것이 규칙이기 때문에 ensemble과정에서 같은 모델의 비율만 바꿔서 높은 것을 2개 내는 것보다는 서로 다른 모델로 이루어진 ensemble 결과물에서 각자 높은 것을 선택하여 제출하는 방법을 사용하는 전략이 좋은 점수를 받을 수 있을 것으로 예상된다.</p>
+</blockquote>
+
+<h1 id="--회고">- 회고</h1>
+
+<hr />
+
+<ul>
+  <li>
+    <p>목표</p>
+
+    <blockquote>
+      <p>ML 알고리즘 기반 baseline 코드 작성 및 hydra, wandb 연결<br />
+예측 모델 성능 향상</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>다음 프로젝트에서 시도해볼 것</p>
+
+    <blockquote>
+      <p>recbole 같은 오픈소스 라이브러리 구조를 생각해서 여러 머신러닝 알고리즘을 하나로 묶는 것을 목표로 하였지만, 이 과정에서 hydra같은 실험 관리 라이브러리 사용이 이상적으로 잘 되지 않았다.<br />
+여러 머신러닝 알고리즘을 함께 사용하다 보니 hydra yaml파일의 피처들이 많이 늘어나게 되어 오히려 파악이 어려워지고, 그에 따라 하이퍼 파라미터에 따른 로깅 기능도 사용하기 어렵게 되었다.<br />
+이점을 보완해서 다음 프로젝트에는 통합으로 관리하기 보다는 알고리즘별로 나누는 것이 필요한것 같고 이 부분을 다시 시도해 볼 것이다.</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>학습 과정에서의 교훈</p>
+
+    <blockquote>
+      <p>테스트 데이터 셋에서 정답 라벨의 분포를 균형있게 맞추어야 된다는 점을 파악할 수 있었습니다.</p>
+    </blockquote>
+  </li>
+</ul>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#project" class="page__taxonomy-item p-category" rel="tag">Project</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#boostcamp-ai" class="page__taxonomy-item p-category" rel="tag">BoostCamp_AI</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-05-17T00:00:00+09:00">2023-05-17 Wednesday</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%5BProject%5D+DKT+%EB%8C%80%ED%9A%8C+-+Modeling%20https%3A%2F%2Fbrothergyu.github.io%2Fboostcamp_ai%2FDKT_Modeling%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fbrothergyu.github.io%2Fboostcamp_ai%2FDKT_Modeling%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fbrothergyu.github.io%2Fboostcamp_ai%2FDKT_Modeling%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      <!-- 
+  <nav class="pagination">
+    
+      <a href="/boostcamp_ai/DKT_EDA/" class="pagination--pager" title="[Project] DKT 대회 - EDA
+">이전</a>
+    
+    
+      <a href="/python_module/Dis/" class="pagination--pager" title="[dis] dis 모듈을 활용해서 바이트코드 분석하기
+">다음</a>
+    
+  </nav>
+ -->
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  	
+  	
+  	
+  	
+  	
+
+
+  <nav class="pagination_prev_next">
+    
+      <a href="/boostcamp_ai/DKT_EDA/" class="pagination_prev_next--pager_left"><span class="prev_next">이전 포스트<br></span>[Project] DKT 대회 - EDA</a>
+    
+    
+    
+      <a href="/boostcamp_ai/durundurun/" class="pagination_prev_next--pager_right"><span class="prev_next">다음 포스트<br></span>[Talk] 두런두런 회고</a>
+    
+    
+  </nav>
+
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">댓글남기기</h4>
+      <section id="utterances-comments"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">최근 포스트</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ubuntu_server/cuda_install/" rel="permalink">[Setting] cuda/cudnn 설치하기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-08-25T00:00:00+09:00">2023-08-25 Friday</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">cuda 설치하기
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ubuntu_server/userful_util/" rel="permalink">[Util] 알면 편한 유틸리티들
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-08-24T00:00:00+09:00">2023-08-24 Thursday</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">알면 편한 유틸리티들
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/etc/ram_overclock/" rel="permalink">[Desktop Setting] Ram Overclock
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-08-24T00:00:00+09:00">2023-08-24 Thursday</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">램 오버클럭 수치 기록
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ai/cosine_similarity/" rel="permalink">[sklearn] cosine_similarity
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-08-24T00:00:00+09:00">2023-08-24 Thursday</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">[sklearn] cosine_similarity
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+    
+    <aside class="sidebar__top">
+      <a href="#site-nav"> <i class="fas fa-angle-up fa-2x"></i></a>
+    </aside>
+    
+      <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="mailto:brothergyu98@gmail.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+        
+      
+        
+          <li><a href="https://github.com/BrotherGyu/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 Brother_Gyu. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BDHERKJ7W3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-BDHERKJ7W3', { 'anonymize_ip': false});
+</script>
+
+
+
+
+
+
+    <script>
+  'use strict';
+
+  (function() {
+    var commentContainer = document.querySelector('#utterances-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://utteranc.es/client.js');
+    script.setAttribute('repo', 'BrotherGyu/BrotherGyu.github.io_comments');
+    script.setAttribute('issue-term', 'pathname');
+    
+    script.setAttribute('theme', 'github-light');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+    <script type="text/javascript">
+    window.MathJax = {
+   tex: {
+     packages: ['base', 'ams']
+   },
+   loader: {
+     load: ['ui/menu', '[tex]/ams']
+   },
+   startup: {
+     ready() {
+       MathJax.startup.defaultReady();
+       const Macro = MathJax._.input.tex.Symbol.Macro;
+       const MapHandler = MathJax._.input.tex.MapHandler.MapHandler;
+       const Array = MathJax._.input.tex.ams.AmsMethods.default.Array;
+       const env = new Macro('psmallmatrix', Array, [null, '(', ')', 'c', '.333em', '.2em', 'S', 1]);
+       MapHandler.getMap('AMSmath-environment').add('psmallmatrix', env);
+     }
+   }
+    };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async
+   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+  </body>
+</html>

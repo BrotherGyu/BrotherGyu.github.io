@@ -1,0 +1,1188 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[Final Project] MongoDB에 이미지 저장하기 [python] | BrotherGyu</title>
+<meta name="description" content="base64, BytesIO 모듈">
+
+
+  <meta name="author" content="Brother_Gyu">
+  
+  <meta property="article:author" content="Brother_Gyu">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="BrotherGyu">
+<meta property="og:title" content="[Final Project] MongoDB에 이미지 저장하기 [python]">
+<meta property="og:url" content="https://brothergyu.github.io/boostcamp_ai/python_module/Mongodb_image_file/">
+
+
+  <meta property="og:description" content="base64, BytesIO 모듈">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-07-28T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://brothergyu.github.io/boostcamp_ai/python_module/Mongodb_image_file/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Brother_Gyu",
+      "url": "https://brothergyu.github.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="BrotherGyu Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<link rel="apple-touch-icon" sizes="180x180" href="../../assets/logo.ico/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../assets/logo.ico/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../assets/logo.ico/favicon-16x16.png">
+<link rel="mask-icon" href="../../assets/logo.ico/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/brother_gyu_logo_image.png" alt="BrotherGyu"></a>
+        
+        <a class="site-title" href="/">
+          BrotherGyu
+          <span class="site-subtitle">Devlog_</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/index.html">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tag</a>
+            </li><li class="masthead__menu-item">
+              <a href="/portfolio/">Portfolio</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#boostcamp_ai" itemprop="item"><span itemprop="name">Boostcamp_ai</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#python_module" itemprop="item"><span itemprop="name">Python_module</span></a>
+          <meta itemprop="position" content="3" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">[Final Project] MongoDB에 이미지 저장하기 [python]</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="https://brothergyu.github.io/">
+        <img src="/assets/images/brother_gyu_profile_image.png" alt="Brother_Gyu" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="https://brothergyu.github.io/" itemprop="url">Brother_Gyu</a>
+    </h3>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <!-- 팔로우 버튼 제거 -->
+    <!-- <button class="btn btn--inverse">팔로우</button> -->
+    <ul class="author__urls social-icons">
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+    
+      <nav class="nav__list">
+  <!-- 토글 버튼 제거 -->
+  <input id="ac-toc" name="accordion-toc" type="checkbox" checked/>
+  <!-- 예전 코드 -->
+  <!-- <input id="ac-toc" name="accordion-toc" type="checkbox"/> -->
+  <!-- <label for="ac-toc">Toggle menu</label> -->
+  <ul class="nav__items" id="category_tag_menu">
+    <li>
+      <span>Category List</span>
+    </li>  
+    <li>
+        <span class="nav__sub-title">study</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/BoostCamp_AI" class="">NaverBoostCamp AI [11]</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+              
+                  
+                      <li><a href="/categories/CleanCode_Python" class="">CleanCode Python [5]</a></li>
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/AI" class="">AI [2]</a></li>
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/Pytorch" class="">Pytorch [3]</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/Ubuntu_Server" class="">Ubuntu Server [7]</a></li>
+                    
+                
+                    
+                
+            </ul>
+
+        <span class="nav__sub-title">python</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/Python_Module" class="">Python Module [3]</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        <span class="nav__sub-title">etc</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/DevTools" class="">DevTools [9]</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                        <li><a href="/categories/TIL" class="">TIL [7]</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/ETC" class="">ETC [1]</a></li>
+                    
+                
+            </ul>
+      </li>
+  </ul>
+</nav>
+    
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[Final Project] MongoDB에 이미지 저장하기 [python]">
+    <meta itemprop="description" content="base64, BytesIO 모듈">
+    <meta itemprop="datePublished" content="2023-07-28T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="https://brothergyu.github.io/boostcamp_ai/python_module/Mongodb_image_file/" class="u-url" itemprop="url">[Final Project] MongoDB에 이미지 저장하기 [python]
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-07-28T00:00:00+09:00">2023-07-28 Friday</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-fas fa-list-ul"></i> 목차</h4></header>
+              <!-- toc 인식 범위 수정 -->
+              <!-- <ul class="toc__menu"><li><a href="#final-project-mongodb에-이미지-저장하기">[Final Project] MongoDB에 이미지 저장하기</a><ul><li><a href="#--base64">- base64</a></li><li><a href="#--bytesio">- BytesIO</a></li><li><a href="#--baseline-code">- Baseline Code</a><ul><li><a href="#--load_image">- load_image</a></li><li><a href="#--thumbnail_encoder">- thumbnail_encoder</a></li><li><a href="#--thumbnail_decoder">- thumbnail_decoder</a></li></ul></li><li><a href="#--result-mongodb">- Result [MongoDB]</a></li></ul></li></ul>
+ -->
+              <ul class="toc__menu"><li><a href="#final-project-mongodb에-이미지-저장하기">[Final Project] MongoDB에 이미지 저장하기</a><ul><li><a href="#--base64">- base64</a></li><li><a href="#--bytesio">- BytesIO</a></li><li><a href="#--baseline-code">- Baseline Code</a><ul><li><a href="#--load_image">- load_image</a></li><li><a href="#--thumbnail_encoder">- thumbnail_encoder</a></li><li><a href="#--thumbnail_decoder">- thumbnail_decoder</a></li></ul></li><li><a href="#--result-mongodb">- Result [MongoDB]</a></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h1 id="final-project-mongodb에-이미지-저장하기">[Final Project] MongoDB에 이미지 저장하기</h1>
+
+<blockquote>
+  <p>최종프로젝트를 진행하며 key: value로 이루어진 MongoDB data에서 바로 저장된 이미지를 가져와서 썸네일로 사용 할 수 없을까 고민을 하였습니다.<br />
+딥러닝 학습을 위한 이미지 전처리 과정에서 이미지 데이터는 개별 원소로 이루어진 행렬의 집합이라는 것을 배웠었고 이것을 활용 하여 집합을 저장하고 불러와 사용 할 수 없을 까라는 고민을 해결하는 과정에서 작성한 코드입니다.<br />
+대회를 진행하며, 할당된 서버 용량이 부족하여 다른 팀원의 서버에 MongoDB를 구성하고, admin계정으로 다른 팀원 서버의 데이터베이스에 접속을 하여 구성하는 과정으로 진행을 하였기 때문에  이미지 파일을 따로 저장하는 데 어려움이 있어 해당 방법으로 해결을 하였습니다.</p>
+
+  <p>DB에 이미지를 저장하는 것은 병목을 발생 시킬 수 있기 때문에 이미지 메타정보만 저장하고 나머지는 물리적인 파일에 저장로 저장하는 것을 권장하는 편이니 실제로 사용하고자 한다면 트래픽이나 크기를 고려하여 결정하는 것을 권장합니다.</p>
+</blockquote>
+
+<h2 id="--base64">- base64</h2>
+
+<p>Base64는 바이너리 데이터를 텍스트 문자열 형식으로 인코딩하기 위한 방식 중 하나입니다. 주로 이메일과 같은 텍스트 기반의 전송 매체에서 바이너리 데이터를 전송할 때 사용됩니다. Base64는 64개의 출력 가능한 문자를 사용하여 모든 바이너리 데이터를 표현합니다.</p>
+
+<p>- <strong>바이너리 데이터를 Base64 문자열로 인코딩하기</strong>:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">base64</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="sa">b</span><span class="sh">"</span><span class="s">hello world</span><span class="sh">"</span>
+
+<span class="c1"># Base64로 인코딩
+</span><span class="n">encoded_data</span> <span class="o">=</span> <span class="n">base64</span><span class="p">.</span><span class="nf">b64encode</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">encoded_data</span><span class="p">.</span><span class="nf">decode</span><span class="p">(</span><span class="sh">'</span><span class="s">utf-8</span><span class="sh">'</span><span class="p">))</span>  <span class="c1"># 출력: aGVsbG8gd29ybGQ=
+</span></code></pre></div></div>
+
+<p>- <strong>Base64 문자열을 바이너리 데이터로 디코딩하기</strong>:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">decoded_data</span> <span class="o">=</span> <span class="n">base64</span><span class="p">.</span><span class="nf">b64decode</span><span class="p">(</span><span class="n">encoded_data</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">decoded_data</span><span class="p">.</span><span class="nf">decode</span><span class="p">(</span><span class="sh">'</span><span class="s">utf-8</span><span class="sh">'</span><span class="p">))</span>  <span class="c1"># 출력: hello world
+</span></code></pre></div></div>
+
+<h2 id="--bytesio">- BytesIO</h2>
+
+<p><code class="language-plaintext highlighter-rouge">BytesIO</code>는 Python의 <code class="language-plaintext highlighter-rouge">io</code> 모듈에 포함된 클래스로, 바이트 데이터에 대한 인메모리 파일 같은 객체를 제공합니다. 실제 파일을 디스크에 쓰고 읽는 대신, 바이트 데이터를 메모리 상에서 파일과 유사한 객체로 다룰 수 있게 해줍니다.</p>
+
+<p>이를 통해 파일과 유사한 작업들 (예: 읽기, 쓰기, seek)을 메모리에서 직접 수행할 수 있습니다. 주로 바이너리 데이터를 임시로 저장하거나, 바이너리 형식의 파일과 상호작용하는 라이브러리에 바이트 데이터를 전달할 때 사용됩니다.</p>
+
+<p>- <strong>BytesIO 객체 생성 및 데이터 쓰기</strong>:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">io</span> <span class="kn">import</span> <span class="n">BytesIO</span>
+
+<span class="c1"># BytesIO 객체 생성
+</span><span class="n">byte_stream</span> <span class="o">=</span> <span class="nc">BytesIO</span><span class="p">()</span>
+
+<span class="c1"># 데이터 쓰기
+</span><span class="n">byte_stream</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="sa">b</span><span class="sh">"</span><span class="s">Hello, World!</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>- <strong>BytesIO 객체의 위치 조정 및 데이터 읽기</strong>:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 읽기 전에 위치를 스트림의 시작으로 이동
+</span><span class="n">byte_stream</span><span class="p">.</span><span class="nf">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># 데이터 읽기
+</span><span class="n">read_data</span> <span class="o">=</span> <span class="n">byte_stream</span><span class="p">.</span><span class="nf">read</span><span class="p">()</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">read_data</span><span class="p">)</span>  <span class="c1"># 출력: b'Hello, World!'
+</span></code></pre></div></div>
+
+<p>- <strong>BytesIO 객체를 사용하여 이미지 데이터와 같은 바이너리 데이터 다루기</strong>:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+
+<span class="c1"># 이미지 데이터를 BytesIO 객체로 로드하기
+</span><span class="n">image_data</span> <span class="o">=</span> <span class="sa">b</span><span class="sh">"</span><span class="s">...</span><span class="sh">"</span>  <span class="c1"># 바이너리 이미지 데이터
+</span><span class="n">image_stream</span> <span class="o">=</span> <span class="nc">BytesIO</span><span class="p">(</span><span class="n">image_data</span><span class="p">)</span>
+
+<span class="c1"># BytesIO 객체에서 이미지 로드
+</span><span class="n">image</span> <span class="o">=</span> <span class="n">Image</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="n">image_stream</span><span class="p">)</span>
+<span class="n">image</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h2 id="--baseline-code">- Baseline Code</h2>
+
+<h3 id="--load_image">- load_image</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">requests</span>
+<span class="k">def</span> <span class="nf">load_image</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">binary_data</span> <span class="o">=</span> <span class="n">response</span><span class="p">.</span><span class="n">content</span>
+    <span class="k">return</span> <span class="n">binary_data</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>주어진 URL에서 이미지를 얻고 이를 이진 데이터 형식으로 반환하는 코드</p>
+</blockquote>
+
+<p>- Example</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">IMAGE_LINK</span> <span class="o">=</span> <span class="sh">"</span><span class="s">https://logoproject.naver.com/img/img_story_renewal.png</span><span class="sh">"</span>
+<span class="n">image_data</span> <span class="o">=</span> <span class="nf">download_image</span><span class="p">(</span><span class="n">IMAGE_LINK</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">type</span><span class="p">(</span><span class="n">image_data</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">image_data</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> &lt;class <span class="s1">'bytes'</span><span class="o">&gt;</span>
+<span class="o">&gt;</span> b<span class="s1">'\x89PNG\r\n\x1a\n\x00\x00\x00\rIHDR\x00\x00\x00\xdf\x00\x00\x00+\x08\x06\x00\x00...
+</span></code></pre></div></div>
+
+<h3 id="--thumbnail_encoder">- thumbnail_encoder</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">base64</span>
+<span class="k">def</span> <span class="nf">thumbnail_encoder</span><span class="p">(</span><span class="n">image_data</span><span class="p">:</span> <span class="nb">bytes</span><span class="p">):</span>
+   	<span class="sh">"""</span><span class="s">
+    Encode image data to a base64 encoded string.
+    Parameters:
+    - image_data (bytes): Raw image data in bytes format.
+    Returns:
+    - str: A base64 encoded string representation of the input image data.
+    </span><span class="sh">"""</span>
+    <span class="n">img_encode</span> <span class="o">=</span> <span class="n">base64</span><span class="p">.</span><span class="nf">b64encode</span><span class="p">(</span><span class="n">image_data</span><span class="p">).</span><span class="nf">decode</span><span class="p">(</span><span class="sh">'</span><span class="s">utf-8</span><span class="sh">'</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">img_encode</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>바이너리 형태의 이미지 데이터를 받아서 base64로 인코딩된 문자열로 반환하는 코드<br />
+이렇게 하면 바이너리 데이터를 텍스트 형식으로 웹 페이지나 JSON 응답 등에서 사용할 수 있다.</p>
+</blockquote>
+
+<p>- Example</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">IMAGE_LINK</span> <span class="o">=</span> <span class="sh">"</span><span class="s">https://logoproject.naver.com/img/img_story_renewal.png</span><span class="sh">"</span>
+<span class="n">image_data</span> <span class="o">=</span> <span class="nf">download_image</span><span class="p">(</span><span class="n">IMAGE_LINK</span><span class="p">)</span>
+<span class="n">image_encode</span> <span class="o">=</span> <span class="nf">thumbnail_encoder</span><span class="p">(</span><span class="n">image_data</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">type</span><span class="p">(</span><span class="n">image_encode</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">image_encode</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> &lt;class <span class="s1">'str'</span><span class="o">&gt;</span>
+<span class="o">&gt;</span> iVBORw0KGgoAAAANSUhEUgAAAN8AAAArCAYAAAD4+l0jAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJ...
+</code></pre></div></div>
+
+<h3 id="--thumbnail_decoder">- thumbnail_decoder</h3>
+
+<blockquote>
+  <p>{key: value}로 저장된 dict형식의 데이터에서 value 값을 받아서 이미지로 반환 해주는 코드</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">base64</span>
+<span class="kn">from</span> <span class="n">io</span> <span class="kn">import</span> <span class="n">BytesIO</span>
+<span class="kn">from</span> <span class="n">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+
+<span class="k">def</span> <span class="nf">thumbnail_decoder</span><span class="p">(</span><span class="n">image_data</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+    <span class="sh">"""</span><span class="s">
+    Decodes and converts the image data from base64 to an Image object.
+    Args:
+        image_data (str): The base64-encoded image data.
+    Returns:
+        PIL.Image.Image: The decoded image as a PIL Image object.
+    </span><span class="sh">"""</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">image_bytes</span> <span class="o">=</span> <span class="n">base64</span><span class="p">.</span><span class="nf">b64decode</span><span class="p">(</span><span class="n">image_data</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">image</span> <span class="o">=</span> <span class="n">Image</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="nc">BytesIO</span><span class="p">(</span><span class="n">image_bytes</span><span class="p">)).</span><span class="nf">convert</span><span class="p">(</span><span class="sh">'</span><span class="s">RGB</span><span class="sh">'</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="n">image</span> <span class="o">=</span> <span class="n">Image</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="nc">BytesIO</span><span class="p">(</span><span class="n">image_bytes</span><span class="p">)).</span><span class="nf">convert</span><span class="p">(</span><span class="sh">'</span><span class="s">RGBA</span><span class="sh">'</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">image</span>
+    <span class="k">except</span> <span class="nb">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="c1"># Handle any exceptions that might occur during decoding
+</span>        <span class="k">raise</span> <span class="nc">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Error decoding image data: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>- Example</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">image_data</span> <span class="o">=</span> <span class="nf">load_image</span><span class="p">(</span><span class="n">IMAGE_LINK</span><span class="p">)</span>
+<span class="n">image_encode</span> <span class="o">=</span> <span class="nf">thumbnail_encoder</span><span class="p">(</span><span class="n">image_data</span><span class="p">)</span>
+<span class="n">json_dict</span> <span class="o">=</span> <span class="p">{</span><span class="sh">'</span><span class="s">naver_img</span><span class="sh">'</span><span class="p">:</span> <span class="n">image_encode</span><span class="p">}</span>
+<span class="nf">thumbnail_decoder</span><span class="p">(</span><span class="n">json_dict</span><span class="p">[</span><span class="sh">'</span><span class="s">naver_img</span><span class="sh">'</span><span class="p">])</span>
+</code></pre></div></div>
+
+<p><img src="../../../images/Boostcamp_AI/2023-07-28-Mongodb_image_file/image-20230822233415117.png" alt="image-20230822233415117" /></p>
+
+<blockquote>
+  <p>실제로 mongodb에서 가져올 때에는 key값으로 검색을 하여, value를 가져와 value를 thumbnail_decoder에 바로 인자로 넣어주는 방식으로 구현했습니다.</p>
+</blockquote>
+
+<h2 id="--result-mongodb">- Result [MongoDB]</h2>
+
+<p><img src="../../../images/Boostcamp_AI/2023-07-28-Mongodb_image_file/image-20230823001632671.png" alt="image-20230823001632671" /></p>
+
+<blockquote>
+  <p>Mongodb Database - thumbnail_data</p>
+</blockquote>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#final-project" class="page__taxonomy-item p-category" rel="tag">Final Project</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#boostcamp-ai" class="page__taxonomy-item p-category" rel="tag">BoostCamp_AI</a><span class="sep">, </span>
+    
+      <a href="/categories/#python-module" class="page__taxonomy-item p-category" rel="tag">Python_Module</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-07-28T00:00:00+09:00">2023-07-28 Friday</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%5BFinal+Project%5D+MongoDB%EC%97%90+%EC%9D%B4%EB%AF%B8%EC%A7%80+%EC%A0%80%EC%9E%A5%ED%95%98%EA%B8%B0+%5Bpython%5D%20https%3A%2F%2Fbrothergyu.github.io%2Fboostcamp_ai%2Fpython_module%2FMongodb_image_file%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fbrothergyu.github.io%2Fboostcamp_ai%2Fpython_module%2FMongodb_image_file%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fbrothergyu.github.io%2Fboostcamp_ai%2Fpython_module%2FMongodb_image_file%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      <!-- 
+  <nav class="pagination">
+    
+      <a href="/devtools/MongoDB_connect/" class="pagination--pager" title="[MongoDB] MongoDB - 외부 접속 설정
+">이전</a>
+    
+    
+      <a href="/boostcamp_ai/final_project_catboost/" class="pagination--pager" title="[Final Project] Catboost 모델
+">다음</a>
+    
+  </nav>
+ -->
+
+
+
+
+  
+
+  
+  	
+  	
+  	
+  	
+  	
+
+
+  <nav class="pagination_prev_next">
+    
+      <a href="/boostcamp_ai/TechTalk/" class="pagination_prev_next--pager_left"><span class="prev_next">이전 포스트<br></span>[TechTalk] 이메일에 쓰던 @가 왜 코드에 있나요?</a>
+    
+    
+    
+      <a href="/boostcamp_ai/final_project_catboost/" class="pagination_prev_next--pager_right"><span class="prev_next">다음 포스트<br></span>[Final Project] Catboost 모델</a>
+    
+    
+  </nav>
+
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">댓글남기기</h4>
+      <section id="utterances-comments"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">최근 포스트</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ubuntu_server/cuda_install/" rel="permalink">[Setting] cuda/cudnn 설치하기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-08-25T00:00:00+09:00">2023-08-25 Friday</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">cuda 설치하기
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ubuntu_server/userful_util/" rel="permalink">[Util] 알면 편한 유틸리티들
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-08-24T00:00:00+09:00">2023-08-24 Thursday</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">알면 편한 유틸리티들
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/etc/ram_overclock/" rel="permalink">[Desktop Setting] Ram Overclock
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-08-24T00:00:00+09:00">2023-08-24 Thursday</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">램 오버클럭 수치 기록
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ai/cosine_similarity/" rel="permalink">[sklearn] cosine_similarity
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-08-24T00:00:00+09:00">2023-08-24 Thursday</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">[sklearn] cosine_similarity
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+    
+    <aside class="sidebar__top">
+      <a href="#site-nav"> <i class="fas fa-angle-up fa-2x"></i></a>
+    </aside>
+    
+      <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="mailto:brothergyu98@gmail.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+        
+      
+        
+          <li><a href="https://github.com/BrotherGyu/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 Brother_Gyu. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BDHERKJ7W3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-BDHERKJ7W3', { 'anonymize_ip': false});
+</script>
+
+
+
+
+
+
+    <script>
+  'use strict';
+
+  (function() {
+    var commentContainer = document.querySelector('#utterances-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://utteranc.es/client.js');
+    script.setAttribute('repo', 'BrotherGyu/BrotherGyu.github.io_comments');
+    script.setAttribute('issue-term', 'pathname');
+    
+    script.setAttribute('theme', 'github-light');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+    <script type="text/javascript">
+    window.MathJax = {
+   tex: {
+     packages: ['base', 'ams']
+   },
+   loader: {
+     load: ['ui/menu', '[tex]/ams']
+   },
+   startup: {
+     ready() {
+       MathJax.startup.defaultReady();
+       const Macro = MathJax._.input.tex.Symbol.Macro;
+       const MapHandler = MathJax._.input.tex.MapHandler.MapHandler;
+       const Array = MathJax._.input.tex.ams.AmsMethods.default.Array;
+       const env = new Macro('psmallmatrix', Array, [null, '(', ')', 'c', '.333em', '.2em', 'S', 1]);
+       MapHandler.getMap('AMSmath-environment').add('psmallmatrix', env);
+     }
+   }
+    };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async
+   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+  </body>
+</html>

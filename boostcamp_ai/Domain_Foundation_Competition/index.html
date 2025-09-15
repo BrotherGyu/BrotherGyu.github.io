@@ -1,0 +1,2162 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[Wrap_up] 도메인 기초 대회 | BrotherGyu</title>
+<meta name="description" content="Book Rating Prediction[Naver Connect] - 회고 및 정리">
+
+
+  <meta name="author" content="Brother_Gyu">
+  
+  <meta property="article:author" content="Brother_Gyu">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="BrotherGyu">
+<meta property="og:title" content="[Wrap_up] 도메인 기초 대회">
+<meta property="og:url" content="https://brothergyu.github.io/boostcamp_ai/Domain_Foundation_Competition/">
+
+
+  <meta property="og:description" content="Book Rating Prediction[Naver Connect] - 회고 및 정리">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-04-21T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://brothergyu.github.io/boostcamp_ai/Domain_Foundation_Competition/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Brother_Gyu",
+      "url": "https://brothergyu.github.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="BrotherGyu Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<link rel="apple-touch-icon" sizes="180x180" href="../../assets/logo.ico/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../assets/logo.ico/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../assets/logo.ico/favicon-16x16.png">
+<link rel="mask-icon" href="../../assets/logo.ico/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/brother_gyu_logo_image.png" alt="BrotherGyu"></a>
+        
+        <a class="site-title" href="/">
+          BrotherGyu
+          <span class="site-subtitle">Devlog_</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/index.html">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tag</a>
+            </li><li class="masthead__menu-item">
+              <a href="/portfolio/">Portfolio</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#boostcamp_ai" itemprop="item"><span itemprop="name">Boostcamp_ai</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">[Wrap_up] 도메인 기초 대회</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="https://brothergyu.github.io/">
+        <img src="/assets/images/brother_gyu_profile_image.png" alt="Brother_Gyu" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="https://brothergyu.github.io/" itemprop="url">Brother_Gyu</a>
+    </h3>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <!-- 팔로우 버튼 제거 -->
+    <!-- <button class="btn btn--inverse">팔로우</button> -->
+    <ul class="author__urls social-icons">
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+    
+      <nav class="nav__list">
+  <!-- 토글 버튼 제거 -->
+  <input id="ac-toc" name="accordion-toc" type="checkbox" checked/>
+  <!-- 예전 코드 -->
+  <!-- <input id="ac-toc" name="accordion-toc" type="checkbox"/> -->
+  <!-- <label for="ac-toc">Toggle menu</label> -->
+  <ul class="nav__items" id="category_tag_menu">
+    <li>
+      <span>Category List</span>
+    </li>  
+    <li>
+        <span class="nav__sub-title">study</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/BoostCamp_AI" class="">NaverBoostCamp AI [11]</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+              
+                  
+                      <li><a href="/categories/CleanCode_Python" class="">CleanCode Python [5]</a></li>
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/AI" class="">AI [2]</a></li>
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/Pytorch" class="">Pytorch [3]</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/Ubuntu_Server" class="">Ubuntu Server [7]</a></li>
+                    
+                
+                    
+                
+            </ul>
+
+        <span class="nav__sub-title">python</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/Python_Module" class="">Python Module [3]</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        <span class="nav__sub-title">etc</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/DevTools" class="">DevTools [9]</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                        <li><a href="/categories/TIL" class="">TIL [7]</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/ETC" class="">ETC [1]</a></li>
+                    
+                
+            </ul>
+      </li>
+  </ul>
+</nav>
+    
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[Wrap_up] 도메인 기초 대회">
+    <meta itemprop="description" content="Book Rating Prediction[Naver Connect] - 회고 및 정리">
+    <meta itemprop="datePublished" content="2023-04-21T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="https://brothergyu.github.io/boostcamp_ai/Domain_Foundation_Competition/" class="u-url" itemprop="url">[Wrap_up] 도메인 기초 대회
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-04-21T00:00:00+09:00">2023-04-21 Friday</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-fas fa-list-ul"></i> 목차</h4></header>
+              <!-- toc 인식 범위 수정 -->
+              <!-- <ul class="toc__menu"><li><a href="#--wrap_up-도메인-기초-대회">- [Wrap_up] 도메인 기초 대회</a><ul><li><a href="#01_-데이터-schema">01_ 데이터 schema</a></li><li><a href="#02_-eda">02_ EDA</a><ul><li><a href="#02_01-결측치-확인">02_01 결측치 확인</a></li><li><a href="#02_02-userscsv">02_02 users.csv</a></li><li><a href="#02_03-train_ratingcsv--test_ratingcsv">02_03 train_rating.csv / test_rating.csv,</a></li><li><a href="#02_04-bookscsv">02_04 books.csv</a></li></ul></li><li><a href="#03_-basemodel-predict-분포">03_ BaseModel predict 분포</a></li><li><a href="#04_-프로젝트-flowchart">04_ 프로젝트 FlowChart</a></li><li><a href="#05_-최종-dataset">05_ 최종 Dataset</a><ul><li><a href="#05_01-categorical-traintest-dataset">05_01 categorical [train/test] dataset</a></li><li><a href="#05_02-numerical-train--test-dataset">05_02 numerical [train / test] dataset</a></li></ul></li><li><a href="#06_-fm--ffm--catboost">06_ FM / FFM / CatBoost</a><ul><li><a href="#06_01-ffm">06_01 FFM</a><ul><li><a href="#--ffm-데이터-전처리-x">- FFM 데이터 전처리 X</a></li><li><a href="#--ffm-데이터-전처리-o">- FFM 데이터 전처리 O</a></li><li><a href="#--ffm-데이터-전처리-o-categorical---numerical">- FFM 데이터 전처리 O [Categorical -&gt; Numerical]</a></li><li><a href="#--test-dataset-rating-분포">- test dataset rating 분포</a></li></ul></li><li><a href="#06_02-catboost">06_02 CatBoost</a><ul><li><a href="#--catboost-데이터-전처리--o-cat_features--o">- Catboost [데이터 전처리 : O, cat_features : O]</a></li></ul></li></ul></li></ul></li><li><a href="#--프로젝트-수행결과">- 프로젝트 수행결과</a><ul><li><a href="#회고">회고</a></li></ul></li></ul>
+ -->
+              <ul class="toc__menu"><li><a href="#--wrap_up-도메인-기초-대회">- [Wrap_up] 도메인 기초 대회</a><ul><li><a href="#01_-데이터-schema">01_ 데이터 schema</a></li><li><a href="#02_-eda">02_ EDA</a><ul><li><a href="#02_01-결측치-확인">02_01 결측치 확인</a></li><li><a href="#02_02-userscsv">02_02 users.csv</a></li><li><a href="#02_03-train_ratingcsv--test_ratingcsv">02_03 train_rating.csv / test_rating.csv,</a></li><li><a href="#02_04-bookscsv">02_04 books.csv</a></li></ul></li><li><a href="#03_-basemodel-predict-분포">03_ BaseModel predict 분포</a></li><li><a href="#04_-프로젝트-flowchart">04_ 프로젝트 FlowChart</a></li><li><a href="#05_-최종-dataset">05_ 최종 Dataset</a><ul><li><a href="#05_01-categorical-traintest-dataset">05_01 categorical [train/test] dataset</a></li><li><a href="#05_02-numerical-train--test-dataset">05_02 numerical [train / test] dataset</a></li></ul></li><li><a href="#06_-fm--ffm--catboost">06_ FM / FFM / CatBoost</a><ul><li><a href="#06_01-ffm">06_01 FFM</a></li><li><a href="#06_02-catboost">06_02 CatBoost</a></li></ul></li></ul></li><li><a href="#--프로젝트-수행결과">- 프로젝트 수행결과</a><ul><li><a href="#회고">회고</a></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h1 id="--wrap_up-도메인-기초-대회">- [Wrap_up] 도메인 기초 대회</h1>
+
+<blockquote>
+  <p><strong>- 개발 환경</strong><br />
+OS : ubuntu 18.04.5 LTS<br />
+GPU : Tesla V100-SXM2-32GB  <br />
+cuda : 11.0.0</p>
+
+  <p><strong>- version</strong></p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>python: 3.8.5</th>
+        <th> </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>torch: 1.7.1<br />numpy: 1.20.3<br />pandas: 2.0.0<br />scikit-learn: 1.2.2<br />matplotlib: 3.7.1</td>
+        <td>CatBoost: 1.1.1<br /><br /><br /><br /><br /></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p><strong>- base</strong><br />
+base model : ‘FM’, ‘FFM’, ‘NCF’, ‘WDN’, ‘DCN’, ‘CNN_FM’, ‘DeepCoNN’<br />
+base loss_fn : ‘MSE’, ‘RMSE’<br />
+base optimizer : ‘SGD’, ‘ADAM’</p>
+
+  <p><strong>- 추가로 적용 해본것</strong><br />
+model : ‘CatBoost’<br />
+loss_fn : ‘Huber Loss[pytorch : SmoothL1Loss()]’<br />
+optimizer : ‘Adagrad’</p>
+</blockquote>
+
+<h2 id="01_-데이터-schema">01_ 데이터 schema</h2>
+
+<ul>
+  <li>
+    <p><strong>[train, test]_rating.csv : train_rating.csv</strong></p>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: right"> </th>
+          <th style="text-align: right">user_id</th>
+          <th style="text-align: right">isbn</th>
+          <th style="text-align: right">rating</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: right">0</td>
+          <td style="text-align: right">8</td>
+          <td style="text-align: right">0002136721</td>
+          <td style="text-align: right">2</td>
+        </tr>
+        <tr>
+          <td style="text-align: right">1</td>
+          <td style="text-align: right">12</td>
+          <td style="text-align: right">0060154323</td>
+          <td style="text-align: right">9</td>
+        </tr>
+        <tr>
+          <td style="text-align: right">2</td>
+          <td style="text-align: right">234</td>
+          <td style="text-align: right">0374255432</td>
+          <td style="text-align: right">8</td>
+        </tr>
+        <tr>
+          <td style="text-align: right">3</td>
+          <td style="text-align: right">345</td>
+          <td style="text-align: right">0399573326</td>
+          <td style="text-align: right">4</td>
+        </tr>
+        <tr>
+          <td style="text-align: right">4</td>
+          <td style="text-align: right">4567</td>
+          <td style="text-align: right">0425125963</td>
+          <td style="text-align: right">6</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <p><strong>users.csv</strong></p>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: right"> </th>
+          <th style="text-align: right">user_id</th>
+          <th style="text-align: left">location</th>
+          <th style="text-align: right">age</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: right">0</td>
+          <td style="text-align: right">8</td>
+          <td style="text-align: left">timmins, ontario, canada</td>
+          <td style="text-align: right">nan</td>
+        </tr>
+        <tr>
+          <td style="text-align: right">1</td>
+          <td style="text-align: right">12</td>
+          <td style="text-align: left">ottawa, ontario, canada</td>
+          <td style="text-align: right">49</td>
+        </tr>
+        <tr>
+          <td style="text-align: right">2</td>
+          <td style="text-align: right">234</td>
+          <td style="text-align: left">n/a, n/a, n/a</td>
+          <td style="text-align: right">nan</td>
+        </tr>
+        <tr>
+          <td style="text-align: right">3</td>
+          <td style="text-align: right">345</td>
+          <td style="text-align: left">toronto, ontario, canada</td>
+          <td style="text-align: right">30</td>
+        </tr>
+        <tr>
+          <td style="text-align: right">4</td>
+          <td style="text-align: right">4567</td>
+          <td style="text-align: left">victoria, british, canada</td>
+          <td style="text-align: right">36</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <p><strong>books.csv</strong></p>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: right"> </th>
+          <th style="text-align: right">isbn</th>
+          <th style="text-align: left">book_title</th>
+          <th style="text-align: left">book_author</th>
+          <th style="text-align: right">year_of_publication</th>
+          <th style="text-align: left">publisher</th>
+          <th style="text-align: left">img_url</th>
+          <th style="text-align: left">language</th>
+          <th style="text-align: left">category</th>
+          <th style="text-align: left">summary</th>
+          <th style="text-align: left">img_path</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: right">0</td>
+          <td style="text-align: right">0002…</td>
+          <td style="text-align: left">book_a</td>
+          <td style="text-align: left">auth_a</td>
+          <td style="text-align: right">2000</td>
+          <td style="text-align: left">pub_a</td>
+          <td style="text-align: left">…</td>
+          <td style="text-align: left">en</td>
+          <td style="text-align: left">[‘Actresses’]</td>
+          <td style="text-align: left">…</td>
+          <td style="text-align: left">…</td>
+        </tr>
+        <tr>
+          <td style="text-align: right">1</td>
+          <td style="text-align: right">0060…</td>
+          <td style="text-align: left">book_b</td>
+          <td style="text-align: left">auth_b</td>
+          <td style="text-align: right">1991</td>
+          <td style="text-align: left">pub_b</td>
+          <td style="text-align: left">…</td>
+          <td style="text-align: left">en</td>
+          <td style="text-align: left">[‘Fiction’]</td>
+          <td style="text-align: left">…</td>
+          <td style="text-align: left">…</td>
+        </tr>
+        <tr>
+          <td style="text-align: right">2</td>
+          <td style="text-align: right">0374…</td>
+          <td style="text-align: left">book_c</td>
+          <td style="text-align: left">auth_c</td>
+          <td style="text-align: right">1999</td>
+          <td style="text-align: left">pub_c</td>
+          <td style="text-align: left">…</td>
+          <td style="text-align: left">en</td>
+          <td style="text-align: left">[‘Medical’]</td>
+          <td style="text-align: left">…</td>
+          <td style="text-align: left">…</td>
+        </tr>
+        <tr>
+          <td style="text-align: right">3</td>
+          <td style="text-align: right">0399…</td>
+          <td style="text-align: left">book_d</td>
+          <td style="text-align: left">auth_d</td>
+          <td style="text-align: right">1991</td>
+          <td style="text-align: left">pub_d</td>
+          <td style="text-align: left">…</td>
+          <td style="text-align: left">en</td>
+          <td style="text-align: left">[‘Fiction’]</td>
+          <td style="text-align: left">…</td>
+          <td style="text-align: left">…</td>
+        </tr>
+        <tr>
+          <td style="text-align: right">4</td>
+          <td style="text-align: right">0425…</td>
+          <td style="text-align: left">book_e</td>
+          <td style="text-align: left">auth_e</td>
+          <td style="text-align: right">2000</td>
+          <td style="text-align: left">pub_e</td>
+          <td style="text-align: left">…</td>
+          <td style="text-align: left">en</td>
+          <td style="text-align: left">[‘History’]</td>
+          <td style="text-align: left">…</td>
+          <td style="text-align: left">…</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <blockquote>
+      <p>*_rating.csv를 기반으로 <code class="language-plaintext highlighter-rouge">user_id</code> -&gt; user.csv, <code class="language-plaintext highlighter-rouge">isbn</code> -&gt; books.csv를 기반으로 train/test데이터를 구성한다</p>
+    </blockquote>
+  </li>
+  <li>
+    <p><strong>Example - train data [context_data]</strong></p>
+
+    <p>- drop columns : <code class="language-plaintext highlighter-rouge">img_url</code>, <code class="language-plaintext highlighter-rouge">impg_path</code> , <code class="language-plaintext highlighter-rouge">year_of_publication</code>, <code class="language-plaintext highlighter-rouge">summary</code></p>
+
+    <p>- ‘location’ : location.split() -&gt; <code class="language-plaintext highlighter-rouge">location_city</code>, <code class="language-plaintext highlighter-rouge">location_state</code>, <code class="language-plaintext highlighter-rouge">location_country</code></p>
+
+    <table>
+      <thead>
+        <tr>
+          <th> </th>
+          <th>user_id</th>
+          <th>isbn</th>
+          <th>age</th>
+          <th>location_city</th>
+          <th>location_state</th>
+          <th>location_country</th>
+          <th>category</th>
+          <th>publisher</th>
+          <th>language</th>
+          <th>book_author</th>
+          <th>rating</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>0</td>
+          <td>8</td>
+          <td>0002…</td>
+          <td>nan</td>
+          <td>timmins</td>
+          <td>ontario</td>
+          <td>canada</td>
+          <td>[‘Actresses’]</td>
+          <td>pub_a</td>
+          <td>en</td>
+          <td>auth_a</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>12</td>
+          <td>0060…</td>
+          <td>49</td>
+          <td>ottawa</td>
+          <td>ontario</td>
+          <td>canada</td>
+          <td>[‘Fiction’]</td>
+          <td>pub_b</td>
+          <td>en</td>
+          <td>auth_b</td>
+          <td>9</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>234</td>
+          <td>0374…</td>
+          <td>nan</td>
+          <td>n/a</td>
+          <td>n/a</td>
+          <td>n/a</td>
+          <td>[‘Medical’]</td>
+          <td>pub_c</td>
+          <td>en</td>
+          <td>auth_c</td>
+          <td>8</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>345</td>
+          <td>0399…</td>
+          <td>30</td>
+          <td>toronto</td>
+          <td>ontario</td>
+          <td>canada</td>
+          <td>[‘Fiction’]</td>
+          <td>pub_d</td>
+          <td>en</td>
+          <td>auth_d</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>4567</td>
+          <td>0425…</td>
+          <td>36</td>
+          <td>victoria</td>
+          <td>british</td>
+          <td>canada</td>
+          <td>[‘History’]</td>
+          <td>pub_e</td>
+          <td>en</td>
+          <td>auth_e</td>
+          <td>6</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="02_-eda">02_ EDA</h2>
+
+<h3 id="02_01-결측치-확인">02_01 결측치 확인</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>users.csv</th>
+      <th>train_ratings.csv</th>
+      <th>books.csv</th>
+      <th>test_ratings.csv</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>[ data_size: 68092 ]</td>
+      <td>[ data_size: 306795 ]</td>
+      <td>[ data_size: 149570 ]</td>
+      <td>[ data_size: 76699 ]</td>
+    </tr>
+    <tr>
+      <td>user_id         0<br />location        0<br />age         27833<br />dtype: int64</td>
+      <td>user_id    0<br />isbn       0<br />rating     0<br />dtype: int64</td>
+      <td>isbn                       0<br />book_title                 0<br />book_author                1<br />year_of_publication        0<br />publisher                  0<br />img_url                    0<br />language               67227<br />category               68851<br />summary                67227<br />img_path                   0<br />dtype: int64</td>
+      <td>user_id    0<br />isbn       0<br />rating     0<br />dtype: int64</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>users data는 68092, books data는 149570개 rating data는 306795개 존재</p>
+  <ul>
+    <li>users, books data 대비 rating data 부족</li>
+    <li>딥러닝 기반 모델에 학습데이터로 사용했을 경우 성능 개선이 어려울 것이라 예상
+<br /></li>
+  </ul>
+</blockquote>
+
+<h3 id="02_02-userscsv">02_02 users.csv</h3>
+
+<ul>
+  <li>
+    <p>age 전처리</p>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">age_map</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+  <span class="n">x</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+  <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">20</span><span class="p">:</span>
+    <span class="k">return</span> <span class="mi">1</span>
+  <span class="k">elif</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">20</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">30</span><span class="p">:</span>
+    <span class="k">return</span> <span class="mi">2</span>
+  <span class="bp">...</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="k">return</span> <span class="mi">6</span>
+  
+<span class="bp">...</span>
+<span class="n">train_df</span><span class="p">[</span><span class="sh">'</span><span class="s">age</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">[</span><span class="sh">'</span><span class="s">age</span><span class="sh">'</span><span class="p">].</span><span class="nf">fillna</span><span class="p">(</span><span class="nf">int</span><span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="sh">'</span><span class="s">age</span><span class="sh">'</span><span class="p">].</span><span class="nf">mean</span><span class="p">()))</span>
+<span class="n">train_df</span><span class="p">[</span><span class="sh">'</span><span class="s">age</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">[</span><span class="sh">'</span><span class="s">age</span><span class="sh">'</span><span class="p">].</span><span class="nf">apply</span><span class="p">(</span><span class="n">age_map</span><span class="p">)</span>
+<span class="n">test_df</span><span class="p">[</span><span class="sh">'</span><span class="s">age</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="n">test_df</span><span class="p">[</span><span class="sh">'</span><span class="s">age</span><span class="sh">'</span><span class="p">].</span><span class="nf">fillna</span><span class="p">(</span><span class="nf">int</span><span class="p">(</span><span class="n">test_df</span><span class="p">[</span><span class="sh">'</span><span class="s">age</span><span class="sh">'</span><span class="p">].</span><span class="nf">mean</span><span class="p">()))</span>
+<span class="n">test_df</span><span class="p">[</span><span class="sh">'</span><span class="s">age</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="n">test_df</span><span class="p">[</span><span class="sh">'</span><span class="s">age</span><span class="sh">'</span><span class="p">].</span><span class="nf">apply</span><span class="p">(</span><span class="n">age_map</span><span class="p">)</span>
+<span class="bp">...</span>
+</code></pre></div>    </div>
+
+    <blockquote>
+      <p>train_df와 test_df의 평균 age로 각각 결측치를 처리한 다음 age_map함수를 통해 age를 범주화 시킨다</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>location 전처리</p>
+
+    <blockquote>
+      <p>location을 city, state, country로 분리</p>
+
+      <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">users</span><span class="p">[</span><span class="sh">'</span><span class="s">location_city</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="n">users</span><span class="p">[</span><span class="sh">'</span><span class="s">location</span><span class="sh">'</span><span class="p">].</span><span class="nf">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="sh">'</span><span class="s">,</span><span class="sh">'</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">users</span><span class="p">[</span><span class="sh">'</span><span class="s">location_state</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="n">users</span><span class="p">[</span><span class="sh">'</span><span class="s">location</span><span class="sh">'</span><span class="p">].</span><span class="nf">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="sh">'</span><span class="s">,</span><span class="sh">'</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">users</span><span class="p">[</span><span class="sh">'</span><span class="s">location_country</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="n">users</span><span class="p">[</span><span class="sh">'</span><span class="s">location</span><span class="sh">'</span><span class="p">].</span><span class="nf">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="sh">'</span><span class="s">,</span><span class="sh">'</span><span class="p">)[</span><span class="mi">2</span><span class="p">])</span>
+</code></pre></div>      </div>
+
+      <p>분리시 결측치 생성됨<br />
+ `toronto,n/a,canada -&gt; location_city: toronto, location_state: n/a, location_country: canada</p>
+
+      <p>결측치가 없는 국가들을 데이터프레임으로 추출하여 결측치와 비교 후 데이터 입력</p>
+
+      <ol>
+        <li>
+          <p>채우는 순서는 location_city, location_state, location_country순으로 우선하여 채움<br />
+[상향식으로 채우는 것이 정확도가 더 높다. - city가 주어질 경우 city에서 country를 맞추는 것이 country에서 city를 맞추는 것보다 더 정확하다]</p>
+        </li>
+        <li>
+          <p>1번 규칙을 지키며 우선 적으로 결측치가 1개인 행들을 채우고 결측치가 2개인 행들을 채운다 
+<br /></p>
+        </li>
+      </ol>
+    </blockquote>
+  </li>
+</ul>
+
+<h3 id="02_03-train_ratingcsv--test_ratingcsv">02_03 train_rating.csv / test_rating.csv,</h3>
+
+<p><img src="../../images/Boostcamp_AI/2023-04-21-Domain_Foundation_Competition/image-20230423234843532.png" alt="image-20230423234843532" /></p>
+
+<blockquote>
+  <p>heavy users를 보았을 떄, train과 test data 구성이 유사한 것으로 파악</p>
+</blockquote>
+
+<h3 id="02_04-bookscsv">02_04 books.csv</h3>
+
+<ul>
+  <li>books_preprocessing 함수 추가</li>
+</ul>
+
+<p><img src="../../images/Boostcamp_AI/2023-04-21-Domain_Foundation_Competition/image-20230424000219780.png" alt="image-20230424000219780" /></p>
+
+<ul>
+  <li>
+    <p>language [book_language_change]</p>
+
+    <blockquote>
+      <p>isbn으로 국가를 파악</p>
+
+      <p>Reference : <a href="https://en.wikipedia.org/wiki/List_of_ISBN_registration_groups#">List of ISBN registration groups</a></p>
+
+      <p>전처리를 위해 isbn 앞자리를 기준으로 같은 앞자리를 가진 book들의 language의 값의 개수를 측정하여 가장 많은 값을 가진 언어를 대표로 딕셔너리를 생성하여 결측치의 language를 채움</p>
+
+      <p><code class="language-plaintext highlighter-rouge">books_isbn_language = {'00': 'en', '03': 'en', '04': 'en', '06': 'en', '07': 'en', '08': 'en', '15': 'en', ... </code></p>
+    </blockquote>
+  </li>
+  <li>
+    <p>publisher [publisher_change]</p>
+
+    <blockquote>
+      <p>isbn으로 출판사 파악</p>
+
+      <p>4번째 자리까지 동일시 같은 출판사로 통일 (대략적으로 4자리까지 동일한 경우 같은 출판사로 파악)</p>
+
+      <p>같은 출판사를 약간씩 다르게 표현한 경우가 많아 publisher를 새롭게 전처리</p>
+
+      <p><code class="language-plaintext highlighter-rouge">book_pub = {'0002': 'HarperFlamingo Canada', '0060': 'HarperPerennial', '0374': 'Farrar Straus Giroux', '0399': 'Putnam Pub Group', '0425': 'Berkley Publishing Group', '0671': 'Audioworks', ...</code></p>
+    </blockquote>
+  </li>
+  <li>
+    <p>category [category_change, category_fill]</p>
+
+    <blockquote>
+      <ul>
+        <li>
+          <p>category_change</p>
+
+          <p>상위 50개의 카테고리를 추출하여 역순으로 비교하여 상위 카테고리 리스트에 값이 있을 경우 해당 카테고리로 값을 변경하고, 같은 카테고리를 가진 항목이 50이하인 책들의 카테고리를 others로 변경</p>
+
+          <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">category</span> <span class="ow">in</span> <span class="n">categories</span><span class="p">:</span>
+    <span class="n">books</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="n">books</span><span class="p">[</span><span class="sh">'</span><span class="s">category</span><span class="sh">'</span><span class="p">].</span><span class="nb">str</span><span class="p">.</span><span class="nf">contains</span><span class="p">(</span><span class="n">category</span><span class="p">,</span> <span class="n">case</span><span class="o">=</span><span class="bp">False</span><span class="p">),</span> <span class="sh">'</span><span class="s">category</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="n">category</span>
+      
+<span class="n">others_list</span> <span class="o">=</span> <span class="n">category_df</span><span class="p">[</span><span class="n">category_df</span><span class="p">[</span><span class="sh">'</span><span class="s">count</span><span class="sh">'</span><span class="p">]</span><span class="o">&lt;</span><span class="mi">50</span><span class="p">][</span><span class="sh">'</span><span class="s">category</span><span class="sh">'</span><span class="p">].</span><span class="n">values</span>
+<span class="n">books</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="n">books</span><span class="p">[</span><span class="n">books</span><span class="p">[</span><span class="sh">'</span><span class="s">category</span><span class="sh">'</span><span class="p">].</span><span class="nf">isin</span><span class="p">(</span><span class="n">others_list</span><span class="p">)].</span><span class="n">index</span><span class="p">,</span> <span class="sh">'</span><span class="s">category</span><span class="sh">'</span><span class="p">]</span><span class="o">=</span><span class="sh">'</span><span class="s">others</span><span class="sh">'</span>
+</code></pre></div>          </div>
+        </li>
+        <li>
+          <p>category_fill</p>
+
+          <p>book_author를 기준으로 해당 author가 가장 많이 작성한 장르의 책을 대표 category로 dict를 생성</p>
+
+          <p><code class="language-plaintext highlighter-rouge">name_dict = {'Stephen King': 'fiction', 'Agatha Christie': 'fiction', 'William Shakespeare': 'drama', 'Barbara Cartland': 'fiction',...</code></p>
+
+          <p>해당 dict를 기반으로 결측치를 채우고 채워지지 않는 결측치들을 other로 처리</p>
+        </li>
+      </ul>
+    </blockquote>
+  </li>
+</ul>
+
+<h2 id="03_-basemodel-predict-분포">03_ BaseModel predict 분포</h2>
+
+<blockquote>
+  <p>전처리, parameter 변경 없는 기본 모델<br />
+predict 데이터 분포와 public test RMSE 결과</p>
+</blockquote>
+
+<p><img src="../../images/Boostcamp_AI/2023-04-21-Domain_Foundation_Competition/image-20230419153844513.png" alt="image-20230419153844513" /></p>
+
+<p>- 모델별 특징</p>
+
+<ul>
+  <li>FM - context_data를 메인으로 학습
+    <blockquote>
+      <p>FM은 모든 정보를 one-hot encoding 한 뒤 Latent Factor Model을 이용해 변수를 축약</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>FFM - context_data를 메인으로 학습</p>
+
+    <blockquote>
+      <p>feature마다 자신이 속한 필드 이외에 여러 개의 잠재 벡터를 가짐<br />
+Latent Factor 구성 시 대응되는 field를 미리 고려하여, 대응되는 field와만 상호작용을 계산<br />
+FM과 다르게 필드별로 여러 개의 잠재 벡터를 가짐</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>NCF, WDN, DCN - dl_data를 메인으로 학습 _ traindata : <code class="language-plaintext highlighter-rouge">user_id</code>, <code class="language-plaintext highlighter-rouge">isbn</code>으로 구성</p>
+
+    <blockquote>
+      <table>
+        <thead>
+          <tr>
+            <th>모델</th>
+            <th>특징</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>NCF</td>
+            <td>MLP를 이용해 선형조합보다 더 다양한 정보를 학습할 수 있게 설계</td>
+          </tr>
+          <tr>
+            <td>WDN</td>
+            <td>DNN과 동시에 WNN을 학습하여 두 네트워크 구조의 장점을 가지는 방법<br />sparse, dense 두가지 대표 특성을 학습</td>
+          </tr>
+          <tr>
+            <td>DCN</td>
+            <td>변수의 상호작용을 자동적, 효율적으로 가능하게 하는 구조 제안<br />총 깊이와 교차 변수들의 차수가 커질수록 명시적 변수들의 상호관계를 효율적으로 학습</td>
+          </tr>
+        </tbody>
+      </table>
+    </blockquote>
+  </li>
+  <li>
+    <p>CNN_FM - image_data를 메인으로 학습</p>
+
+    <blockquote>
+      <p>상품에 대한 이미지 정보를 활용한 추천 모델<br />
+상품 이미지와 같은 비정형 데이터 특징을 추출하기 위해 Convolutional Neural Network 사용</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>DeapCoNN</p>
+
+    <blockquote>
+      <p>사전 학습된 BERT를 사용하여 리뷰 데이터와 같은 비정형 데이터 특징을 추출하기 위해서 사전 학습된 언어 모델을 사용합니다<br />
+하지만 총 149570의 book data중 summary 결측치가 67227개로 상당수 차지하고 있어, 모델을 적용하기에 적합하지 않다고 판단하였고, 실제로도 성능적인 아쉬움까지 이어졌습니다.</p>
+    </blockquote>
+  </li>
+</ul>
+
+<p>- 모델 결정 [FM, FFM]</p>
+
+<blockquote>
+  <p>- 룰베이스 RMSE</p>
+
+  <p><img src="../../images/Boostcamp_AI/2023-04-21-Domain_Foundation_Competition/image-20230502010711762.png" alt="image-20230502010711762" /></p>
+
+  <table>
+    <thead>
+      <tr>
+        <th> </th>
+        <th>ratings</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code class="language-plaintext highlighter-rouge">* user_id</code></td>
+        <td>0.642556</td>
+      </tr>
+      <tr>
+        <td><code class="language-plaintext highlighter-rouge">* isbn</code></td>
+        <td>0.709715</td>
+      </tr>
+      <tr>
+        <td>age</td>
+        <td>0.083359</td>
+      </tr>
+      <tr>
+        <td>location_city</td>
+        <td>0.373939</td>
+      </tr>
+      <tr>
+        <td>location_state</td>
+        <td>0.179588</td>
+      </tr>
+      <tr>
+        <td>location_country</td>
+        <td>0.077136</td>
+      </tr>
+      <tr>
+        <td>category</td>
+        <td>0.056237</td>
+      </tr>
+      <tr>
+        <td>publisher</td>
+        <td>0.139969</td>
+      </tr>
+      <tr>
+        <td>language</td>
+        <td>0.042713</td>
+      </tr>
+      <tr>
+        <td>book_author</td>
+        <td>0.508389</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>ratings를 기준으로 상관 관계를 파악 했을 때 상위 2가지 feature인 user_id, isbn을 선택하여 룰베이스를 적용하였다<br />
+user_id별로 해당유저가 부여하는 평점 평균 딕셔너리, isbn에 따른 평점 평균을 딕셔너리로 저장하였고, test 데이터셋에서 없는 user_id나 isbn을 호출하였을 때에는 전체 평균값을 채우도록하여 결측치를 처리하였다<br />
+ratings = (user_id + isbn) / 2로 예측을 채워서 Rule-Based 결과를 제출하였을 때에 2.2581으로 기본 베이스 모델보다 성능이 높게 나왔다<br />
+그래서 전체 context 데이터를 학습하는 FM / FFM 모델이 피쳐 튜닝을 잘 진행하면 성능이 향상될 여지가 더 많다고 판단하고  두 모델을 집중적으로 진행하였다</p>
+</blockquote>
+
+<h2 id="04_-프로젝트-flowchart">04_ 프로젝트 FlowChart</h2>
+
+<p><img src="../../images/Boostcamp_AI/2023-04-21-Domain_Foundation_Competition/image-2023050202.png" alt="image-2023050202" /></p>
+
+<h2 id="05_-최종-dataset">05_ 최종 Dataset</h2>
+
+<h3 id="05_01-categorical-traintest-dataset">05_01 categorical [train/test] dataset</h3>
+
+<blockquote>
+  <p>피처당 같은 value들을 index화 해서 데이터를 범주화한 데이터 셋</p>
+</blockquote>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: right">index</th>
+      <th style="text-align: right">user_id</th>
+      <th>isbn</th>
+      <th style="text-align: right">rating</th>
+      <th style="text-align: right">age</th>
+      <th>location_city</th>
+      <th>location_state</th>
+      <th>location_country</th>
+      <th>category</th>
+      <th>publisher</th>
+      <th>language</th>
+      <th>book_author</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">0</td>
+      <td>0</td>
+      <td style="text-align: right">4</td>
+      <td style="text-align: right">3</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">1</td>
+      <td style="text-align: right">1</td>
+      <td>0</td>
+      <td style="text-align: right">7</td>
+      <td style="text-align: right">3</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">2</td>
+      <td style="text-align: right">2</td>
+      <td>0</td>
+      <td style="text-align: right">8</td>
+      <td style="text-align: right">3</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">3</td>
+      <td style="text-align: right">3</td>
+      <td>0</td>
+      <td style="text-align: right">8</td>
+      <td style="text-align: right">3</td>
+      <td>3</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">4</td>
+      <td style="text-align: right">4</td>
+      <td>0</td>
+      <td style="text-align: right">9</td>
+      <td style="text-align: right">3</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">…</td>
+      <td style="text-align: right">…</td>
+      <td>…</td>
+      <td style="text-align: right">…</td>
+      <td style="text-align: right">…</td>
+      <td>…</td>
+      <td>…</td>
+      <td>…</td>
+      <td>…</td>
+      <td>…</td>
+      <td>…</td>
+      <td>…</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">306790</td>
+      <td style="text-align: right">6313</td>
+      <td>129772</td>
+      <td style="text-align: right">7</td>
+      <td style="text-align: right">2</td>
+      <td>1606</td>
+      <td>5</td>
+      <td>1</td>
+      <td>0</td>
+      <td>5</td>
+      <td>0</td>
+      <td>1272</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">306791</td>
+      <td style="text-align: right">1879</td>
+      <td>129773</td>
+      <td style="text-align: right">6</td>
+      <td style="text-align: right">3</td>
+      <td>19</td>
+      <td>10</td>
+      <td>1</td>
+      <td>6</td>
+      <td>29</td>
+      <td>0</td>
+      <td>69</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">306792</td>
+      <td style="text-align: right">1879</td>
+      <td>129774</td>
+      <td style="text-align: right">7</td>
+      <td style="text-align: right">3</td>
+      <td>19</td>
+      <td>10</td>
+      <td>1</td>
+      <td>0</td>
+      <td>188</td>
+      <td>0</td>
+      <td>54713</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">306793</td>
+      <td style="text-align: right">1879</td>
+      <td>129775</td>
+      <td style="text-align: right">7</td>
+      <td style="text-align: right">3</td>
+      <td>19</td>
+      <td>10</td>
+      <td>1</td>
+      <td>2</td>
+      <td>118</td>
+      <td>0</td>
+      <td>54714</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">306794</td>
+      <td style="text-align: right">1879</td>
+      <td>129776</td>
+      <td style="text-align: right">10</td>
+      <td style="text-align: right">3</td>
+      <td>19</td>
+      <td>10</td>
+      <td>1</td>
+      <td>0</td>
+      <td>41</td>
+      <td>0</td>
+      <td>54715</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="05_02-numerical-train--test-dataset">05_02 numerical [train / test] dataset</h3>
+
+<blockquote>
+  <p>피쳐당 같은 value들의 rating을 평균을 내서 수치화한 데이터 셋</p>
+
+  <p>- 전처리 규칙</p>
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>user_id : 0이 4개 있다고 가정
+각각의 rating은 user_id {0 : [7,8,9,10], ...} user_id 0의 평점 평균은 8.5
+user_id { 0 : 8.5, ...}로 변경
+
+이러한 규칙으로 나머지 feature들도 동일하게 수치화하여 데이터 전처리
+</code></pre></div>  </div>
+</blockquote>
+
+<table>
+  <thead>
+    <tr>
+      <th>index</th>
+      <th>user_id</th>
+      <th>isbn</th>
+      <th>rating</th>
+      <th>age</th>
+      <th>location_city</th>
+      <th>location_state</th>
+      <th>location_country</th>
+      <th>category</th>
+      <th>publisher</th>
+      <th>language</th>
+      <th>book_author</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>4.42857</td>
+      <td>6.857143</td>
+      <td>4</td>
+      <td>6.883493</td>
+      <td>6.266667</td>
+      <td>6.980202</td>
+      <td>6.934104</td>
+      <td>7.020942</td>
+      <td>7.091387</td>
+      <td>7.091387</td>
+      <td>6.857143</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>7.285714</td>
+      <td>6.857143</td>
+      <td>7</td>
+      <td>6.883493</td>
+      <td>6.823871</td>
+      <td>6.980202</td>
+      <td>6.934104</td>
+      <td>7.020942</td>
+      <td>7.091387</td>
+      <td>7.091387</td>
+      <td>6.857143</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>8.000000</td>
+      <td>6.857143</td>
+      <td>8</td>
+      <td>6.883493</td>
+      <td>6.782609</td>
+      <td>6.980202</td>
+      <td>6.934104</td>
+      <td>7.020942</td>
+      <td>7.091387</td>
+      <td>7.091387</td>
+      <td>6.857143</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>8.000000</td>
+      <td>6.857143</td>
+      <td>8</td>
+      <td>6.883493</td>
+      <td>8.000000</td>
+      <td>6.980202</td>
+      <td>6.934104</td>
+      <td>7.020942</td>
+      <td>7.091387</td>
+      <td>7.091387</td>
+      <td>6.857143</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>8.400000</td>
+      <td>6.857143</td>
+      <td>9</td>
+      <td>6.883493</td>
+      <td>7.293103</td>
+      <td>6.980202</td>
+      <td>6.934104</td>
+      <td>7.020942</td>
+      <td>7.091387</td>
+      <td>7.091387</td>
+      <td>6.857143</td>
+    </tr>
+    <tr>
+      <td>…</td>
+      <td>…</td>
+      <td>…</td>
+      <td>…</td>
+      <td>…</td>
+      <td>…</td>
+      <td>…</td>
+      <td>…</td>
+      <td>…</td>
+      <td>…</td>
+      <td>…</td>
+      <td>…</td>
+    </tr>
+    <tr>
+      <td>306790</td>
+      <td>8.000000</td>
+      <td>7.000000</td>
+      <td>7</td>
+      <td>7.244307</td>
+      <td>7.733333</td>
+      <td>7.104575</td>
+      <td>7.117356</td>
+      <td>6.974887</td>
+      <td>7.105181</td>
+      <td>7.091387</td>
+      <td>6.076923</td>
+    </tr>
+    <tr>
+      <td>306791</td>
+      <td>5.833333</td>
+      <td>6.000000</td>
+      <td>6</td>
+      <td>6.883493</td>
+      <td>6.744807</td>
+      <td>7.115454</td>
+      <td>7.117356</td>
+      <td>7.387309</td>
+      <td>6.931951</td>
+      <td>7.091387</td>
+      <td>5.827586</td>
+    </tr>
+    <tr>
+      <td>306792</td>
+      <td>5.833333</td>
+      <td>7.000000</td>
+      <td>7</td>
+      <td>6.883493</td>
+      <td>6.744807</td>
+      <td>7.115454</td>
+      <td>7.117356</td>
+      <td>6.974887</td>
+      <td>6.569892</td>
+      <td>7.091387</td>
+      <td>7.000000</td>
+    </tr>
+    <tr>
+      <td>306793</td>
+      <td>5.833333</td>
+      <td>7.000000</td>
+      <td>7</td>
+      <td>6.883493</td>
+      <td>6.744807</td>
+      <td>7.115454</td>
+      <td>7.117356</td>
+      <td>7.055849</td>
+      <td>6.760032</td>
+      <td>7.091387</td>
+      <td>7.000000</td>
+    </tr>
+    <tr>
+      <td>306794</td>
+      <td>5.833333</td>
+      <td>10.00000</td>
+      <td>10</td>
+      <td>6.883493</td>
+      <td>6.744807</td>
+      <td>7.115454</td>
+      <td>7.117356</td>
+      <td>6.974887</td>
+      <td>7.457627</td>
+      <td>7.091387</td>
+      <td>10.00000</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="06_-fm--ffm--catboost">06_ FM / FFM / CatBoost</h2>
+
+<p><strong>- 용어 정리</strong><br />
+min valid loss[RMSE] - 학습중 최소 손실<br />
+public score[RMSE] - ai stage 제출 점수</p>
+
+<h3 id="06_01-ffm">06_01 FFM</h3>
+
+<blockquote>
+  <p>같은 데이터와 하이퍼파라미터로 학습 하였을 때 FFM 모델이 FM모델보다 public score가 높게 측정 되었습니다<br />
+FM은 모든 latent vetor간 interaction을 하나의 vector로 표현하는 한계를 FFM은 필드마다 latent vector를 만들어 개선했기 때문으로 파악하였기 때문에 FFM 모델을 중심으로 시각화를 진행하겠습니다</p>
+</blockquote>
+
+<h4 id="--ffm-데이터-전처리-x">- FFM 데이터 전처리 X</h4>
+
+<blockquote>
+
+  <p>min valid loss[RMSE] : 2.516 / public score[RMSE] : 2.4913</p>
+
+  <p><img src="../../images/Boostcamp_AI/2023-04-21-Domain_Foundation_Competition/image-20230424043524889.png" alt="image-20230424043524889" /></p>
+</blockquote>
+
+<h4 id="--ffm-데이터-전처리-o">- FFM 데이터 전처리 O</h4>
+
+<blockquote>
+  <p>min valid loss[RMSE] : 2.473 / public score[RMSE] : 2.4567</p>
+
+  <p><img src="../../images/Boostcamp_AI/2023-04-21-Domain_Foundation_Competition/image-20230424043532065.png" alt="image-20230424043532065" /></p>
+</blockquote>
+
+<h4 id="--ffm-데이터-전처리-o-categorical---numerical">- FFM 데이터 전처리 O [Categorical -&gt; Numerical]</h4>
+<blockquote>
+
+  <p>min valid loss[RMSE] : 1.428 / public score[RMSE] : 2.3943</p>
+
+  <p><img src="../../images/Boostcamp_AI/2023-04-21-Domain_Foundation_Competition/image-20230424043541534.png" alt="image-20230424043541534" /></p>
+</blockquote>
+
+<h4 id="--test-dataset-rating-분포">- test dataset rating 분포</h4>
+<blockquote>
+  <p>학습을 진행하면서 categorical dataset을 통해 FFM을 학습하면서 임의로 매겨진 index 규칙에 따라서 전처리된 학습 데이터셋을 입력하는 것에 대해서 의문이 생겼고, 각각의 value에 따라서 평균값을 이용한 Rule-Based를 적용했을 때 성능이 좋았던 것을 기억하여, categorical dataset을 numerical dataset으로 변경하자는 아이디어를 적용했습니다<br />
+데이터셋 형식의 변화로 2.4567 -&gt; 2.3943의 성능향상이 일어났고 분포 또한 rating을 특징을 잘 파악 할수 있는 분포로 변경되었습니다</p>
+
+  <p><img src="../../images/Boostcamp_AI/2023-04-21-Domain_Foundation_Competition/image-20230424045946128.png" alt="image-20230424045946128" /></p>
+</blockquote>
+
+<h3 id="06_02-catboost">06_02 CatBoost</h3>
+
+<blockquote>
+  <p>범주형(categorical) 데이터를 처리하기 위한 부스팅 알고리즘</p>
+
+  <p>CatBoost는 범주형 데이터를 자동으로 처리하여 모델 성능을 향상시키는데 기여, 이때 중요한 파라미터 중 하나가 <code class="language-plaintext highlighter-rouge">cat_features</code><br />
+<code class="language-plaintext highlighter-rouge">cat_features</code>는 CatBoost 모델에서 범주형 데이터의 열 인덱스를 지정하는 파라미터이며, <code class="language-plaintext highlighter-rouge">cat_features</code>에는 범주형 열의 인덱스나 열 이름을 포함하는 리스트를 전달할 수 있다.<br />
+CatBoost는 <code class="language-plaintext highlighter-rouge">cat_features</code>에 지정된 열을 범주형 데이터로 간주하고, 자동으로 원핫인코딩을 수행하거나, 이를 위한 특별한 분기 방법을 사용</p>
+
+  <p>그래서 CatBoost는 <code class="language-plaintext highlighter-rouge">cat_features</code>를 사용하여 범주형 데이터에 대한 특별한 처리를 수행하므로, 범주형 데이터를 미리 원핫인코딩하지 않아도 된다.<br />
+따라서, <code class="language-plaintext highlighter-rouge">cat_features</code>를 지정함으로써, 머신러닝 모델 구축에 필요한 전처리 과정을 줄일 수 있다.</p>
+</blockquote>
+
+<blockquote>
+  <p>- 하이퍼파라미터</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>cat_features 설정</th>
+        <th>public score[RMSE]</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>X</td>
+        <td>2.3975</td>
+      </tr>
+      <tr>
+        <td>O</td>
+        <td>2.1539</td>
+      </tr>
+    </tbody>
+  </table>
+</blockquote>
+
+<h4 id="--catboost-데이터-전처리--o-cat_features--o">- Catboost [데이터 전처리 : O, cat_features : O]</h4>
+
+<blockquote>
+  <p>min valid loss[RMSE] : 2.144 / public score[RMSE] : 2.1539</p>
+
+  <p><img src="../../images/Boostcamp_AI/2023-04-21-Domain_Foundation_Competition/image-20230502020329943.png" alt="image-20230502020329943" /></p>
+</blockquote>
+
+<h1 id="--프로젝트-수행결과">- 프로젝트 수행결과</h1>
+
+<hr />
+
+<blockquote>
+  <p>상위 3명의 모델을 앙상블을 하여 제출하였습니다<br />
+CatBoost : CatBoost : CNN_FFM = 1 : 1 : 1 -&gt; 2.1359 (public score[RMSE])</p>
+</blockquote>
+
+<blockquote>
+  <p>EDA 과정에서 예상 했던 것 처럼, users, books data 대비 rating data 부족한 문제 때문에 딥러닝의 성능이 머신러닝에 비해서 떨어진것 같다고 파악하였습니다</p>
+
+  <p>데이터가 좀 더 다양해지고 늘어난다면 딥러닝도 좋은 성능을 보일 것으로 예상합니다</p>
+</blockquote>
+
+<h2 id="회고">회고</h2>
+
+<ul>
+  <li>
+    <p>학습 목표</p>
+
+    <blockquote>
+      <p>이번에는 첫 추천 시스템 프로젝트이므로 데이터의 전처리와 예측 모델 알고리즘을 파악하는 것을 목표로 하였다.</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>시도한 개선 방식</p>
+
+    <blockquote>
+      <p>결측치를 채우는 데이터 전처리를 하였을 때는 FM model은 2.463 -&gt; 2.418, FFM model은 2.516 -&gt; 2.473의 min valid loss 변화가 있었다.</p>
+
+      <p>Categorical 데이터로 이루어진 데이터를 각각의 피처에 따라 레이팅의 평균으로 매칭하여 전처리한 결과로 numerical 데이터로 전처리 했을 때에는 valid loss가 FM - 1.446, FFM - 1.438으로 큰 차이가 있었지만 실제 테스트 결과로는 RMSE가 2.3대로 Categorical 데이터로 처리했을 때의 RMSE인 2.4보다는 향상되었다.</p>
+
+      <p>Catboost Regression의 파라미터 cat_feature을 활용하여 Categorical데이터 표적 학습을 한 결과 RMSE가 2.15를 달성하였다. 머신러닝은 딥러닝에 비해 범주형 데이터를 더 잘 처리하였다.</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>다음 프로젝트에서 시도해볼 것</p>
+
+    <blockquote>
+      <p>context data를 처리하는 부분에서는 FFM도 좋은 성능을 보일 것으로 예상된다.<br />
+book recommend project에서는 데이터의 양이 딥러닝 모델을 적용하기에 충분하지 않았었던 것으로 파악을 하였다.</p>
+
+      <p>cold start문제를 해결하기 위해 이미 Categorical 데이터로 주어진 부분은 머신러닝 기법인 catboost를 활용하고, 새로 주어진 데이터는 numerical 데이터로 학습한 딥러닝 모델을 활용하여 하이브리드 모델을 구성하는 것을 목표로 하였다.</p>
+
+      <p>WandB를 통한 결과 기록</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>학습 과정에서의 교훈</p>
+
+    <blockquote>
+      <p>Git을 통해서 버전 관리를 초기에 빠르게 시작 했어야 했다. 중간에 일정이상 진행된 상태로 팀원들과 코드를 합치려는 과정에서 어려움을 겪었다.</p>
+
+      <p>성능만을 높이기 위한 앙상블보다는 데이터를 파악하고 서로 다른 모델끼리 부족한 점을 보완할 수 있도록 앙상블을 진행하여야 된다.</p>
+
+      <p>데이터 전처리와 모델에 집중하는 것 외에도 ColdStart문제를 해결하는 것도 성능 향상에 영향을 준다</p>
+    </blockquote>
+  </li>
+</ul>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#project" class="page__taxonomy-item p-category" rel="tag">Project</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#boostcamp-ai" class="page__taxonomy-item p-category" rel="tag">BoostCamp_AI</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-04-21T00:00:00+09:00">2023-04-21 Friday</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%5BWrap_up%5D+%EB%8F%84%EB%A9%94%EC%9D%B8+%EA%B8%B0%EC%B4%88+%EB%8C%80%ED%9A%8C%20https%3A%2F%2Fbrothergyu.github.io%2Fboostcamp_ai%2FDomain_Foundation_Competition%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fbrothergyu.github.io%2Fboostcamp_ai%2FDomain_Foundation_Competition%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fbrothergyu.github.io%2Fboostcamp_ai%2FDomain_Foundation_Competition%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      <!-- 
+  <nav class="pagination">
+    
+      <a href="/devtools/Pickle/" class="pagination--pager" title="[Python Library] pickle - 파이썬 객체 직렬화, 역직렬화 라이브러리
+">이전</a>
+    
+    
+      <a href="/til/Week_08_TIL/" class="pagination--pager" title="Boostcamp Week 08 [TIL]
+">다음</a>
+    
+  </nav>
+ -->
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  	
+  	
+  	
+  	
+  	
+
+
+  <nav class="pagination_prev_next">
+    
+      <a href="/boostcamp_ai/GitHub_Command_Summary/" class="pagination_prev_next--pager_left"><span class="prev_next">이전 포스트<br></span>[GitHub] Command summary</a>
+    
+    
+    
+      <a href="/boostcamp_ai/Books_Recommendation_Platform/" class="pagination_prev_next--pager_right"><span class="prev_next">다음 포스트<br></span>[Project] Books_Recommendation_Platform</a>
+    
+    
+  </nav>
+
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">댓글남기기</h4>
+      <section id="utterances-comments"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">최근 포스트</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ubuntu_server/cuda_install/" rel="permalink">[Setting] cuda/cudnn 설치하기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-08-25T00:00:00+09:00">2023-08-25 Friday</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">cuda 설치하기
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ubuntu_server/userful_util/" rel="permalink">[Util] 알면 편한 유틸리티들
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-08-24T00:00:00+09:00">2023-08-24 Thursday</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">알면 편한 유틸리티들
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/etc/ram_overclock/" rel="permalink">[Desktop Setting] Ram Overclock
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-08-24T00:00:00+09:00">2023-08-24 Thursday</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">램 오버클럭 수치 기록
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ai/cosine_similarity/" rel="permalink">[sklearn] cosine_similarity
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-08-24T00:00:00+09:00">2023-08-24 Thursday</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">[sklearn] cosine_similarity
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+    
+    <aside class="sidebar__top">
+      <a href="#site-nav"> <i class="fas fa-angle-up fa-2x"></i></a>
+    </aside>
+    
+      <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="mailto:brothergyu98@gmail.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+        
+      
+        
+          <li><a href="https://github.com/BrotherGyu/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 Brother_Gyu. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BDHERKJ7W3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-BDHERKJ7W3', { 'anonymize_ip': false});
+</script>
+
+
+
+
+
+
+    <script>
+  'use strict';
+
+  (function() {
+    var commentContainer = document.querySelector('#utterances-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://utteranc.es/client.js');
+    script.setAttribute('repo', 'BrotherGyu/BrotherGyu.github.io_comments');
+    script.setAttribute('issue-term', 'pathname');
+    
+    script.setAttribute('theme', 'github-light');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+    <script type="text/javascript">
+    window.MathJax = {
+   tex: {
+     packages: ['base', 'ams']
+   },
+   loader: {
+     load: ['ui/menu', '[tex]/ams']
+   },
+   startup: {
+     ready() {
+       MathJax.startup.defaultReady();
+       const Macro = MathJax._.input.tex.Symbol.Macro;
+       const MapHandler = MathJax._.input.tex.MapHandler.MapHandler;
+       const Array = MathJax._.input.tex.ams.AmsMethods.default.Array;
+       const env = new Macro('psmallmatrix', Array, [null, '(', ')', 'c', '.333em', '.2em', 'S', 1]);
+       MapHandler.getMap('AMSmath-environment').add('psmallmatrix', env);
+     }
+   }
+    };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async
+   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+  </body>
+</html>
