@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://brothergyu.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://brothergyu.github.io/" rel="alternate" type="text/html" /><updated>2026-03-26T17:07:55+09:00</updated><id>https://brothergyu.github.io/feed.xml</id><title type="html">BrotherGyu</title><author><name>Brother_Gyu</name></author><entry><title type="html">[uv] uv 처음 설치하기</title><link href="https://brothergyu.github.io/devtools/UV_setting/" rel="alternate" type="text/html" title="[uv] uv 처음 설치하기" /><published>2026-03-25T00:00:00+09:00</published><updated>2026-03-25T00:00:00+09:00</updated><id>https://brothergyu.github.io/devtools/UV_setting</id><content type="html" xml:base="https://brothergyu.github.io/devtools/UV_setting/"><![CDATA[<h1 id="uv-uv-처음-설치하기">[uv] uv 처음 설치하기</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://brothergyu.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://brothergyu.github.io/" rel="alternate" type="text/html" /><updated>2026-03-26T17:15:35+09:00</updated><id>https://brothergyu.github.io/feed.xml</id><title type="html">BrotherGyu</title><author><name>Brother_Gyu</name></author><entry><title type="html">[uv] uv 처음 설치하기</title><link href="https://brothergyu.github.io/devtools/UV_setting/" rel="alternate" type="text/html" title="[uv] uv 처음 설치하기" /><published>2026-03-25T00:00:00+09:00</published><updated>2026-03-25T00:00:00+09:00</updated><id>https://brothergyu.github.io/devtools/UV_setting</id><content type="html" xml:base="https://brothergyu.github.io/devtools/UV_setting/"><![CDATA[<h1 id="uv-uv-처음-설치하기">[uv] uv 처음 설치하기</h1>
 
 <p>Python 패키지 설치, 가상환경 생성, 의존성 관리를 <code class="language-plaintext highlighter-rouge">uv</code>로 진행하는 방법 정리</p>
 
@@ -202,7 +202,19 @@ uv <span class="nb">sync</span>             <span class="c"># lock 파일 기준
 
 <h2 id="--test">- test</h2>
 
-<p>카테고리 페이지와 사이드바 노출 확인용 파일</p>]]></content><author><name>Brother_Gyu</name></author><category term="Recommender Systems" /><category term="Recommender Systems" /><category term="Recsys" /><summary type="html"><![CDATA[Recommender Systems category test post]]></summary></entry><entry><title type="html">[Setting] cuda/cudnn 설치하기</title><link href="https://brothergyu.github.io/ubuntu_server/cuda_install/" rel="alternate" type="text/html" title="[Setting] cuda/cudnn 설치하기" /><published>2023-08-25T00:00:00+09:00</published><updated>2023-08-25T00:00:00+09:00</updated><id>https://brothergyu.github.io/ubuntu_server/cuda_install</id><content type="html" xml:base="https://brothergyu.github.io/ubuntu_server/cuda_install/"><![CDATA[<h1 id="setting-cudacudnn-설치하기">[Setting] cuda/cudnn 설치하기</h1>
+<p>카테고리 페이지와 사이드바 노출 확인용 파일</p>
+
+<h3 id="--test-1">- test 1</h3>
+
+<p><code class="language-plaintext highlighter-rouge">###</code> 헤더 출력 테스트</p>
+
+<h4 id="--test-1_1">- test 1_1</h4>
+
+<p><code class="language-plaintext highlighter-rouge">####</code> 헤더 출력 테스트</p>
+
+<h3 id="--test-2">- test 2</h3>
+
+<p>하위 목차 출력 확인용</p>]]></content><author><name>Brother_Gyu</name></author><category term="Recommender Systems" /><category term="Recommender Systems" /><category term="Recsys" /><summary type="html"><![CDATA[Recommender Systems category test post]]></summary></entry><entry><title type="html">[Setting] cuda/cudnn 설치하기</title><link href="https://brothergyu.github.io/ubuntu_server/cuda_install/" rel="alternate" type="text/html" title="[Setting] cuda/cudnn 설치하기" /><published>2023-08-25T00:00:00+09:00</published><updated>2023-08-25T00:00:00+09:00</updated><id>https://brothergyu.github.io/ubuntu_server/cuda_install</id><content type="html" xml:base="https://brothergyu.github.io/ubuntu_server/cuda_install/"><![CDATA[<h1 id="setting-cudacudnn-설치하기">[Setting] cuda/cudnn 설치하기</h1>
 
 <blockquote>
   <p>Ubuntu 환경에서 cuda/cudnn 설치하는 법을 다룹니다.</p>
