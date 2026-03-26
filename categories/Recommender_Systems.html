@@ -9,24 +9,19 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>[Scikit-learn] sklearn.preprocessing | BrotherGyu</title>
-<meta name="description" content="데이터 전처리(preprocessing) 모듈">
+<!-- begin _includes/seo.html --><title>Recommender Systems | BrotherGyu</title>
+<meta name="description" content="">
 
 
   <meta name="author" content="Brother_Gyu">
   
-  <meta property="article:author" content="Brother_Gyu">
-  
 
 
-<meta property="og:type" content="article">
+<meta property="og:type" content="website">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="BrotherGyu">
-<meta property="og:title" content="[Scikit-learn] sklearn.preprocessing">
-<meta property="og:url" content="https://brothergyu.github.io/boostcamp_ai/sklearn.preprocessing/">
-
-
-  <meta property="og:description" content="데이터 전처리(preprocessing) 모듈">
+<meta property="og:title" content="Recommender Systems">
+<meta property="og:url" content="https://brothergyu.github.io/categories/Recommender_Systems">
 
 
 
@@ -34,7 +29,6 @@
 
 
 
-  <meta property="article:published_time" content="2023-03-10T00:00:00+09:00">
 
 
 
@@ -45,7 +39,7 @@
   
 
 
-<link rel="canonical" href="https://brothergyu.github.io/boostcamp_ai/sklearn.preprocessing/">
+<link rel="canonical" href="https://brothergyu.github.io/categories/Recommender_Systems">
 
 
 
@@ -101,7 +95,7 @@
 
   </head>
 
-  <body class="layout--single wide">
+  <body class="layout--archive wide">
     <nav class="skip-links">
   <ul>
     <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
@@ -151,8 +145,6 @@
       
 
 
-
-
   
     
 
@@ -174,7 +166,7 @@
       
         
         <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a href="/categories/#boostcamp_ai" itemprop="item"><span itemprop="name">Boostcamp_ai</span></a>
+          <a href="/categories" itemprop="item"><span itemprop="name">Categories</span></a>
           <meta itemprop="position" content="2" />
         </li>
         <span class="sep">/</span>
@@ -182,7 +174,7 @@
     
       
       
-        <li class="current">[Scikit-learn] sklearn.preprocessing</li>
+        <li class="current">Recommender Systems</li>
       
     
   </ol>
@@ -607,370 +599,14 @@
 
 
 
-  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="[Scikit-learn] sklearn.preprocessing">
-    <meta itemprop="description" content="데이터 전처리(preprocessing) 모듈">
-    <meta itemprop="datePublished" content="2023-03-10T00:00:00+09:00">
+  <div class="archive">
     
-
-    <div class="page__inner-wrap">
-      
-        <header>
-          <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="https://brothergyu.github.io/boostcamp_ai/sklearn.preprocessing/" class="u-url" itemprop="url">[Scikit-learn] sklearn.preprocessing
-</a>
-          </h1>
-          
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2023-03-10T00:00:00+09:00">2023-03-10 Friday</time>
-      </span>
-    
-
-    
-
-    
-  </p>
-
-
-        </header>
-      
-
-      <section class="page__content e-content" itemprop="text">
-        
-          <aside class="sidebar__right sticky">
-            <nav class="toc">
-              <header><h4 class="nav__title"><i class="fas fa-fas fa-list-ul"></i> 목차</h4></header>
-              <!-- toc 인식 범위 수정 -->
-              <!-- <ul class="toc__menu"><li><a href="#--import-sklearnpreprocessing">- import sklearn.preprocessing</a></li></ul>
- -->
-              <ul class="toc__menu"><li><a href="#--import-sklearnpreprocessing">- import sklearn.preprocessing</a></li></ul>
-
-            </nav>
-          </aside>
-        
-        <h1 id="--import-sklearnpreprocessing">- import sklearn.preprocessing</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: center">종류</th>
-      <th style="text-align: left">설명</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: center">StandardScaler</td>
-      <td style="text-align: left">평균과 표준편차를 이용하여 스케일링하는 방법<br />입력 데이터의 분포가 평균이 0이고, 표준편차가 1인 정규분포 형태로 변환<br />[0, 1, 2, 3, 4, 5] -&gt; [-1.46385, -0.87831, -0.29277, 0.29277, 0.87831, 1.46385]<br />각 feature의 분포가 동일하게 변환되므로, 모델의 학습이 더욱 안정적<br />력 데이터가 정규분포 형태에 가까울 때 가장 잘 작동<br />또한, 이상치(outlier)에 민감하게 반응</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">MinMaxScaler</td>
-      <td style="text-align: left">최솟값과 최댓값을 이용하여 스케일링<br />입력 데이터의 분포를 0과 1 사이로 변경<br />[0, 1, 2, 3, 4, 5] -&gt; [0.0, 0.17, 0.33, 0.50, 0.67, 0.83]<br />입력 데이터의 분포를 0과 1 사이로 매핑함으로써, 각 feature의 절대적인 크기를 동일하게 만들어준다<br />MinMaxScaler는 입력 데이터가 비교적 균일한 분포를 가지고 있을 때 적합<br />예를 들어, 이미지 데이터나 픽셀 값 등에서 주로 사용<br />MinMaxScaler는 이상치(outlier)에 민감하게 반응하므로, 이상치가 포함되어 있는 데이터에서는 RobustScaler나 StandardScaler와 같은 다른 스케일링 방법을 사용하는 것이 더 안정적일 수 있다.</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">MaxAbsScaler</td>
-      <td style="text-align: left">입력 데이터에서 각각의 feature(특성)에 대해 절대값이 가장 큰 값을 1로 만들고, <br />나머지 값들은 절대값이 최댓값에 대한 비율로 변환하는 스케일링 기법<br />[-10, -5, 0, 5, 10] -&gt;  [-1, -0.5, 0, 0.5, 1]<br />입력 데이터의 분포를 보존하면서 각 feature의 절대적인 크기를 동일하게 만들어주는 효과</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">RobustScaler</td>
-      <td style="text-align: left">입력 데이터에서 각각의 feature(특성)에 대해 중앙값(median)과 IQR(Interquartile Range)를 이용하여 스케일링하는 방법<br />[-10, -5, 0, 5, 10, 100] -&gt; [-0.5, -0.25, 0, 0.25, 0.5, 18.5]<br />중앙값과 IQR을 사용하여 스케일링하기 때문에, 이상치가 포함된 데이터에서도 안정적인 스케일링 결과를 얻을 수 있다.<br />중앙값과 IQR을 사용하여 스케일링하기 때문에, 이 값들이 outlier에 의해 영향을 받을 수 있다는 점을 주의</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">Normalizer</td>
-      <td style="text-align: left">L1 또는 L2 norm으로 정규화하는 기능을 제공. L1 norm은 각 데이터의 절대값을 합산한 값으로 나누어 정규화하며, L2 norm은 각 데이터의 제곱을 합산한 값의 제곱근으로 나누어 정규화<br />[[1, 2], [3, 4], [5, 6], [7, 8]] – 디폴트 : L2 norm –&gt;<br />[[0.22975292 0.97324899] [0.45584231 0.89096089] [0.56630692 0.82462113] [0.62791145 0.77847621]]<br />Normalizer 클래스는 fit 메서드를 사용하여 데이터에 맞는 정규화 파라미터를 계산하고, transform 메서드를 사용하여 데이터를 정규화합니다. 주로, 텍스트 분류나 클러스터링에서 희소 행렬(sparse matrix)을 다룰 때 사용됩니다.</td>
-    </tr>
-  </tbody>
-</table>
-
-        
-      </section>
-
-      <footer class="page__meta">
-        
-        
-  
-
-
-  
-
-  <p class="page__taxonomy">
-    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
-    <span itemprop="keywords">
-    
-      <a href="/tags/#scikit-learn" class="page__taxonomy-item p-category" rel="tag">Scikit-learn</a>
-    
-    </span>
-  </p>
-
-
-
-
-  
-
-
-  
-
-  <p class="page__taxonomy">
-    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
-    <span itemprop="keywords">
-    
-      <a href="/categories/#boostcamp-ai" class="page__taxonomy-item p-category" rel="tag">BoostCamp_AI</a>
-    
-    </span>
-  </p>
-
-
-        
-
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-03-10T00:00:00+09:00">2023-03-10 Friday</time></p>
-
-      </footer>
-
-      <section class="page__share">
-  
-    <h4 class="page__share-title">공유하기</h4>
-  
-
-  <a href="https://twitter.com/intent/tweet?text=%5BScikit-learn%5D+sklearn.preprocessing%20https%3A%2F%2Fbrothergyu.github.io%2Fboostcamp_ai%2Fsklearn.preprocessing%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
-
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fbrothergyu.github.io%2Fboostcamp_ai%2Fsklearn.preprocessing%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
-
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fbrothergyu.github.io%2Fboostcamp_ai%2Fsklearn.preprocessing%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
-</section>
-
-
-      <!-- 
-  <nav class="pagination">
-    
-      <a href="/til/Week_01_TIL/" class="pagination--pager" title="Boostcamp Week 01 [TIL]
-">이전</a>
+      <h1 id="page-title" class="page__title">Recommender Systems</h1>
     
     
-      <a href="/python_module/Combinatoric_iterators/" class="pagination--pager" title="[itertools] Combinatoric iterators
-">다음</a>
-    
-  </nav>
- -->
 
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  	
-  	
-  	
-  	
-  	
-
-
-  <nav class="pagination_prev_next">
-    
-    
-      <a href="/boostcamp_ai/Deep_Learing's_Most_Important_Ideas/" class="pagination_prev_next--pager_right"><span class="prev_next">다음 포스트<br></span>Deep Learning's Most Important Ideas</a>
-    
-    
-  </nav>
-
-
-    </div>
-
-    
-      <div class="page__comments">
-  
-  
-      <h4 class="page__comments-title">댓글남기기</h4>
-      <section id="utterances-comments"></section>
-    
+  </div>
 </div>
-
-    
-  </article>
-
-  
-  
-    <div class="page__related">
-      <h2 class="page__related-title">최근 포스트</h2>
-      <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/devtools/UV_setting/" rel="permalink">[uv] uv 처음 설치하기
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2026-03-25T00:00:00+09:00">2026-03-25 Wednesday</time>
-      </span>
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">uv 설치, PATH 설정, 기본 사용 방법 정리
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/recommender/systems/Recommender_Systems_test/" rel="permalink">[Recommender Systems] test post
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2024-01-01T00:00:00+09:00">2024-01-01 Monday</time>
-      </span>
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">Recommender Systems category test post
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/ubuntu_server/cuda_install/" rel="permalink">[Setting] cuda/cudnn 설치하기
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2023-08-25T00:00:00+09:00">2023-08-25 Friday</time>
-      </span>
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">cuda 설치하기
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/ubuntu_server/userful_util/" rel="permalink">[Util] 알면 편한 유틸리티들
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2023-08-24T00:00:00+09:00">2023-08-24 Thursday</time>
-      </span>
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">알면 편한 유틸리티들
-</p>
-  </article>
-</div>
-
-        
-      </div>
-    </div>
-  
-  
-</div>
-
     </div>
 
     
@@ -1050,31 +686,6 @@
 
 
 
-
-
-    <script>
-  'use strict';
-
-  (function() {
-    var commentContainer = document.querySelector('#utterances-comments');
-
-    if (!commentContainer) {
-      return;
-    }
-
-    var script = document.createElement('script');
-    script.setAttribute('src', 'https://utteranc.es/client.js');
-    script.setAttribute('repo', 'BrotherGyu/BrotherGyu.github.io_comments');
-    script.setAttribute('issue-term', 'pathname');
-    
-    script.setAttribute('theme', 'github-light');
-    script.setAttribute('crossorigin', 'anonymous');
-
-    commentContainer.appendChild(script);
-  })();
-</script>
-
-  
 
 
 

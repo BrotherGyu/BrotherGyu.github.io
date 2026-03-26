@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://brothergyu.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://brothergyu.github.io/" rel="alternate" type="text/html" /><updated>2026-03-26T16:53:06+09:00</updated><id>https://brothergyu.github.io/feed.xml</id><title type="html">BrotherGyu</title><author><name>Brother_Gyu</name></author><entry><title type="html">[uv] uv 처음 설치하기</title><link href="https://brothergyu.github.io/devtools/UV_setting/" rel="alternate" type="text/html" title="[uv] uv 처음 설치하기" /><published>2026-03-25T00:00:00+09:00</published><updated>2026-03-25T00:00:00+09:00</updated><id>https://brothergyu.github.io/devtools/UV_setting</id><content type="html" xml:base="https://brothergyu.github.io/devtools/UV_setting/"><![CDATA[<h1 id="uv-uv-처음-설치하기">[uv] uv 처음 설치하기</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://brothergyu.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://brothergyu.github.io/" rel="alternate" type="text/html" /><updated>2026-03-26T17:04:21+09:00</updated><id>https://brothergyu.github.io/feed.xml</id><title type="html">BrotherGyu</title><author><name>Brother_Gyu</name></author><entry><title type="html">[uv] uv 처음 설치하기</title><link href="https://brothergyu.github.io/devtools/UV_setting/" rel="alternate" type="text/html" title="[uv] uv 처음 설치하기" /><published>2026-03-25T00:00:00+09:00</published><updated>2026-03-25T00:00:00+09:00</updated><id>https://brothergyu.github.io/devtools/UV_setting</id><content type="html" xml:base="https://brothergyu.github.io/devtools/UV_setting/"><![CDATA[<h1 id="uv-uv-처음-설치하기">[uv] uv 처음 설치하기</h1>
 
 <p>Python 패키지 설치, 가상환경 생성, 의존성 관리를 <code class="language-plaintext highlighter-rouge">uv</code>로 진행하는 방법 정리</p>
 
@@ -196,7 +196,13 @@ uv <span class="nb">sync</span>             <span class="c"># lock 파일 기준
   <li><a href="https://docs.astral.sh/uv/getting-started/first-steps/">uv 공식 문서 - First steps</a></li>
   <li><a href="https://docs.astral.sh/uv/guides/install-python/">uv 공식 문서 - Installing and managing Python</a></li>
   <li><a href="https://docs.astral.sh/uv/concepts/python-versions/">uv 공식 문서 - Python versions</a></li>
-</ul>]]></content><author><name>Brother_Gyu</name></author><category term="DevTools" /><category term="DevTools" /><category term="uv" /><summary type="html"><![CDATA[uv 설치, PATH 설정, 기본 사용 방법 정리]]></summary></entry><entry><title type="html">[Setting] cuda/cudnn 설치하기</title><link href="https://brothergyu.github.io/ubuntu_server/cuda_install/" rel="alternate" type="text/html" title="[Setting] cuda/cudnn 설치하기" /><published>2023-08-25T00:00:00+09:00</published><updated>2023-08-25T00:00:00+09:00</updated><id>https://brothergyu.github.io/ubuntu_server/cuda_install</id><content type="html" xml:base="https://brothergyu.github.io/ubuntu_server/cuda_install/"><![CDATA[<h1 id="setting-cudacudnn-설치하기">[Setting] cuda/cudnn 설치하기</h1>
+</ul>]]></content><author><name>Brother_Gyu</name></author><category term="DevTools" /><category term="DevTools" /><category term="uv" /><summary type="html"><![CDATA[uv 설치, PATH 설정, 기본 사용 방법 정리]]></summary></entry><entry><title type="html">[Recommender Systems] test post</title><link href="https://brothergyu.github.io/recommender/systems/Recommender_Systems_test/" rel="alternate" type="text/html" title="[Recommender Systems] test post" /><published>2024-01-01T00:00:00+09:00</published><updated>2024-01-01T00:00:00+09:00</updated><id>https://brothergyu.github.io/recommender/systems/Recommender_Systems_test</id><content type="html" xml:base="https://brothergyu.github.io/recommender/systems/Recommender_Systems_test/"><![CDATA[<h1 id="recommender-systems-test-post">[Recommender Systems] test post</h1>
+
+<p>Recommender Systems 카테고리 테스트용 포스트</p>
+
+<h2 id="--test">- test</h2>
+
+<p>카테고리 페이지와 사이드바 노출 확인용 파일</p>]]></content><author><name>Brother_Gyu</name></author><category term="Recommender" /><category term="Systems" /><category term="Recommender Systems" /><category term="Recsys" /><summary type="html"><![CDATA[Recommender Systems category test post]]></summary></entry><entry><title type="html">[Setting] cuda/cudnn 설치하기</title><link href="https://brothergyu.github.io/ubuntu_server/cuda_install/" rel="alternate" type="text/html" title="[Setting] cuda/cudnn 설치하기" /><published>2023-08-25T00:00:00+09:00</published><updated>2023-08-25T00:00:00+09:00</updated><id>https://brothergyu.github.io/ubuntu_server/cuda_install</id><content type="html" xml:base="https://brothergyu.github.io/ubuntu_server/cuda_install/"><![CDATA[<h1 id="setting-cudacudnn-설치하기">[Setting] cuda/cudnn 설치하기</h1>
 
 <blockquote>
   <p>Ubuntu 환경에서 cuda/cudnn 설치하는 법을 다룹니다.</p>
@@ -1140,79 +1146,4 @@ and ~/.bashrc <span class="o">(</span><span class="k">for </span>interactive she
 
 <blockquote>
   <p>정확한 원인은 sshd_config 안에서 /sshd_config.d 폴더 안의 conf 파일들이 Include되는 과정에서 PasswordAuthentication yes가 먼저 선언 되었기 때문이였습니다.</p>
-</blockquote>]]></content><author><name>Brother_Gyu</name></author><category term="Ubuntu_Server" /><category term="Ubuntu Server" /><category term="Troubleshooting" /><summary type="html"><![CDATA[패스워드를 사용하지 않고 rsa를 사용해서 서버 접속]]></summary></entry><entry><title type="html">[Setting] Ubuntu Server 22.04.3 LTS Wifi 설정 &amp;amp; Static IP</title><link href="https://brothergyu.github.io/ubuntu_server/wifi_setting_static_ip/" rel="alternate" type="text/html" title="[Setting] Ubuntu Server 22.04.3 LTS Wifi 설정 &amp;amp; Static IP" /><published>2023-08-20T02:00:00+09:00</published><updated>2023-08-20T02:00:00+09:00</updated><id>https://brothergyu.github.io/ubuntu_server/wifi_setting_static_ip</id><content type="html" xml:base="https://brothergyu.github.io/ubuntu_server/wifi_setting_static_ip/"><![CDATA[<h1 id="setting-ubuntu-22043-lts-wifi-설정--static-ip">[Setting] Ubuntu 22.04.3 LTS Wifi 설정 &amp; Static IP</h1>
-
-<blockquote>
-  <p><code class="language-plaintext highlighter-rouge">netplan</code>은 Ubuntu 18.04 버전부터 도입된 네트워크 설정 도구로, 여러 네트워크 설정을 YAML 파일 형식으로 정의하고 적용할 수 있게 해줍니다.</p>
-</blockquote>
-
-<ul>
-  <li>
-    <p><strong>시스템에 있는 모든 네트워크 인터페이스의 정보 확인</strong></p>
-
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">ls</span> /sys/class/net/
-</code></pre></div>    </div>
-
-    <p><img src="../../images/Ubuntu_Server/2023-08-20-wifi_setting_static_ip/image-20230820213133114.png" alt="image-20230820213133114" /></p>
-  </li>
-  <li>
-    <p><strong>Netplan 설정 파일 위치 확인</strong></p>
-
-    <blockquote>
-      <p>기본적으로 <code class="language-plaintext highlighter-rouge">netplan</code> 설정 파일은 <code class="language-plaintext highlighter-rouge">/etc/netplan/</code> 디렉토리에 위치합니다. 이 디렉토리를 확인해보면 기본 설정 파일을 볼 수 있습니다.</p>
-    </blockquote>
-
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">ls</span> /etc/netplan/
-</code></pre></div>    </div>
-
-    <p><img src="../../images/Ubuntu_Server/2023-08-20-wifi_setting_static_ip/image-20230820213416639.png" alt="image-20230820213416639" /></p>
-  </li>
-  <li>
-    <p><strong>Netplan 설정 파일 수정</strong></p>
-
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>nano /etc/netplan/파일이름.yaml
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p><strong>YAML 형식으로 네트워크 설정</strong></p>
-
-    <blockquote>
-      <p>기본적인 정적 IP 설정 예제</p>
-    </blockquote>
-
-    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># This is the network config written by 'subiquity'</span>
-<span class="na">network</span><span class="pi">:</span>
-  <span class="na">version</span><span class="pi">:</span> <span class="m">2</span>
-  <span class="na">wifis</span><span class="pi">:</span>
-    <span class="na">wlp6s0</span><span class="pi">:</span> <span class="c1"># wlan device 이름 입력</span>
-      <span class="na">addresses</span><span class="pi">:</span>
-        <span class="pi">-</span> <span class="s">192.168.0.100/24</span> <span class="c1"># 고정 ip 주소 입력</span>
-      <span class="na">routes</span><span class="pi">:</span>
-        <span class="pi">-</span> <span class="na">to</span><span class="pi">:</span> <span class="s">0.0.0.0/0</span>
-          <span class="na">via</span><span class="pi">:</span> <span class="s">192.168.0.1</span> <span class="c1"># gateway 주소 입력</span>
-      <span class="na">nameservers</span><span class="pi">:</span>
-        <span class="na">addresses</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">8.8.8.8</span><span class="pi">,</span> <span class="nv">8.8.4.4</span><span class="pi">]</span>
-      <span class="na">access-points</span><span class="pi">:</span>
-        <span class="na">test_wifi</span><span class="pi">:</span> <span class="c1"># wifi 이름 입력</span>
-          <span class="na">password</span><span class="pi">:</span> <span class="m">00000000</span> <span class="c1"># wifi 비밀 번호 입력</span>
-      <span class="na">dhcp4</span><span class="pi">:</span> <span class="kc">true</span>
-</code></pre></div>    </div>
-
-    <blockquote>
-      <p>띄어 쓰기 주의 : tab하고 스페이스가 섞이면 구문 에러 발생</p>
-    </blockquote>
-  </li>
-  <li>
-    <p><strong>Netplan 설정 적용</strong></p>
-
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>netplan apply
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p><strong>네트워크 설정 확인</strong></p>
-
-    <blockquote>
-      <p><code class="language-plaintext highlighter-rouge">ip a</code> 또는 <code class="language-plaintext highlighter-rouge">ip route</code> 명령을 사용하여 네트워크 설정을 확인</p>
-    </blockquote>
-  </li>
-</ul>]]></content><author><name>Brother_Gyu</name></author><category term="Ubuntu_Server" /><category term="Ubuntu Server" /><category term="Setting" /><summary type="html"><![CDATA[wifi 설정 및 고정 ip 설정하기]]></summary></entry></feed>
+</blockquote>]]></content><author><name>Brother_Gyu</name></author><category term="Ubuntu_Server" /><category term="Ubuntu Server" /><category term="Troubleshooting" /><summary type="html"><![CDATA[패스워드를 사용하지 않고 rsa를 사용해서 서버 접속]]></summary></entry></feed>
