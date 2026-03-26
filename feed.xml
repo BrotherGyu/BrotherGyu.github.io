@@ -1,4 +1,202 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://brothergyu.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://brothergyu.github.io/" rel="alternate" type="text/html" /><updated>2025-09-15T17:47:34+09:00</updated><id>https://brothergyu.github.io/feed.xml</id><title type="html">BrotherGyu</title><author><name>Brother_Gyu</name></author><entry><title type="html">[Setting] cuda/cudnn 설치하기</title><link href="https://brothergyu.github.io/ubuntu_server/cuda_install/" rel="alternate" type="text/html" title="[Setting] cuda/cudnn 설치하기" /><published>2023-08-25T00:00:00+09:00</published><updated>2023-08-25T00:00:00+09:00</updated><id>https://brothergyu.github.io/ubuntu_server/cuda_install</id><content type="html" xml:base="https://brothergyu.github.io/ubuntu_server/cuda_install/"><![CDATA[<h1 id="setting-cudacudnn-설치하기">[Setting] cuda/cudnn 설치하기</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://brothergyu.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://brothergyu.github.io/" rel="alternate" type="text/html" /><updated>2026-03-26T16:53:06+09:00</updated><id>https://brothergyu.github.io/feed.xml</id><title type="html">BrotherGyu</title><author><name>Brother_Gyu</name></author><entry><title type="html">[uv] uv 처음 설치하기</title><link href="https://brothergyu.github.io/devtools/UV_setting/" rel="alternate" type="text/html" title="[uv] uv 처음 설치하기" /><published>2026-03-25T00:00:00+09:00</published><updated>2026-03-25T00:00:00+09:00</updated><id>https://brothergyu.github.io/devtools/UV_setting</id><content type="html" xml:base="https://brothergyu.github.io/devtools/UV_setting/"><![CDATA[<h1 id="uv-uv-처음-설치하기">[uv] uv 처음 설치하기</h1>
+
+<p>Python 패키지 설치, 가상환경 생성, 의존성 관리를 <code class="language-plaintext highlighter-rouge">uv</code>로 진행하는 방법 정리</p>
+
+<h2 id="--사전-확인">- 사전 확인</h2>
+
+<p>현재 Python 경로와 버전 확인</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python <span class="nt">--version</span>
+which python
+</code></pre></div></div>
+
+<blockquote>
+  <p>어떤 Python을 기준으로 가상환경이 잡히는지 확인할 때 같이 보면 편하다</p>
+</blockquote>
+
+<h2 id="--uv-설치">- uv 설치</h2>
+
+<p>공식 문서 기준 설치 명령어</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-LsSf</span> https://astral.sh/uv/install.sh | sh
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">curl</code>이 없다면 <code class="language-plaintext highlighter-rouge">wget</code> 사용</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wget <span class="nt">-qO-</span> https://astral.sh/uv/install.sh | sh
+</code></pre></div></div>
+
+<blockquote>
+  <p>기본적으로 <code class="language-plaintext highlighter-rouge">~/.local/bin</code> 아래에 설치된다</p>
+</blockquote>
+
+<h2 id="--path-확인">- PATH 확인</h2>
+
+<p>설치 후 버전 확인</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>uv <span class="nt">--version</span>
+which uv
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">command not found: uv</code>가 출력되면 PATH에 <code class="language-plaintext highlighter-rouge">~/.local/bin</code> 추가</p>
+
+<p><code class="language-plaintext highlighter-rouge">zsh</code></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">"</span><span class="nv">$HOME</span><span class="s2">/.local/bin:</span><span class="nv">$PATH</span><span class="s2">"</span>
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">source</span> ~/.zshrc
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>uv <span class="nt">--version</span>
+</code></pre></div></div>
+
+<h2 id="--uv-업데이트">- uv 업데이트</h2>
+
+<p>standalone installer로 설치한 경우</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>uv self update
+</code></pre></div></div>
+
+<blockquote>
+  <p>설치 스크립트를 다시 실행하는 방식으로 업데이트된다</p>
+</blockquote>
+
+<p>업데이트 후 버전 확인</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>uv <span class="nt">--version</span>
+</code></pre></div></div>
+
+<h2 id="--python-확인">- Python 확인</h2>
+
+<p><code class="language-plaintext highlighter-rouge">uv</code>에서 인식하는 Python 목록 확인</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>uv python list
+</code></pre></div></div>
+
+<p>목록에 있는 Python 설치</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>uv python <span class="nb">install </span>3.12
+</code></pre></div></div>
+
+<p>특정 패치 버전 지정</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>uv python <span class="nb">install </span>3.12.3
+</code></pre></div></div>
+
+<p>여러 버전 한 번에 설치</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>uv python <span class="nb">install </span>3.11 3.12
+</code></pre></div></div>
+
+<p>설치 후 다시 확인</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>uv python list
+</code></pre></div></div>
+
+<p>특정 버전으로 가상환경 생성</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>uv venv <span class="nt">--python</span> 3.11
+</code></pre></div></div>
+
+<p>현재 Python 기준으로 생성</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>uv venv
+</code></pre></div></div>
+
+<blockquote>
+  <p>기본 가상환경 경로는 <code class="language-plaintext highlighter-rouge">.venv</code></p>
+</blockquote>
+
+<h2 id="--기본-사용">- 기본 사용</h2>
+
+<p>프로젝트 초기화</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir </span>uv-test
+<span class="nb">cd </span>uv-test
+uv init
+</code></pre></div></div>
+
+<p>패키지 추가</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>uv add requests
+</code></pre></div></div>
+
+<p>실행</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>uv run python <span class="nt">-c</span> <span class="s2">"import requests; print(requests.__version__)"</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">uv add</code> 실행 시 가상환경 생성, 의존성 설치, <code class="language-plaintext highlighter-rouge">pyproject.toml</code> 갱신, lock 파일 생성이 같이 진행된다</p>
+</blockquote>
+
+<h2 id="--기본-흐름">- 기본 흐름</h2>
+
+<h3 id="1-가상환경-생성">1. 가상환경 생성</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>uv venv
+</code></pre></div></div>
+
+<h3 id="2-의존성-추가">2. 의존성 추가</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>uv add numpy pandas
+</code></pre></div></div>
+
+<h3 id="3-실행">3. 실행</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>uv run python main.py
+</code></pre></div></div>
+
+<blockquote>
+  <p>프로젝트 기준으로 <code class="language-plaintext highlighter-rouge">uv venv</code>, <code class="language-plaintext highlighter-rouge">uv add</code>, <code class="language-plaintext highlighter-rouge">uv run</code> 흐름으로 사용하면 된다</p>
+</blockquote>
+
+<h2 id="--ipynb-파일-사용할-때">- ipynb 파일 사용할 때</h2>
+
+<p>VS Code에서 <code class="language-plaintext highlighter-rouge">ipynb</code> 파일만 사용할 경우 <code class="language-plaintext highlighter-rouge">ipykernel</code> 설치</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>uv add <span class="nt">--dev</span> ipykernel
+</code></pre></div></div>
+
+<p>현재 가상환경을 커널로 등록</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>uv run python <span class="nt">-m</span> ipykernel <span class="nb">install</span> <span class="nt">--user</span> <span class="nt">--name</span> uv-project
+</code></pre></div></div>
+
+<p>VS Code에서 <code class="language-plaintext highlighter-rouge">ipynb</code> 파일을 열고 <code class="language-plaintext highlighter-rouge">uv-project</code> 커널 선택</p>
+
+<blockquote>
+  <p>보통은 여기까지만 해두면 된다<br />
+커널 이름은 프로젝트 이름에 맞게 변경해도 된다</p>
+</blockquote>
+
+<h2 id="--선택-사항-자동완성">- 선택 사항: 자동완성</h2>
+
+<p><code class="language-plaintext highlighter-rouge">zsh</code> 자동완성 설정</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s1">'eval "$(uv generate-shell-completion zsh)"'</span> <span class="o">&gt;&gt;</span> ~/.zshrc
+<span class="nb">source</span> ~/.zshrc
+</code></pre></div></div>
+
+<h2 id="--자주-쓰는-명령어">- 자주 쓰는 명령어</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>uv <span class="nt">--version</span>        <span class="c"># uv 버전 확인</span>
+uv python list      <span class="c"># 사용 가능한 Python 목록 확인</span>
+uv venv             <span class="c"># 가상환경 생성</span>
+uv add requests     <span class="c"># 패키지 추가</span>
+uv run python       <span class="c"># 가상환경 기준으로 Python 실행</span>
+uv <span class="nb">sync</span>             <span class="c"># lock 파일 기준으로 의존성 동기화</span>
+</code></pre></div></div>
+
+<h2 id="--참고">- 참고</h2>
+
+<ul>
+  <li><a href="https://docs.astral.sh/uv/getting-started/installation/">uv 공식 문서 - Installation</a></li>
+  <li><a href="https://docs.astral.sh/uv/getting-started/first-steps/">uv 공식 문서 - First steps</a></li>
+  <li><a href="https://docs.astral.sh/uv/guides/install-python/">uv 공식 문서 - Installing and managing Python</a></li>
+  <li><a href="https://docs.astral.sh/uv/concepts/python-versions/">uv 공식 문서 - Python versions</a></li>
+</ul>]]></content><author><name>Brother_Gyu</name></author><category term="DevTools" /><category term="DevTools" /><category term="uv" /><summary type="html"><![CDATA[uv 설치, PATH 설정, 기본 사용 방법 정리]]></summary></entry><entry><title type="html">[Setting] cuda/cudnn 설치하기</title><link href="https://brothergyu.github.io/ubuntu_server/cuda_install/" rel="alternate" type="text/html" title="[Setting] cuda/cudnn 설치하기" /><published>2023-08-25T00:00:00+09:00</published><updated>2023-08-25T00:00:00+09:00</updated><id>https://brothergyu.github.io/ubuntu_server/cuda_install</id><content type="html" xml:base="https://brothergyu.github.io/ubuntu_server/cuda_install/"><![CDATA[<h1 id="setting-cudacudnn-설치하기">[Setting] cuda/cudnn 설치하기</h1>
 
 <blockquote>
   <p>Ubuntu 환경에서 cuda/cudnn 설치하는 법을 다룹니다.</p>
@@ -1017,127 +1215,4 @@ and ~/.bashrc <span class="o">(</span><span class="k">for </span>interactive she
       <p><code class="language-plaintext highlighter-rouge">ip a</code> 또는 <code class="language-plaintext highlighter-rouge">ip route</code> 명령을 사용하여 네트워크 설정을 확인</p>
     </blockquote>
   </li>
-</ul>]]></content><author><name>Brother_Gyu</name></author><category term="Ubuntu_Server" /><category term="Ubuntu Server" /><category term="Setting" /><summary type="html"><![CDATA[wifi 설정 및 고정 ip 설정하기]]></summary></entry><entry><title type="html">[Setting] Ubuntu Server 22.04.3 LTS 초기 설정</title><link href="https://brothergyu.github.io/ubuntu_server/ubuntu/" rel="alternate" type="text/html" title="[Setting] Ubuntu Server 22.04.3 LTS 초기 설정" /><published>2023-08-20T00:00:00+09:00</published><updated>2023-08-20T00:00:00+09:00</updated><id>https://brothergyu.github.io/ubuntu_server/ubuntu</id><content type="html" xml:base="https://brothergyu.github.io/ubuntu_server/ubuntu/"><![CDATA[<h1 id="setting-ubuntu-server-22043-lts-초기-설정">[Setting] Ubuntu Server 22.04.3 LTS 초기 설정</h1>
-
-<h2 id="ubuntu-server-설치">Ubuntu Server 설치</h2>
-
-<ul>
-  <li>
-    <p>Reference</p>
-
-    <blockquote>
-      <p>[Linux] 우분투 Ubuntu server 설치 - <a href="https://servermon.tistory.com/268">https://servermon.tistory.com/268</a></p>
-
-      <p>[[Linux] Ubuntu 20.04 server 설치 과정 - <a href="https://heroeswillnotdie.tistory.com/22">https://heroeswillnotdie.tistory.com/22</a></p>
-
-      <p>두 개의 블로그를 참고하여 설치 - Rufus 유틸을 사용해서 USB 드라이브 만들었습니다</p>
-    </blockquote>
-  </li>
-</ul>
-
-<h2 id="ubuntu-drivers-설치">ubuntu-drivers 설치</h2>
-
-<ul>
-  <li>
-    <p><strong>1. devices 확인</strong></p>
-
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ubuntu-drivers devices
-</code></pre></div>    </div>
-
-    <p><img src="../../images/Ubuntu_Server/2023-08-20-ubuntu/image-20230820220817302.png" alt="image-20230820220817302" /></p>
-
-    <blockquote>
-      <p>만약 aplay 관련 error나 warning이 발생했을 때:</p>
-
-      <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># aplay가 존재하는지 확인</span>
-which aplay
-<span class="c"># /usr/bin/aplay가 없을 경우 설치</span>
-<span class="nb">sudo </span>apt-get <span class="nb">install </span>alsa-utils
-</code></pre></div>      </div>
-    </blockquote>
-  </li>
-  <li>
-    <p><strong>2. drivers autoinstall</strong></p>
-
-    <blockquote>
-      <p><code class="language-plaintext highlighter-rouge">sudo ubuntu-drivers autoinstall</code> 명령은 Ubuntu에서 사용되는 명령어로, 시스템에 설치된 하드웨어에 가장 잘 맞는 드라이버들을 자동으로 탐지하고 설치하는 기능을 수행</p>
-
-      <p>자세한 기능 설명은 다음과 같습니다:</p>
-
-      <ol>
-        <li><strong>자동 탐지</strong>: <code class="language-plaintext highlighter-rouge">ubuntu-drivers</code> 도구는 현재 시스템에 연결된 하드웨어 (특히 그래픽 카드, 네트워크 카드, 사운드 카드 등)를 검사하여 해당 하드웨어에 최적화된 드라이버가 무엇인지 탐지</li>
-        <li><strong>추천 드라이버 설치</strong>: <code class="language-plaintext highlighter-rouge">autoinstall</code> 옵션을 사용하면, 시스템에 가장 잘 맞는 드라이버를 자동으로 선택하고 설치<br />
-예를 들어, NVIDIA 그래픽 카드가 있는 경우, 가장 적절한 NVIDIA 드라이버 버전을 자동으로 선택하여 설치합니다.</li>
-        <li><strong>의존성 관리</strong>: 드라이버를 설치할 때 필요한 의존성 패키지들도 자동으로 함께 설치</li>
-        <li><strong>커널 모듈 및 서비스 관리</strong>: 드라이버 설치 후 필요한 커널 모듈이나 관련 서비스가 있다면, 이를 자동으로 로드하거나 시작</li>
-      </ol>
-    </blockquote>
-
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>ubuntu-drivers autoinstall
-</code></pre></div>    </div>
-  </li>
-</ul>
-
-<h2 id="선택-apt-저장소-변경">(선택) apt 저장소 변경</h2>
-
-<blockquote>
-  <p>설치 과정에서 <strong>Configure Ubuntu crchive mirror</strong> 페이지에서 별도로 주소를 설정하지 않았다면 <strong>kr.archive.ubuntu.com</strong>로 되어 있을 수 있다</p>
-
-  <p><strong>mirror.kakao.com</strong>으로 변경하면 좀 더 빠르게 apt 설치를 할 수 있다</p>
-</blockquote>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>vi /etc/apt/sources.list
-</code></pre></div></div>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>:%s/kr.archive.ubuntu.com/mirror.kakao.com/
-</code></pre></div></div>
-
-<blockquote>
-  <p>vi 문자열 변경 기능 사용 - 변경후 :wq [저장 후 나가기]</p>
-</blockquote>
-
-<p><img src="../../images/Ubuntu_Server/2023-08-20-ubuntu/image-20230820222550495.png" alt="image-20230820222550495" /></p>
-
-<ul>
-  <li>
-    <p><strong>변경 확인</strong></p>
-
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get update
-</code></pre></div>    </div>
-
-    <p><img src="../../images/Ubuntu_Server/2023-08-20-ubuntu/image-20230820222934409.png" alt="image-20230820222934409" /></p>
-  </li>
-</ul>
-
-<h2 id="시스템-시간-변경">시스템 시간 변경</h2>
-
-<blockquote>
-  <p>Ubuntu Server를 설치 할 때 English로 설치하면서 한국시간이 아닌 다른 나라 시간으로 잡혀있을 때 설정</p>
-</blockquote>
-
-<ul>
-  <li>
-    <p><strong>1. 현재 시스템의 날짜 및 시간 정보 확인</strong>:</p>
-
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">date</span>
-</code></pre></div>    </div>
-
-    <p><img src="../../images/Ubuntu_Server/2023-08-20-ubuntu/image-20230820220119542.png" alt="image-20230820220119542" /></p>
-
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>timedatectl
-</code></pre></div>    </div>
-
-    <p><img src="../../images/Ubuntu_Server/2023-08-20-ubuntu/image-20230820220145953.png" alt="image-20230820220145953" /></p>
-  </li>
-  <li>
-    <p><strong>2. 시간대를 한국 시간으로 설정</strong>:</p>
-
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>timedatectl set-timezone Asia/Seoul
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p><strong>3. 변경 사항 확인</strong>:</p>
-
-    <p><img src="../../images/Ubuntu_Server/2023-08-20-ubuntu/image-20230820220256409.png" alt="image-20230820220256409" /></p>
-  </li>
-</ul>]]></content><author><name>Brother_Gyu</name></author><category term="Ubuntu_Server" /><category term="Ubuntu Server" /><category term="Setting" /><summary type="html"><![CDATA[Ubuntu Server 22.04.3 LTS 초기 설정]]></summary></entry></feed>
+</ul>]]></content><author><name>Brother_Gyu</name></author><category term="Ubuntu_Server" /><category term="Ubuntu Server" /><category term="Setting" /><summary type="html"><![CDATA[wifi 설정 및 고정 ip 설정하기]]></summary></entry></feed>
